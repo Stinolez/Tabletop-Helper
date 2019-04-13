@@ -1,13 +1,10 @@
-var cacheName = 'tabletopHelper-0.1.190413-6';
+var cacheName = 'tabletopHelper-0.1.190413-11';
 var filesToCache = [
   '/',
   '/index.html',
   '/favicon.ico',
-  '/risingsun.html',
   '/images/app-logo.png',
-  '/images/game/risingsun/logo.png',
   '/scripts/app.js',
-  '/scripts/functions.js',
   '/styles/style.css'
 ];
 
