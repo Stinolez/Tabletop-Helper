@@ -48,7 +48,7 @@ body {
   background-image: url('../images/app-logo.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-blend-mode: lighten;
+  background-blend-mode: soft-light;
 }
 
 a, a:link, a:visited, a:hover, a:active {
