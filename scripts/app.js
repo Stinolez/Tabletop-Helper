@@ -10,12 +10,12 @@ var app = (function () {
 
   // Show loader
   function showLoader() {
-    document.querySelector('.loader').hidden = false;
+    loader.hidden = false;
   }
 
   // Hide loader
   function hideLoader() {
-    document.querySelector('.loader').hidden = true;
+    loader.hidden = true;
   }
 
   // Return an object exposed to the public
