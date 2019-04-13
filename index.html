@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  <title>Tabletop Helper</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Tabletop Helper">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="headerTitle">Tabletop Helper</h1>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="card"><img src="images/game-logo/risingsun.png" class="cardLogo" data-game="risingsun"></div>
+  </main>
+
+  <!-- LOADER -->
+  <div class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+  </div>
+
+  <!-- DIALOG -->
+  <div id="dialogSystem">
+    <div id="dialogShow"></div>
+    <div id="dialogTitle">test title</div>
+    <div id="dialogText">test text</div>
+  </div>
+
+  <script src="scripts/app.js" async></script>
+
+</body>
+</html>
