@@ -1,92 +1,89 @@
-(function() {
-  'use strict';
+'use strict';
 
-  var app = {
-    isLoading: true,
-    spinner: document.querySelector('.loader'),
-    confirmDialog: document.querySelector('.dialog-container')
-  };
+var app = (function () {
 
-  /*****************************************************************************
-   * Event listeners for UI elements
-   ****************************************************************************/
+  // Private varibables
+  var appVersion = '0.1.190413';
 
-  // Links to games on index
-  if (document.getElementsByClassName('cardLogo').length > 0) {
-    for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
-      document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
-        location.href = 'games/' + e.srcElement.dataset.game + '/' +  e.srcElement.dataset.game + '.html';
-      });
-    }
+  // DOM variables
+  var loader     = document.querySelector('.loader');
+
+  // Show loader
+  function showLoader() {
+    document.querySelector('.loader').hidden = false;
   }
 
-  // Back button action
-  if (document.getElementById('headerBack')) {
-    document.getElementById('headerBack').addEventListener('click', function() {
-      history.back(-1);
-    });
+  // Hide loader
+  function hideLoader() {
+    document.querySelector('.loader').hidden = true;
   }
 
-  // Dialog confirm action
-  document.getElementById('dialogShow').addEventListener('click', function() {
-    app.toggleConfirmDialog(true);
-  });
+  // Return an object exposed to the public
+  return {
 
-  /*****************************************************************************
-   * Methods to update/refresh the UI
-   ****************************************************************************/
+    // Get application version and build
+    getAppVersion: function() {
+      return appVersion;
+    },
 
-  // Toggles the visibility of the dialog.
-  app.toggleConfirmDialog = function(visible) {
-    if (visible) {
-
-      // Get the text and title for the confirm and the body element
-      var dialogTitle = document.getElementById('dialogTitle').innerText,
-          dialogText = document.getElementById('dialogText').innerText,
-          bodyElement = document.getElementsByTagName('body')[0];
-
-      // Create dialog
-      bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
-                                                    '<div class="dialog">' +
-                                                      '<div class="dialog-title">' + dialogTitle + '</div>' +
-                                                      '<div class="dialog-body">' + dialogText + '</div>' +
-                                                      '<div class="dialog-buttons">' +
-                                                        '<button id="dialogConfirm" class="button">OK</button>' +
+    // Toggles the visibility of the dialog.
+    createConfirm: function(title, text) {
+        var bodyElement = document.getElementsByTagName('body')[0];
+        bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
+                                                      '<div class="dialog">' +
+                                                        '<div class="dialog-title">' + title + '</div>' +
+                                                        '<div class="dialog-body">' + text + '</div>' +
+                                                        '<div class="dialog-buttons">' +
+                                                          '<button id="dialogConfirm" class="button">OK</button>' +
+                                                        '</div>' +
                                                       '</div>' +
-                                                    '</div>' +
-                                                  '</div>');
+                                                    '</div>');
 
-      // Dialog confirm action
-      document.getElementById('dialogConfirm').addEventListener('click', function() {
-        app.toggleConfirmDialog(false);
-      });
+        document.getElementById('dialogConfirm').addEventListener('click', function() {
+          var dialogContainer = document.getElementById('dialog-container');
+          dialogContainer.parentNode.removeChild(dialogContainer);
+        });
+    },
 
-    } else {
+    // Function to show or hide the loading spinner
+    setLoading: function(bool) {
+      document.querySelector('.loader').hidden = !bool;
+    },
 
-      // Get the element
-      var dialogContainer = document.getElementById('dialog-container');
+    // Init function
+    init: function() {
 
-      // Remove the dialog
-      dialogContainer.parentNode.removeChild(dialogContainer);
+      // Show loader
+      showLoader();
+
+      // Register games
+      if (document.getElementsByClassName('cardLogo').length > 0) {
+        for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+          document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
+            location.href = e.srcElement.dataset.game + '.html';
+          });
+        }
+      }
+
+      // Back button action
+      if (document.getElementById('headerBack')) {
+        document.getElementById('headerBack').addEventListener('click', function() {
+          history.back(-1);
+        });
+      }
+
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('../service-worker.js');
+      }
+
+      // Hide loader
+      hideLoader();
 
     }
+
   };
-
-  /*****************************************************************************
-   * Methods for dealing with the model
-   ****************************************************************************/
-
-  // Startup code
-
-  // Fully loaded
-  if (app.isLoading) {
-    app.spinner.setAttribute('hidden', true);
-    app.isLoading = false;
-  }
-
-  // Service worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../../service-worker.js');
-  }
-
 })();
+
+// Run the init function
+app.init();

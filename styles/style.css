@@ -45,7 +45,7 @@ body {
       -ms-flex-line-pack: stretch;
           align-content: stretch;
   background: #ececec;
-  background-image: url('../images/logo.png');
+  background-image: url('../images/app-logo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: lighten;
