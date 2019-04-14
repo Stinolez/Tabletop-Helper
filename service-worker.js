@@ -1,4 +1,4 @@
-var cacheName = 'tabletopHelper-0.1.190413-13';
+var cacheName = 'tabletopHelper-0.1.190414-1';
 var filesToCache = [
   '/',
   '/index.html',
