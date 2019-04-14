@@ -24,7 +24,27 @@
 
   <!-- MAIN -->
   <main class="main">
-    <div class="card"></div>
+    <div class="card" id="rs-options">
+      <div class="cardTitle">Options</div>
+      <div class="cardText">
+        <label for="numberOfPlayers">Number of players</label>
+        <select id="numberOfPlayers">
+          <option value="1">1</option>
+          <option value="1">2</option>
+        </select>
+      </div>
+      <div class="cardText">
+        <label for="dynastyExpansion">Dynasty Expansion</label>
+        <label class="switch">
+          <input type="checkbox" id="dynastyExpansion">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="cardButtons">
+        <button id="shuffleClans" class="button">Shuffle Clans</button>
+      </div>
+    </div>
+    <div class="card" id="rs-clans"></div>
   </main>
 
   <!-- LOADER -->
@@ -35,8 +55,8 @@
   </div>
 
   <!-- Scripts -->
-  <script src="scripts/app.js" async></script>
-  <script src="scripts/g_risingsun.js" async></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/g_risingsun.js"></script>
 
 </body>
 </html>
