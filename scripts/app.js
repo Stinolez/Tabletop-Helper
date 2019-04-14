@@ -2,8 +2,8 @@
 
 var app = (function () {
 
-  // Private varibables
-  var appVersion = '0.1.190413';
+  // Private variables
+  var appVersion = '0.1.190414';
 
   // DOM variables
   var loader     = document.querySelector('.loader');
@@ -47,7 +47,20 @@ var app = (function () {
 
     // Function to show or hide the loading spinner
     setLoading: function(bool) {
-      document.querySelector('.loader').hidden = !bool;
+      if (bool) {
+        showLoader();
+      } else {
+        hideLoader();
+      }
+    },
+
+    // Function to reshufle array in random order
+    arrayShuffle: function(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     },
 
     // Init function
