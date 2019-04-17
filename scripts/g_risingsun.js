@@ -5,6 +5,10 @@
 var g_clans     = ['a', 'b'], // [TODO] - RS - list of clans
     g_exp_clans = ['c', 'd']; // [TODO] - RS - list of expansion clans
 
+    // Dynasty Invasion (3-6) - Sun, Moon
+    // Daimyo Box (3-6) - Fox
+    // Rising Sun (3-5) - Koi, Turtle, Bonsai, Lotus, Dragonfly
+
 // Register the action on the shuffleClans button
 document.getElementById('shuffleClans').addEventListener('click', function() {
   var numberOfPlayers = document.getElementById('numberOfPlayers').value,
