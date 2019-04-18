@@ -3,7 +3,9 @@
 var app = (function () {
 
   // Private variables
-  var appVersion = '0.1.190414';
+  var appName    = 'Tabletop Helper',
+      appVersion = '0.1.190418',
+      appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
   var loader     = document.querySelector('.loader');
@@ -21,9 +23,19 @@ var app = (function () {
   // Return an object exposed to the public
   return {
 
-    // Get application version and build
+    // Get application name
+    getAppName: function() {
+      return appName;
+    },
+
+    // Get application version
     getAppVersion: function() {
       return appVersion;
+    },
+
+    // Get application owner
+    getAppOwner: function() {
+      return appOwner;
     },
 
     // Toggles the visibility of the dialog.
@@ -69,6 +81,9 @@ var app = (function () {
       // Show loader
       showLoader();
 
+      // Setup the copyright
+      document.getElementById('copyright').innerHTML = app.getAppName() + ', v.' + app.getAppVersion() + ', &copy; ' + app.getAppOwner() + ', ' + new Date().getFullYear();
+
       // Register games
       if (document.getElementsByClassName('cardLogo').length > 0) {
         for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
@@ -80,8 +95,8 @@ var app = (function () {
 
       // Back button action
       if (document.getElementById('headerBack')) {
-        document.getElementById('headerBack').addEventListener('click', function() {
-          history.back(-1);
+        document.getElementById('headerBack').addEventListener('click', function(e) {
+          location.href = e.srcElement.dataset.url;
         });
       }
 
