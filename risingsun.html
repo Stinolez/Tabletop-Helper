@@ -19,51 +19,44 @@
   <!-- HEADER -->
   <header class="header">
     <div id="headerBack" data-url="index.html">&laquo;</div>
-    <h1 class="headerTitle">###_GAME-NAME_###</h1>
+    <h1 class="headerTitle">Rising Sun</h1>
   </header>
 
   <!-- MAIN -->
   <main class="main">
-
-    <div class="card" id="cardIDText">
-      <div class="cardTitle">Title - Text</div>
-      <div class="cardText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-    </div>
-
-    <div class="card" id="cardIDForm">
-      <div class="cardTitle">Title - Form</div>
+    <div class="card" id="rs-options">
+      <div class="cardTitle">Options</div>
       <div class="cardText">
-        <label for="sl">Select List</label>
-        <select id="sl">
-          <option value="1">1</option>
-          <option value="2">2</option>
+        <label for="numberOfPlayers">Number of players</label>
+        <select id="numberOfPlayers">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
         </select>
       </div>
       <div class="cardText">
-        <label for="sw">Switch</label>
+        <label for="daimyoBox">Daimyo Box</label>
         <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="sw" checked>
-            <label class="onoffswitch-label" for="sw"></label>
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="daimyoBox" checked>
+            <label class="onoffswitch-label" for="daimyoBox"></label>
+        </div>
+      </div>
+      <div class="cardText">
+        <label for="dynastyExpansion">Dynasty Expansion</label>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="dynastyExpansion" checked>
+            <label class="onoffswitch-label" for="dynastyExpansion"></label>
         </div>
       </div>
       <div class="cardButtons">
-          <button id="cardButton" class="button">Card Button</button>
+        <button id="shuffleClans" class="button">Shuffle Clans</button>
       </div>
     </div>
-
-    <div class="card" id="cardIDSlider">
+    <div class="card" id="rs-clans">
       <div class="cardSlider" id="rs-clans-slider">
-        <div class="cardSlide">
-          <div class="cardSlideTitle">Title</div>
-          <img src="images/###_IMAGE-NAME_###.png" alt="">
-        </div>
-        <div class="cardSlide">
-          <div class="cardSlideTitle">Title</div>
-          <img src="images/###_IMAGE-NAME_###.png" alt="">
-        </div>
       </div>
     </div>
-
   </main>
 
   <!-- COPYRIGHT -->
@@ -78,7 +71,7 @@
 
   <!-- Scripts -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/g_###_GAME-NAME_###.js"></script>
+  <script src="scripts/g_risingsun.js"></script>
 
 </body>
 </html>

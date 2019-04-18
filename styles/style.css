@@ -9,8 +9,9 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'Helvetica', 'Verdana', sans-serif;
-  font-weight: 400;
+  font-weight: bold;
   font-display: optional;
+  font-size: 14px;
   color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -48,12 +49,71 @@ body {
   background-image: url('../images/app-logo.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-blend-mode: lighten;
+  background-blend-mode: soft-light;
+}
+
+select, input {
+  margin-left: 5px;
 }
 
 a, a:link, a:visited, a:hover, a:active {
   color: black;
   text-decoration: none;
+}
+
+/* Style for round switch */
+.onoffswitch {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  width: 40px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+  display: none;
+}
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  height: 16px;
+  padding: 0;
+  line-height: 16px;
+  border: 2px solid #E3E3E3;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  transition: background-color 0.3s ease-in;
+}
+
+.onoffswitch-label:before {
+  content: "";
+  display: block;
+  width: 16px;
+  margin: 0px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 22px;
+  border: 2px solid #E3E3E3;
+  border-radius: 16px;
+  transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+  background-color: #2196F3;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  border-color: #2196F3;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  right: 0px; 
 }
 
 /* Header */
@@ -98,8 +158,8 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .headerTitle {
-  font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25em;
+  font-weight: bold;
   text-align: center;
   margin: 0;
   -webkit-box-flex: 1;
@@ -109,11 +169,11 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 #headerBack {
-  font-size: 20px;
   position: absolute;
   left: 0;
   top: 0;
   padding: 16.5px;
+  cursor: default;
 }
 
 /* Main */
@@ -141,6 +201,49 @@ a, a:link, a:visited, a:hover, a:active {
 
 .cardLogo {
   width: 100%;
+}
+
+.cardTitle, .cardSlideTitle {
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-variant-caps: all-petite-caps;
+}
+
+.cardText {
+  padding-bottom: 10px;
+}
+
+.cardSlider {
+  overflow: auto;
+  display: flex;
+  width: 100%;
+  text-align: center;
+}
+
+.cardSlide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.cardSlide > img {
+  max-width: 100%;
+}
+
+.cardButtons {
+  text-align: right;
+}
+
+/* Copyright */
+#copyright {
+  position: absolute;
+  z-index: -999;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 5px;
+  font-size: 10px;
+  font-style: oblique;
+  text-align: center;
+  color: darkgray;
 }
 
 /* Loader */
@@ -257,8 +360,14 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .dialog-title {
-  padding-top: 20px;
+  margin: 0 10px 0;
+  padding: 20px 0 0 !important;
   font-size: 1.25em;
+  border-bottom: 1px solid;
+}
+
+.dialog-title:empty {
+  display: none;
 }
 
 .dialog-body {

@@ -2,8 +2,10 @@
 
 var app = (function () {
 
-  // Private varibables
-  var appVersion = '0.1.190413';
+  // Private variables
+  var appName    = 'Tabletop Helper',
+      appVersion = '0.1.190418',
+      appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
   var loader     = document.querySelector('.loader');
@@ -21,9 +23,19 @@ var app = (function () {
   // Return an object exposed to the public
   return {
 
-    // Get application version and build
+    // Get application name
+    getAppName: function() {
+      return appName;
+    },
+
+    // Get application version
     getAppVersion: function() {
       return appVersion;
+    },
+
+    // Get application owner
+    getAppOwner: function() {
+      return appOwner;
     },
 
     // Toggles the visibility of the dialog.
@@ -47,7 +59,20 @@ var app = (function () {
 
     // Function to show or hide the loading spinner
     setLoading: function(bool) {
-      document.querySelector('.loader').hidden = !bool;
+      if (bool) {
+        showLoader();
+      } else {
+        hideLoader();
+      }
+    },
+
+    // Function to reshufle array in random order
+    arrayShuffle: function(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     },
 
     // Init function
@@ -55,6 +80,9 @@ var app = (function () {
 
       // Show loader
       showLoader();
+
+      // Setup the copyright
+      document.getElementById('copyright').innerHTML = app.getAppName() + ', v.' + app.getAppVersion() + ', &copy; ' + app.getAppOwner() + ', ' + new Date().getFullYear();
 
       // Register games
       if (document.getElementsByClassName('cardLogo').length > 0) {
@@ -67,8 +95,8 @@ var app = (function () {
 
       // Back button action
       if (document.getElementById('headerBack')) {
-        document.getElementById('headerBack').addEventListener('click', function() {
-          history.back(-1);
+        document.getElementById('headerBack').addEventListener('click', function(e) {
+          location.href = e.srcElement.dataset.url;
         });
       }
 
