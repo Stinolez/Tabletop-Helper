@@ -18,7 +18,7 @@
 
   <!-- HEADER -->
   <header class="header">
-    <div id="headerBack">&laquo;</div>
+    <div id="headerBack" data-url="index.html">&laquo;</div>
     <h1 class="headerTitle">Rising Sun</h1>
   </header>
 
@@ -29,23 +29,38 @@
       <div class="cardText">
         <label for="numberOfPlayers">Number of players</label>
         <select id="numberOfPlayers">
-          <option value="1">1</option>
-          <option value="1">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
         </select>
       </div>
       <div class="cardText">
+        <label for="daimyoBox">Daimyo Box</label>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="daimyoBox" checked>
+            <label class="onoffswitch-label" for="daimyoBox"></label>
+        </div>
+      </div>
+      <div class="cardText">
         <label for="dynastyExpansion">Dynasty Expansion</label>
-        <label class="switch">
-          <input type="checkbox" id="dynastyExpansion">
-          <span class="slider round"></span>
-        </label>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="dynastyExpansion" checked>
+            <label class="onoffswitch-label" for="dynastyExpansion"></label>
+        </div>
       </div>
       <div class="cardButtons">
         <button id="shuffleClans" class="button">Shuffle Clans</button>
       </div>
     </div>
-    <div class="card" id="rs-clans"></div>
+    <div class="card" id="rs-clans">
+      <div class="cardSlider" id="rs-clans-slider">
+      </div>
+    </div>
   </main>
+
+  <!-- COPYRIGHT -->
+  <div id="copyright"></div>
 
   <!-- LOADER -->
   <div class="loader">
