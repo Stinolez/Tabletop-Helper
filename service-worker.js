@@ -1,12 +1,27 @@
-var cacheName = 'tabletopHelper-0.1.190414-1';
+var cacheName = 'tth-cn-2';
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/favicon.ico',
-  '/images/app-logo.png',
-  '/images/games/risingsun/logo.png',
-  '/scripts/app.js',
-  '/styles/style.css'
+
+  /*************** SYSTEM ***************/
+    '/'
+  , '/index.html'
+  , '/favicon.ico'
+  , '/images/app-logo.png'
+  , '/scripts/app.js'
+  , '/styles/style.css'
+
+  /************* RISING SUN *************/
+  , '/risingsun.html'
+  , '/scripts/g_risingsun.js'
+  , '/images/games/risingsun/logo.png'
+  , '/images/games/risingsun/bonsai.png'
+  , '/images/games/risingsun/dragonfly.png'
+  , '/images/games/risingsun/fox.png'
+  , '/images/games/risingsun/koi.png'
+  , '/images/games/risingsun/lotus.png'
+  , '/images/games/risingsun/moon.png'
+  , '/images/games/risingsun/sun.png'
+  , '/images/games/risingsun/turtle.png'
+  
 ];
 
 // Install
