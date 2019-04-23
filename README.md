@@ -5,6 +5,8 @@ This application is hosted here: <https://tabletop-helper.stinolez.com>
 
 ## List of supported board games
 This application supports the following board games:
+* The King's Guild
+  * Shuffle guilds for all players
 * Rising Sun
   * Shuffle clans for all players
 

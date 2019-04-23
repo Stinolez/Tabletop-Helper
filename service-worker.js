@@ -1,28 +1,39 @@
-var cacheName = 'tth-cn-1';
-var filesToCache = [
+var cacheName     = 'tth-cn-190424-01',
+    filesToCache  = [
 
-  /*************** SYSTEM ***************/
-    '/'
-  , '/index.html'
-  , '/favicon.ico'
-  , '/images/app-logo.png'
-  , '/scripts/app.js'
-  , '/styles/style.css'
+      /*************** SYSTEM ***************/
+        '/'
+      , '/index.html'
+      , '/favicon.ico'
+      , '/images/app-logo.png'
+      , '/scripts/app.js'
+      , '/styles/style.css'
 
-  /************* RISING SUN *************/
-  , '/risingsun.html'
-  , '/scripts/g_risingsun.js'
-  , '/images/games/risingsun/logo.png'
-  , '/images/games/risingsun/bonsai.png'
-  , '/images/games/risingsun/dragonfly.png'
-  , '/images/games/risingsun/fox.png'
-  , '/images/games/risingsun/koi.png'
-  , '/images/games/risingsun/lotus.png'
-  , '/images/games/risingsun/moon.png'
-  , '/images/games/risingsun/sun.png'
-  , '/images/games/risingsun/turtle.png'
-  
-];
+      /************* RISING SUN *************/
+      , '/g_risingsun.html'
+      , '/scripts/g_risingsun.js'
+      , '/images/games/risingsun/logo.png'
+      , '/images/games/risingsun/bonsai.png'
+      , '/images/games/risingsun/dragonfly.png'
+      , '/images/games/risingsun/fox.png'
+      , '/images/games/risingsun/koi.png'
+      , '/images/games/risingsun/lotus.png'
+      , '/images/games/risingsun/moon.png'
+      , '/images/games/risingsun/sun.png'
+      , '/images/games/risingsun/turtle.png'
+
+      /********** THE KING'S GUILD **********/
+      , '/g_kingsguild.html'
+      , '/scripts/g_kingsguild.js'
+      , '/images/games/kingsguild/logo.png'
+      , '/images/games/kingsguild/craft-collective.png'
+      , '/images/games/kingsguild/explorers-league.png'
+      , '/images/games/kingsguild/greycastle-guard.png'
+      , '/images/games/kingsguild/holy-order.png'
+      , '/images/games/kingsguild/merchant-guild.png'
+      , '/images/games/kingsguild/starfall-syndicate.png'
+
+    ];
 
 // Install
 self.addEventListener('install', function(e) {
@@ -59,4 +70,11 @@ self.addEventListener('fetch', function(e) {
       return response || fetch(e.request);
     })
   );
+});
+
+// Wait for the message
+addEventListener('message', messageEvent => {
+  if (messageEvent.data === 'skipWaiting') {
+    return skipWaiting();
+  }
 });

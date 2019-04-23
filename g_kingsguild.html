@@ -18,18 +18,39 @@
 
   <!-- HEADER -->
   <header class="header">
-    <h1 class="headerTitle">Tabletop Helper</h1>
+    <div id="headerBack" data-url="index.html">&laquo;</div>
+    <h1 class="headerTitle">The King's Guild</h1>
   </header>
 
   <!-- MAIN -->
   <main class="main">
-    <div class="card"><img src="images/games/kingsguild/logo.png" class="cardLogo" data-game="kingsguild"></div>
-    <div class="card"><img src="images/games/risingsun/logo.png" class="cardLogo" data-game="risingsun"></div>
+    <div class="card" id="kg-options">
+      <div class="cardTitle">Options</div>
+      <div class="cardText">
+        <label for="numberOfPlayers">Number of players</label>
+        <select id="numberOfPlayers">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="cardButtons">
+        <button id="shuffleGuilds" class="button">Shuffle Guilds</button>
+      </div>
+    </div>
+    <div class="card" id="kg-guilds">
+      <div class="cardSlider" id="kg-guilds-slider">
+      </div>
+      <div class="cardCredit">Images by Laura Bevon (http://www.laurabevon.com/)</div>
+    </div>
   </main>
 
   <!-- COPYRIGHT -->
   <div id="copyright"></div>
-  
+
   <!-- LOADER -->
   <div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">
@@ -39,6 +60,7 @@
 
   <!-- Scripts -->
   <script src="scripts/app.js"></script>
+  <script src="scripts/g_kingsguild.js"></script>
 
 </body>
 </html>
