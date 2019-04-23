@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-190423-01',
+var cacheName     = 'tth-cn-190424-01',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -26,6 +26,12 @@ var cacheName     = 'tth-cn-190423-01',
       , '/g_kingsguild.html'
       , '/scripts/g_kingsguild.js'
       , '/images/games/kingsguild/logo.png'
+      , '/images/games/kingsguild/craft-collective.png'
+      , '/images/games/kingsguild/explorers-league.png'
+      , '/images/games/kingsguild/greycastle-guard.png'
+      , '/images/games/kingsguild/holy-order.png'
+      , '/images/games/kingsguild/merchant-guild.png'
+      , '/images/games/kingsguild/starfall-syndicate.png'
 
     ];
 
