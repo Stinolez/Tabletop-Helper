@@ -1,4 +1,4 @@
-var cacheName = 'tth-cn-2';
+var cacheName = 'tth-cn-1';
 var filesToCache = [
 
   /*************** SYSTEM ***************/
