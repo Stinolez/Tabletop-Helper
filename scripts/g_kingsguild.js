@@ -20,7 +20,7 @@ document.getElementById('shuffleGuilds').addEventListener('click', function() {
   guildsArray = app.arrayShuffle(guildsArray);
 
   // Clear previous results
-  while (playersSlider.hasChildNodes()) {   
+  while (playersSlider.hasChildNodes()) {
     playersSlider.removeChild(playersSlider.firstChild);
   }
 
@@ -46,8 +46,9 @@ document.getElementById('shuffleGuilds').addEventListener('click', function() {
 
   }
 
-  // Display the players card
+  // Display the players card & slide to first element
   playersCard.hidden = false;
+  playersSlider.firstElementChild.scrollIntoView(true);
 
 });
 

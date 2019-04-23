@@ -34,7 +34,7 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
     clansArray = app.arrayShuffle(clansArray);
 
     // Clear previous results
-    while (playersSlider.hasChildNodes()) {   
+    while (playersSlider.hasChildNodes()) {
       playersSlider.removeChild(playersSlider.firstChild);
     }
 
@@ -60,8 +60,9 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
 
     }
 
-    // Display the players card
+    // Display the players card & slide to first element
     playersCard.hidden = false;
+    playersSlider.firstElementChild.scrollIntoView(true);
 
   }
 
