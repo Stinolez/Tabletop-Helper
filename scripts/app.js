@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '0.1.190418',
+      appVersion = '0.2.190423',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -39,22 +39,25 @@ var app = (function () {
     },
 
     // Toggles the visibility of the dialog.
-    createConfirm: function(title, text) {
+    createConfirm: function(title, text, button, action) {
         var bodyElement = document.getElementsByTagName('body')[0];
         bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
                                                       '<div class="dialog">' +
                                                         '<div class="dialog-title">' + title + '</div>' +
                                                         '<div class="dialog-body">' + text + '</div>' +
                                                         '<div class="dialog-buttons">' +
-                                                          '<button id="dialogConfirm" class="button">OK</button>' +
+                                                          '<button id="dialogConfirm" class="button">' + (button ? button : 'OK' ) + '</button>' +
                                                         '</div>' +
                                                       '</div>' +
                                                     '</div>');
-
-        document.getElementById('dialogConfirm').addEventListener('click', function() {
-          var dialogContainer = document.getElementById('dialog-container');
-          dialogContainer.parentNode.removeChild(dialogContainer);
-        });
+        if (action) {
+          document.getElementById('dialogConfirm').addEventListener('click', action);
+        } else {
+          document.getElementById('dialogConfirm').addEventListener('click', function() {
+            var dialogContainer = document.getElementById('dialog-container');
+            dialogContainer.parentNode.removeChild(dialogContainer);
+          });
+        }
     },
 
     // Function to show or hide the loading spinner
@@ -88,7 +91,7 @@ var app = (function () {
       if (document.getElementsByClassName('cardLogo').length > 0) {
         for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
           document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
-            location.href = e.srcElement.dataset.game + '.html';
+            location.href = 'g_' + e.srcElement.dataset.game + '.html';
           });
         }
       }
@@ -102,7 +105,25 @@ var app = (function () {
 
       // Register service worker
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('../service-worker.js');
+        navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
+
+          // New service worker has appeared in registration.installing!
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+
+            // Wait for the new service worker to be installed
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed') {
+                app.createConfirm('', 'New version of the application is available. Please click below to update it.', 'Update', function() {
+                  registration.waiting.postMessage('skipWaiting');
+                  window.location.reload();
+                });
+              }
+            });
+          });
+
+        });
+
       }
 
       // Hide loader
