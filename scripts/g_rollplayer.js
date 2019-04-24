@@ -3,23 +3,23 @@
 
 // Roll Player global variables
 var g_data = {"Čeština" : {"base"            : {"race"      : [],
-												"class"     : [],
-												"backstory" : [],
-												"alignment" : []},
+                                                "class"     : [],
+                                                "backstory" : [],
+                                                "alignment" : []},
                            "frogkin"         : {"race"      : []},
                            "minotaur"        : {"race"      : []}
-						  },
-			  "English" : {"base"            : {"race"      : [],
-												"class"     : [],
-												"backstory" : [],
-												"alignment" : []},
+                          },
+              "English" : {"base"            : {"race"      : [],
+                                                "class"     : [],
+                                                "backstory" : [],
+                                                "alignment" : []},
                            "frogkin"         : {"race"      : []},
                            "minotaur"        : {"race"      : []},
                            "monstersMinions" : {"race"      : [],
-												"class"     : [],
-												"backstory" : [],
-												"alignment" : []}
-						  }
+                                                "class"     : [],
+                                                "backstory" : [],
+                                                "alignment" : []}
+                          }
              };
 
 // Register the action on the shuffleHeroes button
@@ -76,16 +76,19 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
 
 });
 
+// Register the action on language change
+document.getElementById('language').addEventListener('change', function() {
+  console.log('Language Change');
+}
+
 // On load init
 document.getElementById('rp-heroes').hidden = true;
 
 // Add supported languages to select list
 var select = document.getElementById('language');
 for (var language in g_data) {
-
-	var option = document.createElement('option');
-	option.appendChild( document.createTextNode(language) );
-	option.value = language; 
-	select.appendChild(option); 
-
+  var option = document.createElement('option');
+  option.appendChild( document.createTextNode(language) );
+  option.value = language;
+  select.appendChild(option);
 }
