@@ -33,6 +33,10 @@ var cacheName     = 'tth-cn-190424-01',
       , '/images/games/kingsguild/merchant-guild.png'
       , '/images/games/kingsguild/starfall-syndicate.png'
 
+      /************ ROLL PLAYER *************/
+      , '/g_rollplayer.html'
+      , '/scripts/g_rollplayer.js'
+
     ];
 
 // Install
