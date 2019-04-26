@@ -234,6 +234,25 @@ a, a:link, a:visited, a:hover, a:active {
   padding: 0 10px;
 }
 
+.cardSlide table {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.cardSlide th, .cardSlide td {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.cardSlide th {
+  text-align: right;
+}
+
+.cardSlide td {
+  text-align: left;
+}
+
 .cardButtons {
   text-align: right;
 }
