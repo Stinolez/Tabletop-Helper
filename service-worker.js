@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-190424-01',
+var cacheName     = 'tth-cn-190426-01',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -36,6 +36,7 @@ var cacheName     = 'tth-cn-190424-01',
       /************ ROLL PLAYER *************/
       , '/g_rollplayer.html'
       , '/scripts/g_rollplayer.js'
+      , '/images/games/rollplayer/logo.png'
 
     ];
 
