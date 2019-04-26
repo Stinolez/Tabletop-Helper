@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '0.3.190424',
+      appVersion = '0.3.190426',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -40,7 +40,7 @@ var app = (function () {
 
     // Toggles the visibility of the dialog.
     createConfirm: function(title, text, button, action) {
-        var bodyElement = document.getElementsByTagName('body')[0];
+        var bodyElement = document.body;
         bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
                                                       '<div class="dialog">' +
                                                         '<div class="dialog-title">' + title + '</div>' +
@@ -115,7 +115,9 @@ var app = (function () {
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed') {
                 app.createConfirm('', 'New version of the application is available. Please click below to update it.', 'Update', function() {
-                  registration.waiting.postMessage('skipWaiting');
+                  if(registration.waiting) {
+                    registration.waiting.postMessage('skipWaiting');
+                  }
                   window.location.reload();
                 });
               }
