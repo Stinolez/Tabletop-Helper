@@ -1,13 +1,19 @@
 // Roll Player specific javascript file
 'use strict';
 
+// [TODO] - Class - udělat páry ! Aby nebylo možné táhnout pro dva hráče Barbar - Bojovník
+
 // Roll Player global variables
-var g_data = {"Čeština" : {"base"            : {"race"      : [],
-                                                "class"     : [],
-                                                "backstory" : [],
-                                                "alignment" : []},
-                           "frogkin"         : {"race"      : []},
-                           "minotaur"        : {"race"      : []}
+var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození", "Elfové", "Lidé", "Orkové", "Pulčíci", "Trpaslíci"],
+                                                "class"     : ["Barbar", "Bard", "Bojovník", "Čaroděj", "Druid", "Hraničář",
+                                                               "Kněz", "Kouzelník", "Mnich", "Ničema", "Paladin", "Zloděj"],
+                                                "backstory" : ["Divoch", "Dítě ulice", "Lovec pokladů", "Mistr meče", "Odhodlaný", "Odolný",
+                                                               "Osvobozený", "Pronásledovaný", "Rváč", "Řemeslník", "Sférochodec", "Šlechtic",
+                                                               "Učitel šermu", "Vyvolený", "Vznešený", "Ztracený duše"],
+                                                "alignment" : ["Blázen", "Hledač pravdy", "Maniak", "Mizera", "Narcis", "Nervák",
+                                                               "Obránce", "Ochránce", "Odpadlík", "Podivín", "Poustevník", "Psychopat",
+                                                               "Rebel", "Soudce", "Strážce", "Šampion" , "Volnomyšlenkář"]},
+                           "frogkin"         : {"race"      : ["Žaborození"]}
                           },
               "English" : {"base"            : {"race"      : ["Dragonkin", "Dwarf", "Elf", "Halfling", "Human", "Orc"],
                                                 "class"     : ["Barbarian", "Bard", "Cleric", "Druid", "Monk", "Paladin",
