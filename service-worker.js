@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-190424-01',
+var cacheName     = 'tth-cn-190429-01',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -32,6 +32,11 @@ var cacheName     = 'tth-cn-190424-01',
       , '/images/games/kingsguild/holy-order.png'
       , '/images/games/kingsguild/merchant-guild.png'
       , '/images/games/kingsguild/starfall-syndicate.png'
+
+      /************ ROLL PLAYER *************/
+      , '/g_rollplayer.html'
+      , '/scripts/g_rollplayer.js'
+      , '/images/games/rollplayer/logo.png'
 
     ];
 
