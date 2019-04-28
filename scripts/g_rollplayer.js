@@ -1,12 +1,14 @@
 // Roll Player specific javascript file
 'use strict';
 
-// [TODO] - Class - udělat páry ! Aby nebylo možné táhnout pro dva hráče Barbar - Bojovník
-
 // Roll Player global variables
 var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození", "Elfové", "Lidé", "Orkové", "Pulčíci", "Trpaslíci"],
-                                                "class"     : ["Barbar", "Bard", "Bojovník", "Čaroděj", "Druid", "Hraničář",
-                                                               "Kněz", "Kouzelník", "Mnich", "Ničema", "Paladin", "Zloděj"],
+                                                "class"     : {"black"  : ["Ničema", "Zloděj"],
+                                                               "blue"   : ["Čaroděj", "Kouzelník"],
+                                                               "green"  : ["Druid", "Hraničář"],
+                                                               "purple" : ["Bard", "Mnich"],
+                                                               "red"    : ["Barbar", "Bojovník"],
+                                                               "white"  : ["Kněz", "Paladin"]},
                                                 "backstory" : ["Divoch", "Dítě ulice", "Lovec pokladů", "Mistr meče", "Odhodlaný", "Odolný",
                                                                "Osvobozený", "Pronásledovaný", "Rváč", "Řemeslník", "Sférochodec", "Šlechtic",
                                                                "Učitel šermu", "Vyvolený", "Vznešený", "Ztracený duše"],
@@ -16,8 +18,12 @@ var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození",
                            "frogkin"         : {"race"      : ["Žaborození"]}
                           },
               "English" : {"base"            : {"race"      : ["Dragonkin", "Dwarf", "Elf", "Halfling", "Human", "Orc"],
-                                                "class"     : ["Barbarian", "Bard", "Cleric", "Druid", "Monk", "Paladin",
-                                                               "Ranger", "Rogue", "Sorcerer", "Thief", "Warrior", "Wizard"],
+                                                "class"     : {"black"  : ["Rogue", "Thief"],
+                                                               "blue"   : ["Sorcerer", "Wizard"],
+                                                               "green"  : ["Druid", "Ranger"],
+                                                               "purple" : ["Bard", "Monk"],
+                                                               "red"    : ["Barbarian", "Warrior"],
+                                                               "white"  : ["Cleric", "Paladin"]},
                                                 "backstory" : ["Aristocrat", "Brawler", "Chosen One", "Craftsman", "Devoted", "Exonerated",
                                                                "Hunter", "Lost Soul", "Mentor", "Patrician", "Persecuted", "Resilient",
                                                                "Riftwalker", "Savage", "Savant", "Street Urchin"],
@@ -27,8 +33,12 @@ var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození",
                            "frogkin"         : {"race"      : ["Frogkin"]},
                            "minotaur"        : {"race"      : ["Minotaur"]},
                            "monstersMinions" : {"race"      : ["Bastja", "Construct", "Dark Elf", "Gnome", "Wrathborn"],
-                                                "class"     : ["Alchemist", "Assassin", "Crusader", "Elementalist", "Enchanter", "Illusionist",
-                                                               "Knight", "Priest", "Psionic", "Scout", "Shaman", "Warlord"],
+                                                "class"     : {"black"  : ["Assassin", "Scout"],
+                                                               "blue"   : ["Enchanter", "Illusionist"],
+                                                               "green"  : ["Elementalist", "Shaman"],
+                                                               "purple" : ["Alchemist", "Psionic"],
+                                                               "red"    : ["Knight", "Warlord"],
+                                                               "white"  : ["Crusader", "Priest"]},
                                                 "backstory" : ["Apprentice", "Cast Off", "Damaged", "Doomed", "Gate Keeper", "Gladiator",
                                                                "Lost in Time", "Oracle", "Outcast", "Separated", "Transported", "Wanderer"],
                                                 "alignment" : ["Advocate", "Defender", "Diplomat", "Dissenter", "Enigma", "Individualist",
@@ -48,8 +58,8 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       monstersMinions = document.getElementById('monstersMinionsExpansion').checked,
       playersCard     = document.getElementById('rp-heroes'),
       playersSlider   = document.getElementById('rp-heroes-slider'),
+      diceColours     = ["black", "blue", "green", "purple", "red", "white"],
       availRace       = g_data[language].base.race,
-      availClass      = g_data[language].base.class,
       availBackstory  = g_data[language].base.backstory,
       availAlignment  = g_data[language].base.alignment;
 
@@ -72,19 +82,25 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
     }
     if (monstersMinions) {
       availRace       = availRace.concat(g_data[language].monstersMinions.race);
-      availClass      = availClass.concat(g_data[language].monstersMinions.class);
       availBackstory  = availBackstory.concat(g_data[language].monstersMinions.backstory);
       availAlignment  = availAlignment.concat(g_data[language].monstersMinions.alignment);
     }
 
     // Shuffle all arrays
     availRace       = app.arrayShuffle(availRace);
-    availClass      = app.arrayShuffle(availClass);
+    diceColours     = app.arrayShuffle(diceColours);
     availBackstory  = app.arrayShuffle(availBackstory);
     availAlignment  = app.arrayShuffle(availAlignment);
 
     // Display the selection for players
     for (var i = 0; i < numberOfPlayers; i++) {
+
+      // Selecting the class for the player colour
+      var availClass = g_data[language].base.class[diceColours[i]];
+      if (monstersMinions) {
+        availClass = availClass.concat(g_data[language].monstersMinions.class[diceColours[i]]);
+      }
+      availClass = app.arrayShuffle(availClass);
 
       // New elements
       var slide = document.createElement('div'),
@@ -98,7 +114,7 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
 
       // Creating table content
       for (var j = 0; j < 4; j++) {
-        
+
         // New elements
         var tr = table.insertRow(),
             th = document.createElement('th');
@@ -114,7 +130,7 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
             td.appendChild(document.createTextNode(availRace[i]));
             break;
           case 1:
-            td.appendChild(document.createTextNode(availClass[i]));
+            td.appendChild(document.createTextNode(availClass[0]));
             break;
           case 2:
             td.appendChild(document.createTextNode(availBackstory[i]));
@@ -124,7 +140,7 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
             break;
         }
 
-      }     
+      }
 
       // Append the elements
       slide.appendChild(title);
@@ -198,7 +214,7 @@ document.getElementById('language').addEventListener('change', function() {
 document.getElementById('rp-heroes').hidden = true;
 
 // Add supported languages to select list
-var select = document.getElementById('language'), 
+var select = document.getElementById('language'),
     event  = new Event('change');
 for (var language in g_data) {
   var option = document.createElement('option');
