@@ -1,9 +1,9 @@
 ---
 name: TODO
 about: Create to track what needs to be done
-title: ''
-labels: 'todo'
-assignees: ''
+title: "[TODO]"
+labels: todo
+assignees: Stinolez
 
 ---
 
