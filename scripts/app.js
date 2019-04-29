@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '0.3.190429',
+      appVersion = '0.3.190430',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -108,14 +108,14 @@ var app = (function () {
         navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
 
           // Automatically check SW update every hour (if online)
-          setInterval(function(){ 
+          setInterval(function(){
 
               // Get the SW and if exists update / if doesn't exist - already waiting for refresh
               navigator.serviceWorker.getRegistration().then(function(reg) {
                 if (navigator.onLine && reg) {
                   reg.update();
                 }
-              });           
+              });
 
           }, (60 * 60 * 1000));
 
@@ -126,10 +126,10 @@ var app = (function () {
             // Wait for the new service worker to be installed
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed') {
-                
+
                 // Get all registrated service workers
                 navigator.serviceWorker.getRegistration().then(function(reg) {
-                  
+
                   // If there is some service worker waiting - unregister, show message and reload
                   if (reg.waiting) {
                     reg.unregister().then(function() {
