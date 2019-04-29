@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-190429-01',
+var cacheName     = 'tth-cn-190429-14',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -75,11 +75,4 @@ self.addEventListener('fetch', function(e) {
       return response || fetch(e.request);
     })
   );
-});
-
-// Wait for the message
-addEventListener('message', messageEvent => {
-  if (messageEvent.data === 'skipWaiting') {
-    return skipWaiting();
-  }
 });
