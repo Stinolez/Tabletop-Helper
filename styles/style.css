@@ -11,7 +11,6 @@ html, body {
   font-family: 'Helvetica', 'Verdana', sans-serif;
   font-display: optional;
   font-size: 14px;
-  color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -44,7 +43,7 @@ body {
   -webkit-align-content: stretch;
       -ms-flex-line-pack: stretch;
           align-content: stretch;
-  background: #ececec;
+  background: rgba(236, 236, 236, 1);
   background-image: url('../images/app-logo.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -83,9 +82,9 @@ a, a:link, a:visited, a:hover, a:active {
   height: 16px;
   padding: 0;
   line-height: 16px;
-  border: 2px solid #E3E3E3;
+  border: 2px solid rgba(227, 227, 227, 1);
   border-radius: 16px;
-  background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 1);
   transition: background-color 0.3s ease-in;
 }
 
@@ -94,21 +93,21 @@ a, a:link, a:visited, a:hover, a:active {
   display: block;
   width: 16px;
   margin: 0px;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 1);
   position: absolute;
   top: 0;
   bottom: 0;
   right: 22px;
-  border: 2px solid #E3E3E3;
+  border: 2px solid rgba(227, 227, 227, 1);
   border-radius: 16px;
   transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label {
-  background-color: #2196F3;
+  background-color: rgba(33, 150, 243, 1);
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
-  border-color: #2196F3;
+  border-color: rgba(33, 150, 243, 1);
 }
 
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
@@ -119,8 +118,8 @@ a, a:link, a:visited, a:hover, a:active {
 .header {
   width: 100%;
   height: 56px;
-  color: #FFF;
-  background: #3F51B5;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(63, 81, 181, 1);
   position: fixed;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
   padding: 16px 16px 0 16px;
@@ -193,7 +192,7 @@ a, a:link, a:visited, a:hover, a:active {
   padding: 16px;
   position: relative;
   box-sizing: border-box;
-  background: #fff;
+  background: rgba(255, 255, 255, 1);
   border-radius: 2px;
   margin: 16px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -237,12 +236,14 @@ a, a:link, a:visited, a:hover, a:active {
 .cardSlide table {
   width: 100%;
   margin-bottom: 5px;
+  padding: 0 10px;
 }
 
 .cardSlide th, .cardSlide td {
   width: 50%;
   padding: 10px;
   border: 1px solid rgba(33, 150, 243, 0.2);
+  background-color: rgba(33, 150, 243, 0.2);
 }
 
 .cardSlide th {
@@ -264,11 +265,11 @@ a, a:link, a:visited, a:hover, a:active {
 /* Copyright */
 #copyright {
   width: 100%;
-  color: #FFF;
+  color: rgba(255, 255, 255, 1);
   font-size: 10px;
   font-style: oblique;
   text-align: center;
-  background: #3F51B5;
+  background: rgba(63, 81, 181, 1);
   position: fixed;
   bottom: 0;
   padding: 10px 0;
@@ -369,7 +370,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .dialog {
-  background: #FFF;
+  background: rgba(255, 255, 255, 1);
   border-radius: 2px;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48);
   min-width: 280px;

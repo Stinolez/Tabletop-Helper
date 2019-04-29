@@ -131,6 +131,7 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
             break;
           case 1:
             td.appendChild(document.createTextNode(availClass[0]));
+            td.className = 'block ' + diceColours[i];
             break;
           case 2:
             td.appendChild(document.createTextNode(availBackstory[i]));
