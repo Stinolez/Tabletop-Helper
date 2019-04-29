@@ -1,0 +1,2 @@
+Logo gradient from: #5972ff
+Logo gradient to  : #324192
