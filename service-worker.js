@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-190430-01',
+var cacheName     = 'tth-cn-190430-02',
     filesToCache  = [
 
       /*************** SYSTEM ***************/

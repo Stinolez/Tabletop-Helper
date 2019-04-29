@@ -243,7 +243,7 @@ a, a:link, a:visited, a:hover, a:active {
   width: 50%;
   padding: 10px;
   border: 1px solid rgba(33, 150, 243, 0.2);
-  background-color: rgba(33, 150, 243, 0.2);
+  background-color: rgba(33, 150, 243, 0.05);
 }
 
 .cardSlide th {
