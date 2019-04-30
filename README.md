@@ -27,3 +27,9 @@ Do you have board game you'd like to see in this companion application or some f
 
 ## Something didn't work properly?
 If you have any issue with this application, please submit it via the **Bug report template** in the Issues tab.
+
+## Credits
+
+* All game assets (incl. logo) are property of their respective owners.
+* Guild images for *King's Guild* by Laura Bevon (<http://www.laurabevon.com/>)
+* Icons by <https://game-icons.net/>
