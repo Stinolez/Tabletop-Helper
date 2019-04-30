@@ -55,7 +55,7 @@ select, input {
 }
 
 a, a:link, a:visited, a:hover, a:active {
-  color: black;
+  color: rgba(63, 81, 181, 1);
   text-decoration: none;
 }
 
@@ -112,6 +112,51 @@ a, a:link, a:visited, a:hover, a:active {
 
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
   right: 0px;
+}
+
+/* Tooltips */
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: url(../images/system/info.png);
+  background-size: contain;
+  right: 32px;
+}
+
+.tooltip .tooltipText {
+  min-width: 200px;
+  width: calc(100vw - 32px);
+  right: -16px;
+  top: 24px;
+  padding: 10px;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 1);
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 999;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.tooltip:hover .tooltipText {
+    visibility:visible; opacity:1;
+}
+
+.tooltip .tooltipText:after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid rgba(255, 255, 255, 1);
 }
 
 /* Header */
