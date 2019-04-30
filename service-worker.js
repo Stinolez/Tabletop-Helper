@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-190430-02',
+var cacheName     = 'tth-cn-190501-01',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -6,13 +6,26 @@ var cacheName     = 'tth-cn-190430-02',
       , '/index.html'
       , '/favicon.ico'
       , '/images/app-logo.png'
+      , '/images/system/info.png'
       , '/scripts/app.js'
       , '/styles/style.css'
 
-      /************* RISING SUN *************/
+      /************* GAME LOGOS *************/
+      , '/images/games-logo/risingsun.png'
+      , '/images/games-logo/kingsguild.png'
+      , '/images/games-logo/rollplayer.png'
+
+      /************* GAME PAGES *************/
       , '/g_risingsun.html'
+      , '/g_kingsguild.html'
+      , '/g_rollplayer.html'
+
+      /************ GAME SCRIPTS ************/
       , '/scripts/g_risingsun.js'
-      , '/images/games/risingsun/logo.png'
+      , '/scripts/g_kingsguild.js'
+      , '/scripts/g_rollplayer.js'
+
+      /************* RISING SUN *************/
       , '/images/games/risingsun/bonsai.png'
       , '/images/games/risingsun/dragonfly.png'
       , '/images/games/risingsun/fox.png'
@@ -23,20 +36,12 @@ var cacheName     = 'tth-cn-190430-02',
       , '/images/games/risingsun/turtle.png'
 
       /********** THE KING'S GUILD **********/
-      , '/g_kingsguild.html'
-      , '/scripts/g_kingsguild.js'
-      , '/images/games/kingsguild/logo.png'
       , '/images/games/kingsguild/craft-collective.png'
       , '/images/games/kingsguild/explorers-league.png'
       , '/images/games/kingsguild/greycastle-guard.png'
       , '/images/games/kingsguild/holy-order.png'
       , '/images/games/kingsguild/merchant-guild.png'
       , '/images/games/kingsguild/starfall-syndicate.png'
-
-      /************ ROLL PLAYER *************/
-      , '/g_rollplayer.html'
-      , '/scripts/g_rollplayer.js'
-      , '/images/games/rollplayer/logo.png'
 
     ];
 
