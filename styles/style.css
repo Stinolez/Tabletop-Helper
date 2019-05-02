@@ -123,6 +123,7 @@ a, a:link, a:visited, a:hover, a:active {
   background: url(../images/system/info.png);
   background-size: contain;
   right: 32px;
+  top: 18px;
 }
 
 .tooltip .tooltipText {
