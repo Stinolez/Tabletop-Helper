@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-1-0-190503-01',
+var cacheName     = 'tth-cn-1-0-190518-02',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -14,16 +14,19 @@ var cacheName     = 'tth-cn-1-0-190503-01',
       , '/images/games-logo/risingsun.png'
       , '/images/games-logo/kingsguild.png'
       , '/images/games-logo/rollplayer.png'
+      , '/images/games-logo/imperialsettlers.png'
 
       /************* GAME PAGES *************/
       , '/g_risingsun.html'
       , '/g_kingsguild.html'
       , '/g_rollplayer.html'
+      , '/g_imperialsettlers.html'
 
       /************ GAME SCRIPTS ************/
       , '/scripts/g_risingsun.js'
       , '/scripts/g_kingsguild.js'
       , '/scripts/g_rollplayer.js'
+      , '/scripts/g_imperialsettlers.js'
 
       /************* RISING SUN *************/
       , '/images/games/risingsun/bonsai.png'
@@ -42,6 +45,15 @@ var cacheName     = 'tth-cn-1-0-190503-01',
       , '/images/games/kingsguild/holy-order.png'
       , '/images/games/kingsguild/merchant-guild.png'
       , '/images/games/kingsguild/starfall-syndicate.png'
+
+      /********** IMPERIAL SETTLERS *********/
+      , '/images/games/imperialsettlers/romans.png'
+      , '/images/games/imperialsettlers/barbarians.png'
+      , '/images/games/imperialsettlers/japanese.png'
+      , '/images/games/imperialsettlers/egyptians.png'
+      , '/images/games/imperialsettlers/atlanteans.png'
+      , '/images/games/imperialsettlers/aztecs.png'
+      , '/images/games/imperialsettlers/amazons.png'
 
     ];
 
