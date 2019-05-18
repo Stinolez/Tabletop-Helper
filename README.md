@@ -5,6 +5,7 @@ The application is hosted and free to use at my website: <https://tabletop-helpe
 
 ## List of supported board games
 
+* **Imperial Settlers** - <https://boardgamegeek.com/boardgame/154203/imperial-settlers>
 * **King's Guild** - <https://boardgamegeek.com/boardgame/206327/kings-guild>
 * **Rising Sun** - <https://boardgamegeek.com/boardgame/205896/rising-sun>
 * **Roll Player** - <https://boardgamegeek.com/boardgame/169426/roll-player>
