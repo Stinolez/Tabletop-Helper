@@ -21,30 +21,57 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 </head>
-<body ontouchstart>
+<body>
 
   <!-- HEADER -->
   <header class="header">
-    <h1 class="headerTitle">Tabletop Helper</h1>
-    <div class="tooltip">
-      <div class="tooltipText">
-        This application is an companion application for board games.
-        It's designed for mobile use, where all data and objects should be cached on your device, so it should work without using the Internet.
-        If you want to report any issue or request some functionality or game to be added, please do so via the Issue tab on my GitHub.<br />
-        <br />
-        Link to the project on GitHub is: <a href="https://github.com/Stinolez/Tabletop-Helper" target="_blank">https://github.com/Stinolez/Tabletop-Helper</a>
-      </div>
-    </div>
-
+    <div id="headerBack" data-url="index.html">&laquo;</div>
+    <h1 class="headerTitle">Imperial Settlers</h1>
   </header>
 
   <!-- MAIN -->
   <main class="main">
-    <div class="card"><img src="images/games-logo/gloomhaven.png" class="cardLogo" data-game="gloomhaven"></div>
-    <div class="card"><img src="images/games-logo/imperialsettlers.png" class="cardLogo" data-game="imperialsettlers"></div>
-    <div class="card"><img src="images/games-logo/kingsguild.png" class="cardLogo" data-game="kingsguild"></div>
-    <div class="card"><img src="images/games-logo/risingsun.png" class="cardLogo" data-game="risingsun"></div>
-    <div class="card"><img src="images/games-logo/rollplayer.png" class="cardLogo" data-game="rollplayer"></div>
+    <div class="card" id="is-options">
+      <div class="cardTitle">Options</div>
+      <div class="cardText">
+        <label for="numberOfPlayers">Number of players</label>
+        <select id="numberOfPlayers">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="cardText">
+        <label for="amazons">Amazons</label>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="amazons" checked>
+            <label class="onoffswitch-label" for="amazons"></label>
+        </div>
+      </div>
+      <div class="cardText">
+        <label for="atlanteans">Atlanteans</label>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="atlanteans" checked>
+            <label class="onoffswitch-label" for="atlanteans"></label>
+        </div>
+      </div>
+      <div class="cardText">
+        <label for="aztecs">Aztecs</label>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="aztecs" checked>
+            <label class="onoffswitch-label" for="aztecs"></label>
+        </div>
+      </div>
+      <div class="cardButtons">
+        <button id="shuffleFactions" class="button">Shuffle Factions</button>
+      </div>
+    </div>
+    <div class="card" id="is-factions">
+      <div class="cardSlider" id="is-factions-slider">
+      </div>
+    </div>
   </main>
 
   <!-- COPYRIGHT -->
@@ -59,6 +86,7 @@
 
   <!-- Scripts -->
   <script src="scripts/app.js"></script>
+  <script src="scripts/g_imperialsettlers.js"></script>
 
 </body>
 </html>
