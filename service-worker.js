@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-1-0-190518-02',
+var cacheName     = 'tth-cn-1-2-190923-01',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -15,18 +15,21 @@ var cacheName     = 'tth-cn-1-0-190518-02',
       , '/images/games-logo/kingsguild.png'
       , '/images/games-logo/rollplayer.png'
       , '/images/games-logo/imperialsettlers.png'
+      , '/images/games-logo/gloomhaven.png'
 
       /************* GAME PAGES *************/
       , '/g_risingsun.html'
       , '/g_kingsguild.html'
       , '/g_rollplayer.html'
       , '/g_imperialsettlers.html'
+      , '/g_gloomhaven.html'
 
       /************ GAME SCRIPTS ************/
       , '/scripts/g_risingsun.js'
       , '/scripts/g_kingsguild.js'
       , '/scripts/g_rollplayer.js'
       , '/scripts/g_imperialsettlers.js'
+      , '/scripts/g_gloomhaven.js'
 
       /************* RISING SUN *************/
       , '/images/games/risingsun/bonsai.png'
