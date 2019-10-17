@@ -57,7 +57,7 @@ document.getElementById('shuffleFactions').addEventListener('click', function() 
       slide.className = 'cardSlide';
       title.className = 'cardSlideTitle';
       title.innerText = 'Player ' + (i + 1);
-      image.src       = 'images/games/imperialsettlers/' + factionsArray[i] + '.png';
+      image.src       = '../images/games/imperialsettlers/' + factionsArray[i] + '.png';
       image.alt       = factionsArray[i];
 
       // Append the elements

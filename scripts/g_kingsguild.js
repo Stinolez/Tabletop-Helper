@@ -36,7 +36,7 @@ document.getElementById('shuffleGuilds').addEventListener('click', function() {
     slide.className = 'cardSlide';
     title.className = 'cardSlideTitle';
     title.innerText = 'Player ' + (i + 1);
-    image.src       = 'images/games/kingsguild/' + guildsArray[i] + '.png';
+    image.src       = '../images/games/kingsguild/' + guildsArray[i] + '.png';
     image.alt       = guildsArray[i];
 
     // Append the elements

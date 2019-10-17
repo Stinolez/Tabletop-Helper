@@ -91,7 +91,7 @@ var app = (function () {
       if (document.getElementsByClassName('cardLogo').length > 0) {
         for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
           document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
-            location.href = 'g_' + e.srcElement.dataset.game + '.html';
+            location.href = 'games/g_' + e.srcElement.dataset.game + '.html';
           });
         }
       }

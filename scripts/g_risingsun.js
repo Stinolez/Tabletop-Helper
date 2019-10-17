@@ -50,7 +50,7 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
       slide.className = 'cardSlide';
       title.className = 'cardSlideTitle';
       title.innerText = 'Player ' + (i + 1);
-      image.src       = 'images/games/risingsun/' + clansArray[i] + '.png';
+      image.src       = '../images/games/risingsun/' + clansArray[i] + '.png';
       image.alt       = clansArray[i];
 
       // Append the elements
