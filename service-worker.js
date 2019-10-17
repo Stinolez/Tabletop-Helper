@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-1-2-190923-01',
+var cacheName     = 'tth-cn-1-2-191015-02',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -16,13 +16,15 @@ var cacheName     = 'tth-cn-1-2-190923-01',
       , '/images/games-logo/rollplayer.png'
       , '/images/games-logo/imperialsettlers.png'
       , '/images/games-logo/gloomhaven.png'
+      , '/images/games-logo/witcher.png'
 
       /************* GAME PAGES *************/
-      , '/g_risingsun.html'
-      , '/g_kingsguild.html'
-      , '/g_rollplayer.html'
-      , '/g_imperialsettlers.html'
-      , '/g_gloomhaven.html'
+      , '/games/g_risingsun.html'
+      , '/games/g_kingsguild.html'
+      , '/games/g_rollplayer.html'
+      , '/games/g_imperialsettlers.html'
+      , '/games/g_gloomhaven.html'
+      , '/games/g_witcher.html'
 
       /************ GAME SCRIPTS ************/
       , '/scripts/g_risingsun.js'
@@ -30,6 +32,7 @@ var cacheName     = 'tth-cn-1-2-190923-01',
       , '/scripts/g_rollplayer.js'
       , '/scripts/g_imperialsettlers.js'
       , '/scripts/g_gloomhaven.js'
+      , '/scripts/g_witcher.js'
 
       /************* RISING SUN *************/
       , '/images/games/risingsun/bonsai.png'
@@ -57,6 +60,12 @@ var cacheName     = 'tth-cn-1-2-190923-01',
       , '/images/games/imperialsettlers/atlanteans.png'
       , '/images/games/imperialsettlers/aztecs.png'
       , '/images/games/imperialsettlers/amazons.png'
+
+      /*************** WITCHER **************/
+      , '/images/games/witcher/dandelion.png'
+      , '/images/games/witcher/geralt.png'
+      , '/images/games/witcher/triss.png'
+      , '/images/games/witcher/yarpen.png'
 
     ];
 
