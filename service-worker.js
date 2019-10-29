@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-1-2-191015-02',
+var cacheName     = 'tth-cn-4',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -11,30 +11,43 @@ var cacheName     = 'tth-cn-1-2-191015-02',
       , '/styles/style.css'
 
       /************* GAME LOGOS *************/
-      , '/images/games-logo/risingsun.png'
-      , '/images/games-logo/kingsguild.png'
-      , '/images/games-logo/rollplayer.png'
-      , '/images/games-logo/imperialsettlers.png'
       , '/images/games-logo/gloomhaven.png'
+      , '/images/games-logo/imperialsettlers.png'
+      , '/images/games-logo/kingsguild.png'
+      , '/images/games-logo/risingsun.png'
+      , '/images/games-logo/rollplayer.png'
       , '/images/games-logo/witcher.png'
 
       /************* GAME PAGES *************/
-      , '/games/g_risingsun.html'
-      , '/games/g_kingsguild.html'
-      , '/games/g_rollplayer.html'
-      , '/games/g_imperialsettlers.html'
       , '/games/g_gloomhaven.html'
+      , '/games/g_imperialsettlers.html'
+      , '/games/g_kingsguild.html'
+      , '/games/g_risingsun.html'
+      , '/games/g_rollplayer.html'
       , '/games/g_witcher.html'
 
       /************ GAME SCRIPTS ************/
-      , '/scripts/g_risingsun.js'
-      , '/scripts/g_kingsguild.js'
-      , '/scripts/g_rollplayer.js'
-      , '/scripts/g_imperialsettlers.js'
       , '/scripts/g_gloomhaven.js'
+      , '/scripts/g_imperialsettlers.js'
+      , '/scripts/g_kingsguild.js'
+      , '/scripts/g_risingsun.js'
+      , '/scripts/g_rollplayer.js'
       , '/scripts/g_witcher.js'
 
-      /************* RISING SUN *************/
+      /************ GAME IMAGES *************/
+      , '/images/games/imperialsettlers/amazons.png'
+      , '/images/games/imperialsettlers/atlanteans.png'
+      , '/images/games/imperialsettlers/aztecs.png'
+      , '/images/games/imperialsettlers/barbarians.png'
+      , '/images/games/imperialsettlers/egyptians.png'
+      , '/images/games/imperialsettlers/japanese.png'
+      , '/images/games/imperialsettlers/romans.png'
+      , '/images/games/kingsguild/craft-collective.png'
+      , '/images/games/kingsguild/explorers-league.png'
+      , '/images/games/kingsguild/greycastle-guard.png'
+      , '/images/games/kingsguild/holy-order.png'
+      , '/images/games/kingsguild/merchant-guild.png'
+      , '/images/games/kingsguild/starfall-syndicate.png'
       , '/images/games/risingsun/bonsai.png'
       , '/images/games/risingsun/dragonfly.png'
       , '/images/games/risingsun/fox.png'
@@ -43,25 +56,6 @@ var cacheName     = 'tth-cn-1-2-191015-02',
       , '/images/games/risingsun/moon.png'
       , '/images/games/risingsun/sun.png'
       , '/images/games/risingsun/turtle.png'
-
-      /********** THE KING'S GUILD **********/
-      , '/images/games/kingsguild/craft-collective.png'
-      , '/images/games/kingsguild/explorers-league.png'
-      , '/images/games/kingsguild/greycastle-guard.png'
-      , '/images/games/kingsguild/holy-order.png'
-      , '/images/games/kingsguild/merchant-guild.png'
-      , '/images/games/kingsguild/starfall-syndicate.png'
-
-      /********** IMPERIAL SETTLERS *********/
-      , '/images/games/imperialsettlers/romans.png'
-      , '/images/games/imperialsettlers/barbarians.png'
-      , '/images/games/imperialsettlers/japanese.png'
-      , '/images/games/imperialsettlers/egyptians.png'
-      , '/images/games/imperialsettlers/atlanteans.png'
-      , '/images/games/imperialsettlers/aztecs.png'
-      , '/images/games/imperialsettlers/amazons.png'
-
-      /*************** WITCHER **************/
       , '/images/games/witcher/dandelion.png'
       , '/images/games/witcher/geralt.png'
       , '/images/games/witcher/triss.png'
