@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-4',
+var cacheName     = 'tth-cn-5',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -16,6 +16,7 @@ var cacheName     = 'tth-cn-4',
       , '/images/games-logo/kingsguild.png'
       , '/images/games-logo/risingsun.png'
       , '/images/games-logo/rollplayer.png'
+      , '/images/games-logo/tokaido.png'
       , '/images/games-logo/witcher.png'
 
       /************* GAME PAGES *************/
@@ -24,6 +25,7 @@ var cacheName     = 'tth-cn-4',
       , '/games/g_kingsguild.html'
       , '/games/g_risingsun.html'
       , '/games/g_rollplayer.html'
+      , '/games/g_tokaido.html'
       , '/games/g_witcher.html'
 
       /************ GAME SCRIPTS ************/
@@ -32,6 +34,7 @@ var cacheName     = 'tth-cn-4',
       , '/scripts/g_kingsguild.js'
       , '/scripts/g_risingsun.js'
       , '/scripts/g_rollplayer.js'
+      , '/scripts/g_tokaido.js'
       , '/scripts/g_witcher.js'
 
       /************ GAME IMAGES *************/
