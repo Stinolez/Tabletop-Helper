@@ -27,6 +27,7 @@ echo.>>%sw%
  echo>>%sw%       /*************** SYSTEM ***************/
  echo>>%sw%         '/'
  echo>>%sw%       , '/index.html'
+ echo>>%sw%       , '/info.html'
  echo>>%sw%       , '/favicon.ico'
  echo>>%sw%       , '/images/app-logo.png'
  echo>>%sw%       , '/images/system/info.png'
