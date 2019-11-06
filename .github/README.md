@@ -23,7 +23,7 @@ To install this application on your iPhone / iPad, just follow few basic steps:
 3. Name your application, then tap Add in the upper-right corner.
 4. Now you can launch the application from your home screen by tapping the icon.
 
-![How to install iOS](__doc/ios_install.png "How to install on iOS.")
+![How to install iOS](../__doc/ios_install.png "How to install on iOS.")
 
 *Note:  The application can be deleted the same way any native app is removed from the Home screen: tap and hold until the icons start jiggling like they’re doing a dance, then tap the little “x” in the top-left corner of the icon.*
 
@@ -33,7 +33,7 @@ It's little bit easier to install this application on your Android phone or tabl
 2. Tap the Add button.
 3. Now you can launch the application from your home screen by tapping the icon.
 
-![How to install Android](__doc/android_install.png "How to install on Android.")
+![How to install Android](../__doc/android_install.png "How to install on Android.")
 
 *Alternatively if the automatic add to home screen is not available, you can add it manually like:*
 1. *Tap the Setting button in Google Chrome.*
