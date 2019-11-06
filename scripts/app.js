@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '1.2.190923',
+      appVersion = '2.0.191106',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -67,6 +67,58 @@ var app = (function () {
       } else {
         hideLoader();
       }
+    },
+
+    // Function to load and save localStorage for game settings
+    gameSetting: function(id, type) {
+
+      // Getting the settings from localStorage
+      var settings = JSON.parse(localStorage.getItem(id));
+
+      // Load data and input in the form (if there are any data to input)
+      if (type === 'get' && settings) {
+       
+        console.log(settings);
+
+        // Set the data for selects
+        for (var key in settings['selects']) {
+          document.getElementById(key).value = settings['selects'][key];
+        }
+
+        // Set the data for checkboxes
+        for (var key in settings['checkboxes']) {
+          document.getElementById(key).checked = settings['checkboxes'][key];
+        }
+
+      }
+
+      // Set the data into localStorage to use for getData
+      if (type === 'set') {
+
+        // Get the options box and all select and input elements
+        var optionBox   = document.getElementById(id),
+            selects     = optionBox.getElementsByTagName('select'),
+            inputs      = optionBox.getElementsByTagName('input'),
+            newSettings = {'selects'    : {},
+                           'checkboxes' : {}};
+
+        // Get data for all selects
+        for (var i = 0; i < selects.length; i++) {
+          newSettings['selects'][selects[i].id] = selects[i].value;
+        }
+
+        // Get data for all checkboxes
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].type === 'checkbox') {
+            newSettings['checkboxes'][inputs[i].id] = inputs[i].checked;
+          }
+        }
+
+        // Set the newSettings to localStorage
+        localStorage.setItem(id, JSON.stringify(newSettings));
+
+      }
+
     },
 
     // Function to reshufle array in random order
