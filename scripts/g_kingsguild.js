@@ -13,8 +13,8 @@ var g_guilds = [  'starfall-syndicate'
 document.getElementById('shuffleGuilds').addEventListener('click', function() {
   var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       guildsArray     = g_guilds,
-      playersCard     = document.getElementById('kg-guilds'),
-      playersSlider   = document.getElementById('kg-guilds-slider');
+      playersCard     = document.getElementById('kingsguild-guilds'),
+      playersSlider   = document.getElementById('kingsguild-guilds-slider');
 
   // Shuffle the guilds
   guildsArray = app.arrayShuffle(guildsArray);
@@ -50,7 +50,13 @@ document.getElementById('shuffleGuilds').addEventListener('click', function() {
   playersCard.hidden = false;
   playersSlider.firstElementChild.scrollIntoView(true);
 
+  // Run game setting (with the game setting card ID)
+  app.gameSetting('kingsguild-options', 'set');
+
 });
 
 // On load init
-document.getElementById('kg-guilds').hidden = true;
+document.getElementById('kingsguild-guilds').hidden = true;
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('kingsguild-options', 'get');

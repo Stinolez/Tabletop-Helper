@@ -51,8 +51,8 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
       eriku           = document.getElementById('eriku').checked,
       felicia         = document.getElementById('felicia').checked,
       charactersArray = g_base,
-      playersCard     = document.getElementById('tok-characters'),
-      playersSlider   = document.getElementById('tok-characters-slider');
+      playersCard     = document.getElementById('tokaido-characters'),
+      playersSlider   = document.getElementById('tokaido-characters-slider');
 
   // Add expansion if checked
   if (crossroads) {
@@ -112,7 +112,13 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
   playersCard.hidden = false;
   playersSlider.firstElementChild.scrollIntoView(true);
 
+  // Run game setting (with the game setting card ID)
+  app.gameSetting('tokaido-options', 'set');
+
 });
 
 // On load init
-document.getElementById('tok-characters').hidden = true;
+document.getElementById('tokaido-characters').hidden = true;
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('tokaido-options', 'get');

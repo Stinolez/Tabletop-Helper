@@ -8,8 +8,8 @@ var g_characters = ['geralt', 'triss', 'yarpen', 'dandelion'];
 document.getElementById('shuffleCharacters').addEventListener('click', function() {
   var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       charactersArray = g_characters,
-      playersCard     = document.getElementById('is-characters'),
-      playersSlider   = document.getElementById('is-characters-slider');
+      playersCard     = document.getElementById('witcher-characters'),
+      playersSlider   = document.getElementById('witcher-characters-slider');
 
   // Shuffle the characters
   charactersArray = app.arrayShuffle(charactersArray);
@@ -45,7 +45,13 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
   playersCard.hidden = false;
   playersSlider.firstElementChild.scrollIntoView(true);
 
+  // Run game setting (with the game setting card ID)
+  app.gameSetting('witcher-options', 'set');
+
 });
 
 // On load init
-document.getElementById('is-characters').hidden = true;
+document.getElementById('witcher-characters').hidden = true;
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('witcher-options', 'get');

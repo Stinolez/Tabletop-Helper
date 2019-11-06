@@ -36,7 +36,7 @@ document.getElementById('numberOfCharacters').addEventListener('change', functio
   }
 
   // Change of the settings - hide the results of previous setting
-  document.getElementById('g-game').hidden = true;
+  document.getElementById('gloomhaven-game').hidden = true;
 
 });
 
@@ -48,8 +48,8 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
       g_scenario         = (document.getElementById('solo').checked ? g_solo_level : g_scenario_level),
       playerLvl          = 0,
       scenarioLvl        = 0,
-      playersCard        = document.getElementById('g-game'),
-      playersSlider      = document.getElementById('g-game-slider');
+      playersCard        = document.getElementById('gloomhaven-game'),
+      playersSlider      = document.getElementById('gloomhaven-game-slider');
 
   // Get the sum of player levels
   for (var i = 1; i <= numberOfCharacters; i++) {
@@ -117,9 +117,15 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
   playersSlider.appendChild(slide);
 
   // Show settings
-  document.getElementById('g-game').hidden = false;  
+  document.getElementById('gloomhaven-game').hidden = false;
+
+  // Run game setting (with the game setting card ID)
+  app.gameSetting('gloomhaven-options', 'set');
 
 });
 
 // On load init
-document.getElementById('g-game').hidden = true;
+document.getElementById('gloomhaven-game').hidden = true;
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('gloomhaven-options', 'get');

@@ -56,8 +56,8 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       frogkin         = document.getElementById('frogkinPromo').checked,
       minotaur        = document.getElementById('minotaurPromo').checked,
       monstersMinions = document.getElementById('monstersMinionsExpansion').checked,
-      playersCard     = document.getElementById('rp-heroes'),
-      playersSlider   = document.getElementById('rp-heroes-slider'),
+      playersCard     = document.getElementById('rollplayer-heroes'),
+      playersSlider   = document.getElementById('rollplayer-heroes-slider'),
       diceColours     = ["black", "blue", "green", "purple", "red", "white"],
       availRace       = g_data[language].base.race,
       availBackstory  = g_data[language].base.backstory,
@@ -154,6 +154,9 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
     playersCard.hidden = false;
     playersSlider.firstElementChild.scrollIntoView(true);
 
+    // Run game setting (with the game setting card ID)
+    app.gameSetting('rollplayer-options', 'set');
+
   }
 
 });
@@ -212,7 +215,7 @@ document.getElementById('language').addEventListener('change', function() {
 });
 
 // On load init
-document.getElementById('rp-heroes').hidden = true;
+document.getElementById('rollplayer-heroes').hidden = true;
 
 // Add supported languages to select list
 var select = document.getElementById('language'),
@@ -223,6 +226,9 @@ for (var language in g_data) {
   option.value = language;
   select.appendChild(option);
 }
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('rollplayer-options', 'get');
 
 // Trigger initial change of language
 select.dispatchEvent(event);

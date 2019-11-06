@@ -14,8 +14,8 @@ document.getElementById('shuffleFactions').addEventListener('click', function() 
       atlanteans      = document.getElementById('atlanteans').checked,
       aztecs          = document.getElementById('aztecs').checked,
       factionsArray   = g_factions,
-      playersCard     = document.getElementById('is-factions'),
-      playersSlider   = document.getElementById('is-factions-slider');
+      playersCard     = document.getElementById('imperialsettlers-factions'),
+      playersSlider   = document.getElementById('imperialsettlers-factions-slider');
 
   // Five players available only with Atlanteans
   if (!atlanteans && numberOfPlayers === 5) {
@@ -71,9 +71,15 @@ document.getElementById('shuffleFactions').addEventListener('click', function() 
     playersCard.hidden = false;
     playersSlider.firstElementChild.scrollIntoView(true);
 
+    // Run game setting (with the game setting card ID)
+    app.gameSetting('imperialsettlers-options', 'set');
+
   }
 
 });
 
 // On load init
-document.getElementById('is-factions').hidden = true;
+document.getElementById('imperialsettlers-factions').hidden = true;
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('imperialsettlers-options', 'get');
