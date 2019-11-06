@@ -10,6 +10,7 @@ The application is hosted and free to use at my website: <https://tabletop-helpe
 * **King's Guild** - <https://boardgamegeek.com/boardgame/206327/kings-guild>
 * **Rising Sun** - <https://boardgamegeek.com/boardgame/205896/rising-sun>
 * **Roll Player** - <https://boardgamegeek.com/boardgame/169426/roll-player>
+* **Tokaido** - <https://boardgamegeek.com/boardgame/123540/tokaido>
 * **The Witcher Adventure Game** - <https://boardgamegeek.com/boardgame/147116/witcher-adventure-game>
 
 *Note: This is my passion project, developed by single developer, who has also a normal job. If you want to see some game featured in the application, please see the feature / game request section below. I've started the project as a way to help us pick random clans for the game Rising Sun - as clans sheets are both-sided and clan markers are in the clan colors which we remember, so we'd be able to pick the clan we like the most and fit the most to our playstyle. I'll expand the list of supported games slowly through out the time, featuring the games you request, preferring the ones which we also have in collection.*
@@ -49,7 +50,6 @@ If you have any issue with this application, please submit it via the **Bug repo
 Please see if there was already submitted another bug similar to yours to avoid creating duplicates. I also recommend to try restart the application at first (swipe it out, kill from task manager) and try to restart it. Another trick, which might solve some major issues - esp. when update was not delivered - go to your browser setting and try to delete data from the domain <https://stinolez.com>.
 
 ## Credits
-
 * All game assets (incl. logos) are property of their respective owners.
 * Guild images for *King's Guild* by Laura Bevon (<http://www.laurabevon.com/>)
 * Icons by <https://game-icons.net/>
