@@ -1,9 +1,10 @@
-var cacheName     = 'tth-cn-5',
+var cacheName     = 'tth-cn-6',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
         '/'
       , '/index.html'
+      , '/info.html'
       , '/favicon.ico'
       , '/images/app-logo.png'
       , '/images/system/info.png'
