@@ -221,6 +221,14 @@ a, a:link, a:visited, a:hover, a:active {
   cursor: default;
 }
 
+#headerHelp {
+  position: absolute;
+  width: 34px;
+  height: 22px;
+  right: 22px;
+  top: 15px; 
+}
+
 /* Main */
 .main {
   padding: 60px 0 35px;
@@ -455,4 +463,30 @@ a, a:link, a:visited, a:hover, a:active {
 .dialog-buttons {
   padding: 8px !important;
   float: right;
+}
+
+/* Release notes */
+.rn {
+  margin-block-start: 0px;
+  padding-left: 16px;
+}
+
+.rn li {
+    margin-bottom: 5px;
+}
+
+.rn li:last-child {
+    margin-bottom: 0px;
+}
+
+.rn-bugfix {
+  color: red;
+}
+
+.rn-update {
+  color: darkgoldenrod;
+}
+
+.rn-new {
+  color: green;
 }

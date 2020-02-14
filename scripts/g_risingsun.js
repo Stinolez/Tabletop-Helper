@@ -12,8 +12,8 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
       daimyo          = document.getElementById('daimyoBox').checked,
       expansion       = document.getElementById('dynastyExpansion').checked,
       clansArray      = g_clans,
-      playersCard     = document.getElementById('rs-clans'),
-      playersSlider   = document.getElementById('rs-clans-slider');
+      playersCard     = document.getElementById('risingsun-clans'),
+      playersSlider   = document.getElementById('risingsun-clans-slider');
 
   // Six players available only with Daimyo Box or Dynasty Expansion (or both)
   if (!daimyo && !expansion && numberOfPlayers === 6) {
@@ -50,7 +50,7 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
       slide.className = 'cardSlide';
       title.className = 'cardSlideTitle';
       title.innerText = 'Player ' + (i + 1);
-      image.src       = 'images/games/risingsun/' + clansArray[i] + '.png';
+      image.src       = '../images/games/risingsun/' + clansArray[i] + '.png';
       image.alt       = clansArray[i];
 
       // Append the elements
@@ -64,9 +64,15 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
     playersCard.hidden = false;
     playersSlider.firstElementChild.scrollIntoView(true);
 
+    // Run game setting (with the game setting card ID)
+    app.gameSetting('risingsun-options', 'set');
+
   }
 
 });
 
 // On load init
-document.getElementById('rs-clans').hidden = true;
+document.getElementById('risingsun-clans').hidden = true;
+
+// Run game setting (with the game setting card ID)
+app.gameSetting('risingsun-options', 'get');
