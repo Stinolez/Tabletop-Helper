@@ -211,6 +211,18 @@ a, a:link, a:visited, a:hover, a:active {
           flex: 1;
 }
 
+.headerSearchBox {
+  display: none;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 #headerBack {
   font-size: 17px;
   font-weight: bold;
@@ -219,6 +231,21 @@ a, a:link, a:visited, a:hover, a:active {
   top: 0;
   padding: 16.5px;
   cursor: default;
+}
+
+#headerSearch {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 22px;
+  top: 15px; 
+}
+
+#gameSearch {
+  padding: 5px;
+  width: calc(100% - 110px);
+  margin-left: -12px;
+  margin-top: -2px;
 }
 
 #headerHelp {
