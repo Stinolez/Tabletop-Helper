@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-2020-1',
+var cacheName     = 'tth-cn-8',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -8,6 +8,7 @@ var cacheName     = 'tth-cn-2020-1',
       , '/favicon.ico'
       , '/images/app-logo.png'
       , '/images/system/info.png'
+      , '/images/system/search.png'
       , '/scripts/app.js'
       , '/styles/style.css'
 

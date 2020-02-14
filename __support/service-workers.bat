@@ -31,6 +31,7 @@ echo.>>%sw%
  echo>>%sw%       , '/favicon.ico'
  echo>>%sw%       , '/images/app-logo.png'
  echo>>%sw%       , '/images/system/info.png'
+ echo>>%sw%       , '/images/system/search.png'
  echo>>%sw%       , '/scripts/app.js'
  echo>>%sw%       , '/styles/style.css'
 echo.>>%sw%
