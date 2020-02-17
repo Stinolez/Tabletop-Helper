@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-8',
+var cacheName     = 'tth-cn-9',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -15,6 +15,7 @@ var cacheName     = 'tth-cn-8',
       /************* GAME LOGOS *************/
       , '/images/games-logo/gloomhaven.png'
       , '/images/games-logo/imperialsettlers.png'
+      , '/images/games-logo/imperialsettlersnorth.png'
       , '/images/games-logo/kingsguild.png'
       , '/images/games-logo/risingsun.png'
       , '/images/games-logo/rollplayer.png'
@@ -24,6 +25,7 @@ var cacheName     = 'tth-cn-8',
       /************* GAME PAGES *************/
       , '/games/g_gloomhaven.html'
       , '/games/g_imperialsettlers.html'
+      , '/games/g_imperialsettlersnorth.html'
       , '/games/g_kingsguild.html'
       , '/games/g_risingsun.html'
       , '/games/g_rollplayer.html'
@@ -33,6 +35,7 @@ var cacheName     = 'tth-cn-8',
       /************ GAME SCRIPTS ************/
       , '/scripts/g_gloomhaven.js'
       , '/scripts/g_imperialsettlers.js'
+      , '/scripts/g_imperialsettlersnorth.js'
       , '/scripts/g_kingsguild.js'
       , '/scripts/g_risingsun.js'
       , '/scripts/g_rollplayer.js'
@@ -47,6 +50,14 @@ var cacheName     = 'tth-cn-8',
       , '/images/games/imperialsettlers/egyptians.png'
       , '/images/games/imperialsettlers/japanese.png'
       , '/images/games/imperialsettlers/romans.png'
+      , '/images/games/imperialsettlersnorth/glenn.png'
+      , '/images/games/imperialsettlersnorth/heidel.png'
+      , '/images/games/imperialsettlersnorth/mackinnon.png'
+      , '/images/games/imperialsettlersnorth/nanurjuk.png'
+      , '/images/games/imperialsettlersnorth/panuk.png'
+      , '/images/games/imperialsettlersnorth/saikoro.png'
+      , '/images/games/imperialsettlersnorth/ulaf.png'
+      , '/images/games/imperialsettlersnorth/umineko.png'
       , '/images/games/kingsguild/craft-collective.png'
       , '/images/games/kingsguild/explorers-league.png'
       , '/images/games/kingsguild/greycastle-guard.png'
