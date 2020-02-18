@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '2.0.200214',
+      appVersion = '2.0.200218',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -138,6 +138,57 @@ var app = (function () {
 
       // Setup the copyright
       document.getElementById('copyright').innerHTML = app.getAppName() + ', v.' + app.getAppVersion() + ', &copy; ' + app.getAppOwner() + ', ' + new Date().getFullYear();
+
+      // Register the search icon
+      if (document.getElementById('headerSearch')) {
+
+        document.getElementById('headerSearch').addEventListener('click', function(e) {
+
+          var title  = document.getElementsByClassName('headerTitle')[0].style.display || 'block'
+            , search = document.getElementsByClassName('headerSearchBox')[0].style.display || 'none';
+
+          document.getElementsByClassName('headerTitle')[0].style.display = (title  === 'block' ? 'none' : 'block');
+          document.getElementsByClassName('headerSearchBox')[0].style.display = (search === 'block' ? 'none' : 'block');
+
+          if (document.getElementsByClassName('headerSearchBox')[0].style.display === 'block') {
+            document.getElementById('gameSearch').focus();
+          } else {
+            document.getElementById('gameSearch').value = '';
+            document.getElementById('gameSearch').dispatchEvent(new KeyboardEvent('keyup', { keyCode: 70, ctrlKey: true }));
+          }
+
+        });        
+      }
+
+      // Register search function
+      if (document.getElementById('gameSearch')) {
+
+        document.getElementById('gameSearch').addEventListener('keyup', function(e) {
+
+          var search = document.getElementById('gameSearch').value;
+
+          if (search !== '') {
+
+            for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+              var gameName = document.getElementsByClassName('cardLogo')[i].dataset.gamename;
+              if (gameName.toUpperCase().indexOf(search.toUpperCase()) === -1) {
+                document.getElementsByClassName('cardLogo')[i].parentNode.style.display = 'none';
+              } else {
+                document.getElementsByClassName('cardLogo')[i].parentNode.style.display = 'block';
+              }
+            }
+
+          } else {
+
+            // Show all games
+            for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+              document.getElementsByClassName('cardLogo')[i].parentNode.style.display = 'block';
+            }
+
+          }
+
+        });        
+      }
 
       // Register games
       if (document.getElementsByClassName('cardLogo').length > 0) {
