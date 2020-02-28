@@ -1,0 +1,37 @@
+{
+
+  "2.2" : {"date" : "28/02/2020",
+           "rn"   : {"1" : ["new",    "18Lilliput"],
+                     "2" : ["update", "Changed handling of release notes (json file) so there is no need to change info file."]}},
+
+  "2.1" : {"date" : "18/02/2020",
+           "rn"   : {"1" : ["new",    "Added \"Search\" function into the header for looking through the list of games"],
+                     "2" : ["new",    "Imperial Settlers: Empires of the North"]}},
+
+  "2.0" : {"date" : "14/02/2020",
+           "rn"   : {"1" : ["new",    "Tokaido"],
+                     "2" : ["new",    "The Witcher Adventure Game"],
+                     "3" : ["new",    "Added support to save game settings in localStorage for future use without selecting it again"],
+                     "4" : ["update", "Move \"About\" tooltip to separate page with release notes"]}},
+
+  "1.2" : {"date" : "23/09/2019",
+           "rn"   : {"1" : ["new",    "Gloomhaven"],
+                     "2" : ["new",    "Imperial Settlers"]}},
+
+  "1.0" : {"date" : "03/05/2019",
+           "rn"   : {"1" : ["new",    "Added tooltip for \"About\" page"],
+                     "2" : ["update", "Update splash screens with application logo"],
+                     "3" : ["update", "Update Rising Sun clan's names with images"],
+                     "4" : ["bugfix", "Fixed zoom-in on select list"],
+                     "5" : ["bugfix", "Fixed update message for app first time load"]}},
+
+  "0.3" : {"date" : "29/04/2019",
+           "rn"   : {"1" : ["new",    "Roll Player (Czech + English translation)"]}},
+
+  "0.2" : {"date" : "24/04/2019",
+           "rn"   : {"1" : ["new",    "The King's Guild"]}},
+
+  "0.1" : {"date" : "18/04/2019",
+           "rn"   : {"1" : ["new",    "Rising Sun"]}}
+
+}

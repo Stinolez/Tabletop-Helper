@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-10',
+var cacheName     = 'tth-cn-12',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -6,6 +6,7 @@ var cacheName     = 'tth-cn-10',
       , '/index.html'
       , '/info.html'
       , '/favicon.ico'
+      , '/release-notes.json'
       , '/images/app-logo.png'
       , '/images/system/info.png'
       , '/images/system/search.png'
@@ -13,6 +14,7 @@ var cacheName     = 'tth-cn-10',
       , '/styles/style.css'
 
       /************* GAME LOGOS *************/
+      , '/images/games-logo/18lilliput.png'
       , '/images/games-logo/gloomhaven.png'
       , '/images/games-logo/imperialsettlers.png'
       , '/images/games-logo/imperialsettlersnorth.png'
@@ -23,6 +25,7 @@ var cacheName     = 'tth-cn-10',
       , '/images/games-logo/witcher.png'
 
       /************* GAME PAGES *************/
+      , '/games/g_18lilliput.html'
       , '/games/g_gloomhaven.html'
       , '/games/g_imperialsettlers.html'
       , '/games/g_imperialsettlersnorth.html'
@@ -33,6 +36,7 @@ var cacheName     = 'tth-cn-10',
       , '/games/g_witcher.html'
 
       /************ GAME SCRIPTS ************/
+      , '/scripts/g_18lilliput.js'
       , '/scripts/g_gloomhaven.js'
       , '/scripts/g_imperialsettlers.js'
       , '/scripts/g_imperialsettlersnorth.js'
@@ -43,6 +47,15 @@ var cacheName     = 'tth-cn-10',
       , '/scripts/g_witcher.js'
 
       /************ GAME IMAGES *************/
+      , '/images/games/18lilliput/balmuff.png'
+      , '/images/games/18lilliput/emperor.png'
+      , '/images/games/18lilliput/flimnap.png'
+      , '/images/games/18lilliput/general-limnoc.png'
+      , '/images/games/18lilliput/glimigrim.png'
+      , '/images/games/18lilliput/lilliput.png'
+      , '/images/games/18lilliput/mildendo.png'
+      , '/images/games/18lilliput/skyresh-bolgolam.png'
+      , '/images/games/18lilliput/slamecksan.png'
       , '/images/games/imperialsettlers/amazons.png'
       , '/images/games/imperialsettlers/atlanteans.png'
       , '/images/games/imperialsettlers/aztecs.png'

@@ -29,6 +29,7 @@ echo.>>%sw%
  echo>>%sw%       , '/index.html'
  echo>>%sw%       , '/info.html'
  echo>>%sw%       , '/favicon.ico'
+ echo>>%sw%       , '/release-notes.json'
  echo>>%sw%       , '/images/app-logo.png'
  echo>>%sw%       , '/images/system/info.png'
  echo>>%sw%       , '/images/system/search.png'
