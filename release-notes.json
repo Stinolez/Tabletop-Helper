@@ -1,6 +1,6 @@
 {
 
-  "2.2" : {"date" : "??/??/2020",
+  "2.2" : {"date" : "28/02/2020",
            "rn"   : {"1" : ["new",    "18Lilliput"],
                      "2" : ["update", "Changed handling of release notes (json file) so there is no need to change info file."]}},
 
