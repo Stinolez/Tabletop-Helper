@@ -20,6 +20,72 @@ var app = (function () {
     loader.hidden = true;
   }
 
+  // Load JSON file
+  function loadJSON(callback, filepath) {
+
+    var xobj = new XMLHttpRequest();
+
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', filepath, true);
+
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        callback(xobj.responseText);
+      }
+    };
+
+    xobj.send(null);
+  }
+
+  // Print release notes on the page
+  function releaseNotes(json) {
+
+    var data = JSON.parse(json),
+        rn   = document.getElementById('release-notes');
+
+    // Loop through versions
+    for (var versions in data) {
+
+      // New elements
+      var card      = document.createElement('div'),
+          cardTitle = document.createElement('div'),
+          cardText  = document.createElement('div'),
+          rnList    = document.createElement('ul');
+
+      // Setting the elements
+      card.className      = 'card';
+      cardTitle.className = 'cardTitle';
+      cardTitle.innerText = 'Version ' + versions + ' (' + data[versions]['date'] + ')';
+      rnList.className    = "rn";
+
+      // Loop through the actual release notes
+      for (var order in data[versions]['rn']) {
+
+        // New elements
+        var line = document.createElement('li'),
+            type = document.createElement('span');
+
+        // Setting the elements
+        type.className = 'rn-' + data[versions]['rn'][order][0];
+        type.innerText = '[' + data[versions]['rn'][order][0].toUpperCase() + ']';
+        line.appendChild(type);
+        line.innerHTML = line.innerHTML + ' ' + data[versions]['rn'][order][1];
+
+        // Append the elements
+        rnList.appendChild(line);
+
+      }
+
+      // Append the elements
+      card.appendChild(cardTitle);
+      card.appendChild(cardText);
+      cardText.appendChild(rnList);
+      rn.appendChild(card);
+
+    }
+
+  }
+
   // Return an object exposed to the public
   return {
 
@@ -197,6 +263,11 @@ var app = (function () {
             location.href = 'games/g_' + e.srcElement.dataset.game + '.html';
           });
         }
+      }
+
+      // Put release notes on the page (only for info page)
+      if (document.getElementById('release-notes')) {
+        loadJSON(releaseNotes, '../release-notes.json');
       }
 
       // Back button action
