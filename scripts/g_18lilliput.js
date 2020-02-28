@@ -38,22 +38,27 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
     // New elements
     var slide  = document.createElement('div'),
         title  = document.createElement('div'),
-        image1 = document.createElement('img'),
-        image2 = document.createElement('img');
+        image  = document.createElement('img'),
+        bg     = document.createElement('div');
 
     // Setting the elements
-    slide.className    = 'cardSlide';
-    title.className    = 'cardSlideTitle';
-    title.innerText    = 'Player ' + (i + 1);
-    image1.src         = '../images/games/18lilliput/' + charactersArray[i] + '.png';
-    image1.alt         = charactersArray[i];
-    image2.src         = '../images/games/18lilliput/' + companiesArray[i] + '.png';
-    image2.alt         = companiesArray[i];
+    slide.className               = 'cardSlide';
+    slide.style.position          = 'relative';
+    title.className               = 'cardSlideTitle';
+    title.innerText               = 'Player ' + (i + 1);
+    image.src                     = '../images/games/18lilliput/' + charactersArray[i] + '.png';
+    image.alt                     = charactersArray[i];
+    bg.style.position             = 'absolute';
+    bg.style.width                = '100px';
+    bg.style.height               = '200px';
+    bg.style.backgroundImage      = 'url("../images/games/18lilliput/' + companiesArray[i] + '.png")';
+    bg.style.backgroundPositionX  = '9px';
+    bg.style.backgroundRepeat     = 'no-repeat';
 
     // Append the elements
+    slide.appendChild(bg);
     slide.appendChild(title);
-    slide.appendChild(image1);
-    slide.appendChild(image2);
+    slide.appendChild(image);
     playersSlider.appendChild(slide);
 
   }
