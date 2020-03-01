@@ -122,3 +122,6 @@ document.getElementById('tokaido-characters').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('tokaido-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('tokaido');

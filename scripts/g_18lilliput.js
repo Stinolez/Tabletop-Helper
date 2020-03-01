@@ -77,3 +77,6 @@ document.getElementById('18lilliput-characters').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('18lilliput-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('18lilliput');

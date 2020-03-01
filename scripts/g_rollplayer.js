@@ -232,3 +232,6 @@ app.gameSetting('rollplayer-options', 'get');
 
 // Trigger initial change of language
 select.dispatchEvent(event);
+
+// Run the init of rules and set
+app.gameInit('rollplayer');

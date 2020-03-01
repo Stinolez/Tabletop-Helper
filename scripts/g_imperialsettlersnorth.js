@@ -62,3 +62,6 @@ document.getElementById('imperialsettlersnorth-factions').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('imperialsettlersnorth-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('imperialsettlersnorth');

@@ -83,3 +83,6 @@ document.getElementById('imperialsettlers-factions').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('imperialsettlers-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('imperialsettlers');
