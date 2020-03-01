@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-12',
+var cacheName     = 'tth-cn-14',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -23,6 +23,17 @@ var cacheName     = 'tth-cn-12',
       , '/images/games-logo/rollplayer.png'
       , '/images/games-logo/tokaido.png'
       , '/images/games-logo/witcher.png'
+
+      /************* GAME DATA *************/
+      , '/data/g_18lilliput.json'
+      , '/data/g_gloomhaven.json'
+      , '/data/g_imperialsettlers.json'
+      , '/data/g_imperialsettlersnorth.json'
+      , '/data/g_kingsguild.json'
+      , '/data/g_risingsun.json'
+      , '/data/g_rollplayer.json'
+      , '/data/g_tokaido.json'
+      , '/data/g_witcher.json'
 
       /************* GAME PAGES *************/
       , '/games/g_18lilliput.html'

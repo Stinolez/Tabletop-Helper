@@ -12,6 +12,7 @@ set root=%root:~,-10%
 set sw=%root%service-worker.js
 set build=%root%__support/build.txt
 set logos=%root%images/games-logo/
+set data=%root%data/
 set pages=%root%games/
 set scripts=%root%scripts/
 set images=%root%images/games/
@@ -41,6 +42,14 @@ echo.>>%sw%
 :: Loop through the game logos folder
 for %%f in (%logos%*.png) do (
  echo>>%sw%       , '/images/games-logo/%%~xnf'
+)
+
+echo.>>%sw%
+ echo>>%sw%       /************* GAME DATA *************/
+
+:: Loop through the game pages folder
+for %%f in (%data%*.json) do (
+ echo>>%sw%       , '/data/%%~xnf'
 )
 
 echo.>>%sw%
