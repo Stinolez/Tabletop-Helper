@@ -29,8 +29,25 @@
     <h1 class="headerTitle">Imperial Settlers</h1>
   </header>
 
+  <!-- Navigation -->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" id="menuBox"/>
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href="#" onclick="app.menuToggle('gameOption')"><li>Game Options</li></a>
+        <a href="#" onclick="app.menuToggle('gameSet')"><li>Game Setup</li></a>
+        <a href="#" onclick="app.menuToggle('gameRules')"><li>Game Rules</li></a>
+      </ul>
+    </div>
+  </nav>
+  
   <!-- MAIN -->
-  <main class="main">
+  <main class="main hidden" id="gameSet"></main>
+  <main class="main hidden" id="gameRules"></main>
+  <main class="main" id="gameOption">
     <div class="card" id="imperialsettlers-options">
       <div class="cardTitle">Options</div>
       <div class="cardText">
