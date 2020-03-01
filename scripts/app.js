@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '2.2.200228',
+      appVersion = '3.0.200301',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -86,6 +86,46 @@ var app = (function () {
 
   }
 
+  // Add rules and game setup on the page
+  function gameRulesSetting(json) {
+
+    var data  = JSON.parse(json),
+        setup = document.getElementById('gameSet'),
+        rules = document.getElementById('gameRules'),
+        cardS = document.createElement('div'),
+        cardR = document.createElement('div');
+
+    cardS.className = 'card';
+    cardR.className = 'card';
+
+    // Game Setup
+    var gsTitle   = document.createElement('div'),
+        gsContent = document.createElement('div');
+
+    gsTitle.innerText = 'Game Setup';
+    gsTitle.className = 'cardTitle';
+    gsContent.innerText = data['set'];
+    gsContent.className = 'cardText';
+
+    cardS.appendChild(gsTitle);
+    cardS.appendChild(gsContent);
+    setup.appendChild(cardS);
+
+    // Game Rules
+    var grTitle   = document.createElement('div'),
+        grContent = document.createElement('div');
+
+    grTitle.innerText = 'Game Rules';
+    grTitle.className = 'cardTitle';
+    grContent.innerText = data['rules'];
+    grContent.className = 'cardText';
+
+    cardR.appendChild(grTitle);
+    cardR.appendChild(grContent);
+    rules.appendChild(cardR);
+
+  }
+
   // Return an object exposed to the public
   return {
 
@@ -143,7 +183,7 @@ var app = (function () {
 
       // Load data and input in the form (if there are any data to input)
       if (type === 'get' && settings) {
-       
+
         console.log(settings);
 
         // Set the data for selects
@@ -187,6 +227,46 @@ var app = (function () {
 
     },
 
+    // Function to load rules of game to model
+    gameInit: function(gameName) {
+      loadJSON(gameRulesSetting, '../data/g_' + gameName + '.json');
+    },
+
+    // Menu toggle Function
+    menuToggle: function(button) {
+
+      var menuBox     = document.getElementById('menuBox'),
+          gameSet     = document.getElementById('gameSet'),
+          gameRules   = document.getElementById('gameRules'),
+          gameOption  = document.getElementById('gameOption');
+
+      // Hide menu
+      menuBox.checked = false
+
+      // Show / hide section based on the selection
+      switch(button) {
+
+        case 'gameSet':
+          gameSet.className     = 'main';
+          gameRules.className   = 'main hidden';
+          gameOption.className  = 'main hidden';
+          break;
+
+        case 'gameRules':
+          gameSet.className     = 'main hidden';
+          gameRules.className   = 'main';
+          gameOption.className  = 'main hidden';
+          break;
+
+        case 'gameOption':
+          gameSet.className     = 'main hidden';
+          gameRules.className   = 'main hidden';
+          gameOption.className  = 'main';
+          break;
+      }
+
+    },
+
     // Function to reshufle array in random order
     arrayShuffle: function(array) {
       for (var i = array.length - 1; i > 0; i--) {
@@ -223,7 +303,7 @@ var app = (function () {
             document.getElementById('gameSearch').dispatchEvent(new KeyboardEvent('keyup', { keyCode: 70, ctrlKey: true }));
           }
 
-        });        
+        });
       }
 
       // Register search function
@@ -253,7 +333,7 @@ var app = (function () {
 
           }
 
-        });        
+        });
       }
 
       // Register games

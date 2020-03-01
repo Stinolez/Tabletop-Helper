@@ -1,4 +1,6 @@
 {
+  "3.0" : {"date" : "??/??/2020",
+           "rn"   : {"1" : ["new",    "Added new menu to the games, option to toggle between game rules, game setting and game options."]}},
 
   "2.2" : {"date" : "28/02/2020",
            "rn"   : {"1" : ["new",    "18Lilliput"],
