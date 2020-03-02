@@ -99,29 +99,35 @@ var app = (function () {
     cardR.className = 'card';
 
     // Game Setup
-    var gsTitle   = document.createElement('div'),
-        gsContent = document.createElement('div');
+    for (var set in data['set']) {
 
-    gsTitle.innerText = 'Game Setup';
-    gsTitle.className = 'cardTitle';
-    gsContent.innerText = data['set'];
-    gsContent.className = 'cardText';
+      var gs = document.createElement('div');
 
-    cardS.appendChild(gsTitle);
-    cardS.appendChild(gsContent);
-    setup.appendChild(cardS);
+      // Create content of the element
+      gs.className = data['set'][set][0];
+      gs.innerText = data['set'][set][1];
+
+      // Append the element
+      cardS.appendChild(gs);
+
+    }
 
     // Game Rules
-    var grTitle   = document.createElement('div'),
-        grContent = document.createElement('div');
+    for (var rule in data['rules']) {
 
-    grTitle.innerText = 'Game Rules';
-    grTitle.className = 'cardTitle';
-    grContent.innerText = data['rules'];
-    grContent.className = 'cardText';
+      var gr = document.createElement('div');
 
-    cardR.appendChild(grTitle);
-    cardR.appendChild(grContent);
+      // Create content of the element
+      gr.className = data['rules'][rule][0];
+      gr.innerText = data['rules'][rule][1];
+
+      // Append the element
+      cardR.appendChild(gr);
+
+    }
+
+    // Add cards to setup / rules
+    setup.appendChild(cardS);
     rules.appendChild(cardR);
 
   }
