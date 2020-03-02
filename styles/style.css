@@ -328,25 +328,36 @@ a, a:link, a:visited, a:hover, a:active {
 #menu {
   text-align: right;
   position: absolute;
-  width: 225px;
-  margin: -38px 0 0 0;
-  padding: 50px 50px 30px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 35px 20px 30px 20px;
   background: rgba(236, 236, 236, 1);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  top: -20px;
+  right: -15px;
 }
 
 #menu li {
-  padding: 10px 0;
+  padding: 15px 0;
   font-weight: bold;
+  font-size: 35px;
   font-variant-caps: all-petite-caps;
 }
 
 #menuToggle input:checked ~ ul {
-  transform: translate(-72%, 0);
+  transition: all 0.5s linear;
+  transform: scale(1);
+  transform: translate(0%);
+  opacity: 1;
+}
+
+#menuToggle input:not(:checked) ~ ul {
+  transition: all 0.5s linear;
+  transform: scale(0);
+  transform: translate(100%);
+  opacity: 0;
 }
 
 /* Main */
