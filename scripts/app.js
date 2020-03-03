@@ -10,6 +10,65 @@ var app = (function () {
   // DOM variables
   var loader     = document.querySelector('.loader');
 
+  // Create element (for game setup / game rules)
+  function createElement(elementType, data) {
+
+    /****************************************
+     | Element | Data                       |
+     ----------------------------------------
+     | div     | [className, HTML content]  |
+     | span    |                            |
+     | ul      |                            |
+     | li      |                            |
+     | tr      |                            |
+     | td      |                            |
+     ----------------------------------------
+     | table   | [className, [              |
+     |         |               [1, 1, ...], |
+     |         |               [2, 2, ...], |
+     |         |               ...          |
+     |         |             ]]             |
+     ****************************************/
+
+    // Create element by the type
+    var element = document.createElement(elementType);
+
+    // Use different settings for different element types
+    switch(elementType) {
+
+      // Element: div, span, ul, li
+      case 'div':
+      case 'span':
+      case 'ul':
+      case 'li':
+      case 'tr':
+      case 'td':
+
+        element.className = data[0];
+        element.innerHTML = data[1];
+        break;
+
+      // Element: table
+      case 'table':
+    
+        var tableData = data[1];
+        element.className = data[0];
+        for (var i = 0; i < tableData.length; i++) {
+          var row = createElement('tr', ["", ""]);
+          for (var j = 0; j < tableData[i].length; j++) {        
+            var col = createElement('td', ["", tableData[i][j]]);
+            row.appendChild(col);
+          }
+          element.appendChild(row);
+        }
+        break;
+
+    }  
+
+    return element;
+
+  }
+
   // Show loader
   function showLoader() {
     loader.hidden = false;
@@ -47,29 +106,16 @@ var app = (function () {
     for (var versions in data) {
 
       // New elements
-      var card      = document.createElement('div'),
-          cardTitle = document.createElement('div'),
-          cardText  = document.createElement('div'),
-          rnList    = document.createElement('ul');
-
-      // Setting the elements
-      card.className      = 'card';
-      cardTitle.className = 'cardTitle';
-      cardTitle.innerText = 'Version ' + versions + ' (' + data[versions]['date'] + ')';
-      rnList.className    = "rn";
+      var card      = createElement('div', ["card", ""]),
+          cardTitle = createElement('div', ["cardTitle", "Version " + versions + " (" + data[versions]['date'] + ")"]),
+          rnList    = createElement('ul' , ["rn", ""]);
 
       // Loop through the actual release notes
       for (var order in data[versions]['rn']) {
 
         // New elements
-        var line = document.createElement('li'),
-            type = document.createElement('span');
-
-        // Setting the elements
-        type.className = 'rn-' + data[versions]['rn'][order][0];
-        type.innerText = '[' + data[versions]['rn'][order][0].toUpperCase() + ']';
-        line.appendChild(type);
-        line.innerHTML = line.innerHTML + ' ' + data[versions]['rn'][order][1];
+        var type = createElement('span', ["rn-" + data[versions]['rn'][order][0], "[" + data[versions]['rn'][order][0].toUpperCase() + "]"]),
+            line = createElement('li', ["", type.outerHTML + ' ' + data[versions]['rn'][order][1]]);
 
         // Append the elements
         rnList.appendChild(line);
@@ -78,8 +124,7 @@ var app = (function () {
 
       // Append the elements
       card.appendChild(cardTitle);
-      card.appendChild(cardText);
-      cardText.appendChild(rnList);
+      card.appendChild(rnList);
       rn.appendChild(card);
 
     }
@@ -92,37 +137,34 @@ var app = (function () {
     var data  = JSON.parse(json),
         setup = document.getElementById('gameSet'),
         rules = document.getElementById('gameRules'),
-        cardS = document.createElement('div'),
-        cardR = document.createElement('div');
-
-    cardS.className = 'card';
-    cardR.className = 'card';
+        cardS = createElement('div', ["card", ""]),
+        cardR = createElement('div', ["card", ""]);
 
     // Game Setup
     for (var set in data['set']) {
 
-      var gs = document.createElement('div');
+      // Process tables
+      if (data['set'][set][0] === 'cardTable') {
+        cardS.appendChild(createElement('table', data['set'][set]));
 
-      // Create content of the element
-      gs.className = data['set'][set][0];
-      gs.innerText = data['set'][set][1];
-
-      // Append the element
-      cardS.appendChild(gs);
+      // Process texts
+      } else {     
+        cardS.appendChild(createElement('div', data['set'][set]));
+      }
 
     }
 
     // Game Rules
     for (var rule in data['rules']) {
 
-      var gr = document.createElement('div');
+      // Process tables
+      if (data['rules'][rule][0] === 'cardTable') {
+        cardR.appendChild(createElement('table', data['rules'][rule]));
 
-      // Create content of the element
-      gr.className = data['rules'][rule][0];
-      gr.innerText = data['rules'][rule][1];
-
-      // Append the element
-      cardR.appendChild(gr);
+      // Process texts
+      } else {     
+        cardR.appendChild(createElement('div', data['rules'][rule]));
+      }
 
     }
 
@@ -170,6 +212,11 @@ var app = (function () {
             dialogContainer.parentNode.removeChild(dialogContainer);
           });
         }
+    },
+
+    // Publicly facing createElement function
+    createElement: function(elementType, data) {
+      return createElement(elementType, data);
     },
 
     // Function to show or hide the loading spinner
