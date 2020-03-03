@@ -345,7 +345,7 @@ a, a:link, a:visited, a:hover, a:active {
   width: 100%;
 }
 
-.cardTitle, .cardSlideTitle, .cardSlider, .cardText, .cardList, .cardCredit, .cardButtons {
+.cardTitle, .cardSlideTitle, .cardSlider, .cardText, .cardList, .cardCredit, .cardButtons, .cardTable {
   padding-bottom: 10px;
 }
 
@@ -358,6 +358,16 @@ a, a:link, a:visited, a:hover, a:active {
   display: list-item;
   margin-left: inherit;
   list-style: decimal;
+}
+
+.cardTable {
+  width: 100%;
+}
+
+.cardTable td {
+  padding: 4px;
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  background-color: rgba(33, 150, 243, 0.05);
 }
 
 .cardCredit {
