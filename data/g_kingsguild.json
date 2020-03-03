@@ -32,14 +32,14 @@
                                   ]],
              "15" : ["cardList" , "Shuffle the two sets of Age I quest cards together, then create the quest deck by placing <b>top to bottom:</b> Age I quest cards, King's Funeral card, Age II quest cards, Offering to the Council card."],
              "16" : ["cardList" , "Draw and place 5 quest cards face-up in the empty slots. For a 5-6 player game, remove the quest deck from the board and place a 6th quest card in its place."],
-             "17" : ["cardList" , "Infividually shuffle the blue, red, and yellow treasure cards. Place each deck on its marked area on the board."],
+             "17" : ["cardList" , "Individually shuffle the blue, red, and yellow treasure cards. Place each deck on its marked area on the board."],
              "18" : ["cardList" , "Shuffle the player boards and deal one to each player. Return any remaining player boards to the game box."],
              "19" : ["cardList" , "The player who most recently had an adventure is the starting player. Going clockwise take coins as follows:"],
              "20" : ["cardTable", [
                                     ["<b>1st</b>","<b>2nd</b>","<b>3rd</b>","<b>4th</b>","<b>5th</b>","<b>6th</b>"],
                                     ["3","4","5","5","6","6"]
                                   ]],
-             "21" : ["cardList" , "Shuffle the guild tiles and deal one to each player <i>(you can use this application for this step)</i>. Players take their guild sigil minis and place their guild tiles on their player boards. Return unused guilds and sigils to the box. Going <b>clockwise</b> from the starting player, each player takes the starting bonus printed on their guild tile. <b>Then the starting player takes the first tunr and play proceeds clockwise.</b>"]},
+             "21" : ["cardList" , "Shuffle the guild tiles and deal one to each player <i>(you can use this application for this step)</i>. Players take their guild sigil minis and place their guild tiles on their player boards. Return unused guilds and sigils to the box. Going <b>clockwise</b> from the starting player, each player takes the starting bonus printed on their guild tile. <b>Then the starting player takes the first turn and play proceeds clockwise.</b>"]},
   "rules" : {"1" : ["cardTitle" , "Rules"],
              "2" : ["cardText"  , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]}
 }
