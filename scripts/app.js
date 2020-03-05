@@ -137,18 +137,29 @@ var app = (function () {
     var data  = JSON.parse(json),
         setup = document.getElementById('gameSet'),
         rules = document.getElementById('gameRules'),
-        cardS = createElement('div', ["card", ""]),
-        cardR = createElement('div', ["card", ""]);
+        cardS,
+        cardR;
 
     // Game Setup
     for (var set in data['set']) {
 
+      // Process card class
+      if (data['set'][set][0] === 'card') {
+
+        // If we already have card, then add it to setup
+        if (cardS) {
+          setup.appendChild(cardS);
+        }
+
+        // Create new element for the card
+        cardS = createElement('div', data['set'][set]);
+      
       // Process tables
-      if (data['set'][set][0] === 'cardTable') {
+      } else if (data['set'][set][0] === 'cardTable') {
         cardS.appendChild(createElement('table', data['set'][set]));
 
       // Process texts
-      } else {     
+      } else {
         cardS.appendChild(createElement('div', data['set'][set]));
       }
 
@@ -157,8 +168,19 @@ var app = (function () {
     // Game Rules
     for (var rule in data['rules']) {
 
+      // Process card class
+      if (data['rules'][rule][0] === 'card') {
+
+        // If we already have card, then add it to setup
+        if (cardR) {
+          rules.appendChild(cardR);
+        }
+
+        // Create new element for the card
+        cardR = createElement('div', data['rules'][rule]);
+      
       // Process tables
-      if (data['rules'][rule][0] === 'cardTable') {
+      } else if (data['rules'][rule][0] === 'cardTable') {
         cardR.appendChild(createElement('table', data['rules'][rule]));
 
       // Process texts
