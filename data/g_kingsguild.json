@@ -1,45 +1,109 @@
 {
-  "set"   : {"1"  : ["cardTitle", "Setup"],
-             "2"  : ["cardList" , "Place the game board in the center of the table."],
-             "3"  : ["cardList" , "Shuffle the master room tiles. Draw <b>3 plus the number of players</b> and place them face up next to the board. Return the rest to the game box. Place the King's Statue near the board."],
-             "4"  : ["cardList" , "<b>According to the number of players</b>, stack Warehouses, Gem Workshops, Magic Arcaenums, and Libraries in their marked areas on the board. Return any remaining rooms of these types to the game box."],
-             "5"  : ["cardTable", [
-                                    ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
-                                    ["<b>Warehouses</b>","1","2","3","3","4"],
-                                    ["<b>Library</b>","1","2","3","3","4"],
-                                    ["<b>Gem Workshop</b>","1","2","2","3","3"],
-                                    ["<b>Magic Arcaenum</b>","1","2","2","3","3"]
-                                  ]],
-             "6"  : ["cardList" , "Individually shuffle the three sets of specialist cards (A, B, & C). Then draw cards facedown from each set <b>according to the number of players</b>. Return the remaining specialist cards to the box."],
-             "7"  : ["cardTable", [
-                                    ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
-                                    ["<b>A, B, & C</b>","5","7","8","9","10"]
-                                  ]],
-             "8"  : ["cardList" , "Stack the specialists <b>A on top of B on top of C</b>, then place the combined deck on the board. Draw the first 5 specialist cards and place them face up in a row."],
-             "9"  : ["cardList" , "Place all the coins in the center of the board."],
-             "10" : ["cardList" , "<b>According to the number of players</b> place resources in their marked areas on the board. Return any unused resources to the game box."],
-             "11" : ["cardTable", [
-                                    ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
-                                    ["<b>Cloth, Leather, Metal, Wood</b>","5","6","7","8","8"],
-                                    ["<b>Magic, Gems</b>","3","4","5","6","6"]
-                                  ]],
-             "12" : ["cardList" , "Stack one Bedchamber | Kitchen <b>per player</b> and one Great Hall | Barracks <b>per player</b> on their marked spots on the board. Return any remaining chambers to the box."],
-             "13" : ["cardList" , "Individually shuffle the three types of quest cards (Age I [Gems and Magic], Age I [Cloth, Leather, Metal, Wood], Age II). <b>According to the number of players</b>, draw cards facedown from each of the three shuffled sets of quest cards. Return the remaining quest cards to the game box."],
-             "14" : ["cardTable", [
-                                    ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
-                                    ["<b>Age I</b> (each type)","5","7","8","9","10"],
-                                    ["<b>Age II</b>","8","12","14","17","19"]
-                                  ]],
-             "15" : ["cardList" , "Shuffle the two sets of Age I quest cards together, then create the quest deck by placing <b>top to bottom:</b> Age I quest cards, King's Funeral card, Age II quest cards, Offering to the Council card."],
-             "16" : ["cardList" , "Draw and place 5 quest cards face-up in the empty slots. For a 5-6 player game, remove the quest deck from the board and place a 6th quest card in its place."],
-             "17" : ["cardList" , "Individually shuffle the blue, red, and yellow treasure cards. Place each deck on its marked area on the board."],
-             "18" : ["cardList" , "Shuffle the player boards and deal one to each player. Return any remaining player boards to the game box."],
-             "19" : ["cardList" , "The player who most recently had an adventure is the starting player. Going clockwise take coins as follows:"],
-             "20" : ["cardTable", [
-                                    ["<b>1st</b>","<b>2nd</b>","<b>3rd</b>","<b>4th</b>","<b>5th</b>","<b>6th</b>"],
-                                    ["3","4","5","5","6","6"]
-                                  ]],
-             "21" : ["cardList" , "Shuffle the guild tiles and deal one to each player <i>(you can use this application for this step)</i>. Players take their guild sigil minis and place their guild tiles on their player boards. Return unused guilds and sigils to the box. Going <b>clockwise</b> from the starting player, each player takes the starting bonus printed on their guild tile. <b>Then the starting player takes the first turn and play proceeds clockwise.</b>"]},
-  "rules" : {"1" : ["cardTitle" , "Rules"],
-             "2" : ["cardText"  , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]}
+  "set"   : [
+              ["card"     , ""],
+              ["cardTitle", "Setup"],
+              ["cardList" , "Place the game board in the center of the table."],
+              ["cardList" , "Shuffle the master room tiles. Draw <b>3 plus the number of players</b> and place them face up next to the board. Return the rest to the game box. Place the King's Statue near the board."],
+              ["cardList" , "<b>According to the number of players</b>, stack Warehouses, Gem Workshops, Magic Arcaenums, and Libraries in their marked areas on the board. Return any remaining rooms of these types to the game box."],
+              ["cardTable", [
+                              ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
+                              ["<b>Warehouses</b>","1","2","3","3","4"],
+                              ["<b>Library</b>","1","2","3","3","4"],
+                              ["<b>Gem Workshop</b>","1","2","2","3","3"],
+                              ["<b>Magic Arcaenum</b>","1","2","2","3","3"]
+                            ]],
+              ["cardList" , "Individually shuffle the three sets of specialist cards (A, B, & C). Then draw cards facedown from each set <b>according to the number of players</b>. Return the remaining specialist cards to the box."],
+              ["cardTable", [
+                              ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
+                              ["<b>A, B, & C</b>","5","7","8","9","10"]
+                            ]],
+              ["cardList" , "Stack the specialists <b>A on top of B on top of C</b>, then place the combined deck on the board. Draw the first 5 specialist cards and place them face up in a row."],
+              ["cardList" , "Place all the coins in the center of the board."],
+              ["cardList" , "<b>According to the number of players</b> place resources in their marked areas on the board. Return any unused resources to the game box."],
+              ["cardTable", [
+                              ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
+                              ["<b>Cloth, Leather, Metal, Wood</b>","5","6","7","8","8"],
+                              ["<b>Magic, Gems</b>","3","4","5","6","6"]
+                            ]],
+              ["cardList" , "Stack one Bedchamber | Kitchen <b>per player</b> and one Great Hall | Barracks <b>per player</b> on their marked spots on the board. Return any remaining chambers to the box."],
+              ["cardList" , "Individually shuffle the three types of quest cards (Age I [Gems and Magic], Age I [Cloth, Leather, Metal, Wood], Age II). <b>According to the number of players</b>, draw cards facedown from each of the three shuffled sets of quest cards. Return the remaining quest cards to the game box."],
+              ["cardTable", [
+                              ["<b>Players</b>","<b>2</b>","<b>3</b>","<b>4</b>","<b>5</b>","<b>6</b>"],
+                              ["<b>Age I</b> (each type)","5","7","8","9","10"],
+                              ["<b>Age II</b>","8","12","14","17","19"]
+                            ]],
+              ["cardList" , "Shuffle the two sets of Age I quest cards together, then create the quest deck by placing <b>top to bottom:</b> Age I quest cards, King's Funeral card, Age II quest cards, Offering to the Council card."],
+              ["cardList" , "Draw and place 5 quest cards face-up in the empty slots. For a 5-6 player game, remove the quest deck from the board and place a 6th quest card in its place."],
+              ["cardList" , "Individually shuffle the blue, red, and yellow treasure cards. Place each deck on its marked area on the board."],
+              ["cardList" , "Shuffle the player boards and deal one to each player. Return any remaining player boards to the game box."],
+              ["cardList" , "The player who most recently had an adventure is the starting player. Going clockwise take coins as follows:"],
+              ["cardTable", [
+                              ["<b>1st</b>","<b>2nd</b>","<b>3rd</b>","<b>4th</b>","<b>5th</b>","<b>6th</b>"],
+                              ["3","4","5","5","6","6"]
+                            ]],
+              ["cardList" , "Shuffle the guild tiles and deal one to each player <i style=\"color: red;\">(you can use this application for this step)</i>. Players take their guild sigil minis and place their guild tiles on their player boards. Return unused guilds and sigils to the box. Going <b>clockwise</b> from the starting player, each player takes the starting bonus printed on their guild tile. <b>Then the starting player takes the first turn and play proceeds clockwise.</b>"]
+            ],
+  "rules" : [
+              ["card"      , ""],
+              ["cardTitle" , "Rules"],
+              ["cardText"  , "The King's Guild rules over the city of Greycastle, but the Kings has fallen ill and the fate of the kingdom hangs in the balance."],
+              ["cardText"  , "When the King dies, the Council of the Wise will convene and coronate a new King's Guild - and with it, a new King or Queen. As one of the guild leaders of Greycastle, this is the opportunity of a lifetime. If you earn the most prestige, you'll ascend to the throne and rule the whole kingdom! Each turn, you perform one action - gather resources, craft items to sell to heroes, or expand your guild by building rooms and hiring specialists. Build your guild's prestige higher than the other players by earning valuable treasures, heroes, specialist, and rooms."],
+              ["cardText"  , "The game takes place across two ages of heroes, and ends when the Council of the Wise arrives in Greycastle. After each player has had a chance to make an offering, the council evaluates your progress and chooses a new King's Guild. <b>The player with the most prestige</b> takes the crown and wins the game!"],
+              ["card"      , ""],
+              ["cardTitle" , "Turn"],
+              ["cardText"  , "Players take turns one at a time going clockwise. On your turn, take <b>ONE</b> action of your choice - <b>Gather</b>, <b>Craft</b>, or <b>Expand</b>. You may also play or sell any number of treasure cards."],
+              ["card"      , ""],
+              ["cardTitle" , "Gather"],
+              ["cardList"  , "Take up to 3 resources of the same type <b>or</b> 2 resources of different types. Place them in your storage area."],
+              ["cardList"  , "If a resource is out of stock, you may not take it."],
+              ["cardList"  , "<b>You may not</b> gather Gems until you build the Gem Workshop or Magic until you build the Magic Arcaenum."],
+              ["cardList"  , "Any time you exceed your storage limit, you must <b>immediately</b> choose and discard resources until you are within your limit."],
+              ["card"      , ""],
+              ["cardTitle" , "Craft"],
+              ["cardList"  , "Choose one quest. Pay the resource cost to craft one <b>OR BOTH</b> items for that quest, then take coins equal to the value of the item(s) you crafted."],
+              ["cardList"  , "If you start a <b>two item quest</b> and only craft one item, place one of your guild sigil minis on the item you crafted."],
+              ["cardList"  , "If both of your guild sigils are on quests, you may only start <b>two item quests</b> if you craft both items in the same action."],
+              ["cardTitle" , "Completing a Quest"],
+              ["cardList"  , "As soon as all of a quest's items have been crafted, that quest is complete. (The heroes always succeed on their quests.)"],
+              ["cardList"  , "<b>If you crafted all the items for that quest</b>: draw the quest's treasure card(s) and take the quest card and place it face-up to the left of your player board."],
+              ["cardList"  , "<b>If you and another player each crafted one item</b>: The player who crafted first takes the quest card and places it face-up to the left of their player board. The player who finished the card draw and look at the treasure cards, chooses one to keep, and passes the remaining card to the other player."],
+              ["cardList"  , "If a guild sigil was on the completed quest, return that sigil to its owner. Finally, draw a quest card and place it in the empty space on the board."],
+              ["card"      , ""],
+              ["cardTitle" , "Expand"],
+              ["cardText"  , "Build <b>ONE</b> room and/or hire <b>ONE</b> specialist in either order."],
+              ["cardList"  , "<b>Build a Room</b> - Choose a room (chambers are double-sided), pay its coin cost, and add it to your player board. Rooms must face the same direction and connect vertically or horizontally to your guild. You can't build if you don't have enough space on your board. <b>You may only build ONE of each room in your guild.</b> If you cover up a bonus on your player board, take the coins or resource from the supply if available."],
+              ["cardTable" , [
+                               ["<b>Two player game only</b>", "Neither player may build both the Gem Workshop and the Magic Arcaenum."]
+                             ]],
+              ["cardList"  , "<b>Hire a Specialist</b> - Pay the specialist's coin cost and place it in one of your chambers or one of the four spaces outside your guild. You may not hire a specialist unless you have space to place it. <b>ONLY IF</b> you paid <b>full price</b> for the specialist, add a 1 coin discount to each specialist on the board to the right of the one you hired. (Those specialists now cost fewer coins to hire.) If this reduces a specialist's cost to 0, remove that specialist from the game instead. Slide the remaining specialist card(s) to the right into any empty spaces. Then draw new specialist card(s) to refill the row."],
+              ["card"      , ""],
+              ["cardTitle" , "End of turn"],
+              ["cardText"  , "After taking your action and playing or selling any number of treasures, your turn is over. Play passes to the player on your left"],
+              ["card"      , ""],
+              ["cardTitle" , "Hand size"],
+              ["cardText"  , "Your hand size is 6 treasure cards. If you have more than 6 at any time, you must <b>immediately</b> sell treasures until you have 6. The Library and some specialists increase your hand size."],
+              ["card"      , ""],
+              ["cardTitle" , "The King's Funeral"],
+              ["cardText"  , "When the King's Funeral card is drawn, set it aside. Players hide their coins and secretly choose an amount to bit on the King's Statue."],
+              ["cardText"  , "All players reveal their bids simultaneously. Then the player with the highest bid spends those coins and builds the King's Statue room in their guild. All other players keep the coins they bid. (If there's a tie, all players keep their coins and nobody builds the statue.)"],
+              ["cardText"  , "Draw a quest to fill the empty space on the board."],
+              ["card"      , ""],
+              ["cardTitle" , "Offering to the council"],
+              ["cardText"  , "<b>The end of the game</b> is triggered when the Offering to the Council card is drawn from the quest deck. Each player takes one more turn, including the player who drew the council card."],
+              ["cardText"  , "On each player's final turn, he or she may make an offering to the council <b>instead of taking an action</b>. To do so, place a guild sigil on the Offering to the Council card. You will score additional prestige at the end of the game for your remaining coins and resources."],
+              ["cardText"  , "If both your sigils are on quests, you may not make an offering."],
+              ["card"      , ""],
+              ["cardTitle" , "Scoring"],
+              ["cardText"  , "Each player takes any quest cards that still have their quild sigil on them and <b>add those cards to their guild</b>. (Do not gain any treasure for those quests.) Then score prestige as follows."],
+              ["cardTable" , [
+                               ["<b>Charms</b>","For each Charm in your hand, gain 2 or 3 prestige as shown. Then the player (or players) with the most Charms gains an additional 3 prestige."],
+                               ["<b>Relics</b>","Gain 2/5/9/13/17/22 prestige for having 1/2/3/4/5/6 different Relics in your hand. You may score multiple sets, but no Relic may be scored twice."],
+                               ["<b>Quests</b>","Gain 1 prestige for each completed quest you have."],
+                               ["<b>Specialists</b>","Gain the prestige listed on each of your specialists."],
+                               ["<b>Rooms</b>","Gain the prestige listed on each of your rooms. Rooms with a star describe their scoring conditions, and chambers only score if occupied by specialists."],
+                               ["<b>Offering</b>","If you made an offering, gain 2 prestige + 1 prestige for every 3 coins + 1 prestige for every 2 resources you have (round down)."],
+                               ["",""],
+                               ["<b>Total</b>","The player with the most prestige wins! Ties go to the player(s) with the most coins."]
+                             ]]
+            ]
 }
