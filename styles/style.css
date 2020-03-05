@@ -301,14 +301,14 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 #menuToggle input:checked ~ ul {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   transform: scale(1);
   transform: translate(0%);
   opacity: 1;
 }
 
 #menuToggle input:not(:checked) ~ ul {
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
   transform: scale(0);
   transform: translate(100%);
   opacity: 0;
