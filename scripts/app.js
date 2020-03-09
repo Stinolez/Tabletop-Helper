@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '3.0.200303',
+      appVersion = '3.0.200309',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
