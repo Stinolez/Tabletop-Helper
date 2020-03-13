@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '3.0.200309',
+      appVersion = '3.0.200313',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -50,12 +50,12 @@ var app = (function () {
 
       // Element: table
       case 'table':
-    
+
         var tableData = data[1];
         element.className = data[0];
         for (var i = 0; i < tableData.length; i++) {
           var row = createElement('tr', ["", ""]);
-          for (var j = 0; j < tableData[i].length; j++) {        
+          for (var j = 0; j < tableData[i].length; j++) {
             var col = createElement('td', ["", tableData[i][j]]);
             row.appendChild(col);
           }
@@ -63,7 +63,7 @@ var app = (function () {
         }
         break;
 
-    }  
+    }
 
     return element;
 
@@ -153,7 +153,7 @@ var app = (function () {
 
         // Create new element for the card
         cardS = createElement('div', data['set'][set]);
-      
+
       // Process tables
       } else if (data['set'][set][0] === 'cardTable') {
         cardS.appendChild(createElement('table', data['set'][set]));
@@ -178,13 +178,13 @@ var app = (function () {
 
         // Create new element for the card
         cardR = createElement('div', data['rules'][rule]);
-      
+
       // Process tables
       } else if (data['rules'][rule][0] === 'cardTable') {
         cardR.appendChild(createElement('table', data['rules'][rule]));
 
       // Process texts
-      } else {     
+      } else {
         cardR.appendChild(createElement('div', data['rules'][rule]));
       }
 

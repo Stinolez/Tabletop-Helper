@@ -3,7 +3,8 @@
            "rn"   : [
                       ["new",    "Added new menu to the games, option to toggle between game rules, game setting and game options."],
                       ["update", "Added rules and game setup for The King's Guild."],
-                      ["update", "Added rules and game setup for The Witcher Adventure Game."]
+                      ["update", "Added rules and game setup for The Witcher Adventure Game."],
+                      ["update", "Added rules and game setup for Tokaido."]
                     ]},
 
   "2.2" : {"date" : "28/02/2020",
