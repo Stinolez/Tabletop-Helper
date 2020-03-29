@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '3.0.200313',
+      appVersion = '3.0.200329',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -13,22 +13,28 @@ var app = (function () {
   // Create element (for game setup / game rules)
   function createElement(elementType, data) {
 
-    /****************************************
-     | Element | Data                       |
-     ----------------------------------------
-     | div     | [className, HTML content]  |
-     | span    |                            |
-     | ul      |                            |
-     | li      |                            |
-     | tr      |                            |
-     | td      |                            |
-     ----------------------------------------
-     | table   | [className, [              |
-     |         |               [1, 1, ...], |
-     |         |               [2, 2, ...], |
-     |         |               ...          |
-     |         |             ]]             |
-     ****************************************/
+    /*******************************************
+     | Element | Data                          |
+     -------------------------------------------
+     | div     | [className, HTML content]     |
+     | span    |                               |
+     | tr      |                               |
+     | td      |                               |
+     | li      |                               |
+     -------------------------------------------
+     | ul      | [className, [                 |
+     | ol      |               [className, 1], |
+     |         |               [className, 2], |
+     |         |               ...             |
+     |         |             ]]                |
+     |         |                               |
+     -------------------------------------------
+     | table   | [className, [                 |
+     |         |               [1, 1, ...],    |
+     |         |               [2, 2, ...],    |
+     |         |               ...             |
+     |         |             ]]                |
+     *******************************************/
 
     // Create element by the type
     var element = document.createElement(elementType);
@@ -39,13 +45,28 @@ var app = (function () {
       // Element: div, span, ul, li
       case 'div':
       case 'span':
-      case 'ul':
-      case 'li':
       case 'tr':
       case 'td':
+      case 'li':
 
         element.className = data[0];
         element.innerHTML = data[1];
+        break;
+
+      // List elements
+      case 'ul':
+      case 'ol':
+
+        var listData = data[1];
+        element.className = data[0];
+        for (var i = 0; i < listData.length; i++) {
+          if (listData[i][0] === 'cardTable') {
+            var sub = createElement('table', listData[i]);
+          } else {
+            var sub = createElement('li', listData[i]);
+          }
+          element.appendChild(sub);
+        }
         break;
 
       // Element: table
@@ -108,19 +129,7 @@ var app = (function () {
       // New elements
       var card      = createElement('div', ["card", ""]),
           cardTitle = createElement('div', ["cardTitle", "Version " + versions + " (" + data[versions]['date'] + ")"]),
-          rnList    = createElement('ul' , ["rn", ""]);
-
-      // Loop through the actual release notes
-      for (var order in data[versions]['rn']) {
-
-        // New elements
-        var type = createElement('span', ["rn-" + data[versions]['rn'][order][0], "[" + data[versions]['rn'][order][0].toUpperCase() + "]"]),
-            line = createElement('li', ["", type.outerHTML + ' ' + data[versions]['rn'][order][1]]);
-
-        // Append the elements
-        rnList.appendChild(line);
-
-      }
+          rnList    = createElement('ul' , ["rn", data[versions]['rn']]);
 
       // Append the elements
       card.appendChild(cardTitle);
@@ -143,8 +152,10 @@ var app = (function () {
     // Game Setup
     for (var set in data['set']) {
 
+      var options = data['set'][set];
+
       // Process card class
-      if (data['set'][set][0] === 'card') {
+      if (options[0] === 'card') {
 
         // If we already have card, then add it to setup
         if (cardS) {
@@ -152,15 +163,23 @@ var app = (function () {
         }
 
         // Create new element for the card
-        cardS = createElement('div', data['set'][set]);
+        cardS = createElement('div', options);
+
+      // Process ordered list
+      } else if (options[0] === 'cardOl') {
+        cardS.appendChild(createElement('ol', options));
+
+      // Process un-ordered list
+      } else if (options[0] === 'cardUl') {
+        cardS.appendChild(createElement('ul', options));
 
       // Process tables
-      } else if (data['set'][set][0] === 'cardTable') {
-        cardS.appendChild(createElement('table', data['set'][set]));
+      } else if (options[0] === 'cardTable') {
+        cardS.appendChild(createElement('table', options));
 
       // Process texts
       } else {
-        cardS.appendChild(createElement('div', data['set'][set]));
+        cardS.appendChild(createElement('div', options));
       }
 
     }
@@ -168,8 +187,10 @@ var app = (function () {
     // Game Rules
     for (var rule in data['rules']) {
 
+      var options = data['rules'][rule];
+
       // Process card class
-      if (data['rules'][rule][0] === 'card') {
+      if (options[0] === 'card') {
 
         // If we already have card, then add it to setup
         if (cardR) {
@@ -177,15 +198,23 @@ var app = (function () {
         }
 
         // Create new element for the card
-        cardR = createElement('div', data['rules'][rule]);
+        cardR = createElement('div', options);
+
+      // Process ordered list
+      } else if (options[0] === 'cardOl') {
+        cardR.appendChild(createElement('ol', options));
+
+      // Process un-ordered list
+      } else if (options[0] === 'cardUl') {
+        cardR.appendChild(createElement('ul', options));
 
       // Process tables
-      } else if (data['rules'][rule][0] === 'cardTable') {
-        cardR.appendChild(createElement('table', data['rules'][rule]));
+      } else if (options[0] === 'cardTable') {
+        cardR.appendChild(createElement('table', options));
 
       // Process texts
       } else {
-        cardR.appendChild(createElement('div', data['rules'][rule]));
+        cardR.appendChild(createElement('div', options));
       }
 
     }
