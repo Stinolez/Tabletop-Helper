@@ -1,6 +1,192 @@
 {
-  "set"   : {"1" : ["cardTitle", "Setup"],
-             "2" : ["cardText" , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]},
-  "rules" : {"1" : ["cardTitle", "Rules"],
-             "2" : ["cardText" , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]}
+  "set"   : [
+              ["card"     , ""],
+              ["cardTitle", "Setup for base game"],
+              ["cardOl"   , [
+                              ["" , "All players roll a die. The player with the highest roll is the Start Player. Place all 73 dice into the dice bag."],
+                              ["" , "Beginning with the Start Player and proceeding clockwise around the table, each player chooses a Character Sheet and selects the male or female side (gender choice does not affect gameplay). <i style=\"color: red;\">You can use this application for this step.</i>"],
+                              ["" , "Each player takes 5 Gold. If there is a third player, the third player in player order receives 1 additional Gold. If there is a fourth player, the fourth player in player order receives 2 additional Gold. The remaining Gold creates the Gold supply."],
+                              ["" , "Beginning with the Start Player and proceeding clockwise around the table, each player draws a random die from the dice bag, takes the Class card of the matching color, and chooses one of the two Classes on the card. If the drawn die is gold, or matches another player’s color, continue to draw until a unique color is drawn. During this step, no Gold is gained if a gold die is drawn. Once all players have a Class card, return all dice to the dice bag. Alternatively, instead of drawing dice, players may select the Class card they want in reverse turn order, ending with the Start Player. <i style=\"color: red;\">You can use this application for this step.</i>"],
+                              ["" , "Shuffle the deck of Backstory cards and the deck of Alignment cards separately. Deal one Backstory card and one Alignment card to each player, and give each player a Player Aid card. Return any unused Backstory, Alignment, and Player Aid cards to the box. <i style=\"color: red;\">You can use this application for this step.</i>"],
+                              ["" , "Each player places their Backstory and Alignment cards on their Character Sheet and takes the two tracking tokens of their Class color. One is placed on the center space of their Alignment card. The other is placed on their Class card."],
+                              ["" , "Separate the Market cards into single-dot and double-dot card piles (dots are in the upper right corner of the cards). If playing with three players, discard three cards from each pile, or if playing with two players, discard seven cards from each pile. Shuffle the piles separately and place the single-dot pile on top of the double-dot pile to form the Market deck."],
+                              ["" , "Create the Market by drawing cards from the Market deck equal to the number of players plus one (3/4/5 cards for 2/3/4 players, respectively) and placing them face up in the center of the table."],
+                              ["" , "Line up the Initiative cards in the center of the table in numerical order. With three players, return the “5” card to the box. With two players, also remove the “4” card. This way, the number of Initiative cards in play equals the number of face up Market cards in play."],
+                              ["" , "Place 1 Gold on each Initiative card that is neither first nor last in numerical order."],
+                              ["" , "Beginning with the Start Player, each player randomly draws their starting dice from the bag. The number of  dice each player draws is equal to the number of players plus four (6/7/8 dice for 2/3/4 players, respectively)."],
+                              ["" , "Each player rolls their starting dice and arranges them on their Character Sheet in the spaces of their Attribute Rows, following these guidelines:<ul style=\"padding-top:10px;\"><li>Dice must be placed in the leftmost empty space in an Attribute Row.</li><li>Attribute Actions are not taken during setup.</li><li>For each Attribute Row that is filled with 3 dice, gain 1 Gold.</li><li>For each gold die drawn, gain 2 Gold. <i>(Exception: A player with the Thief Class card takes 4 Gold for each gold die drawn, instead of 2.</i></li></ul>"],
+                              ["" , "The Start Player begins the game."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Setup for Monsters & Minions Expansion"],
+              ["cardText" , "To play with this expansion, use the same Setup as in the base game, except for the following changes:"],
+              ["cardOl"   , [
+                              ["" , "<b>Dice and Dice Bag</b> - When placing the dice in the bag at the start of the game, include the 11 Boost Dice and 7 additional Attribute Dice from this expansion. Set the smaller Combat Dice off to the side of the play area."],
+                              ["" , "<b>Starting Gold</b> - When playing with five players, all players start with 5 Gold each. The third and fourth players do not receive additional starting Gold as listed in the base game rulebook in games with five players."],
+                              ["" , "<b>Character Sheets and Class Cards</b> - When selecting a Character Sheet, choose from among all available Character Sheets. When drawing dice to randomly select a Class color, if a player draws a gold-colored die or Boost Die, set it aside and draw again, remembering to return all set-aside dice to the bag afterward. This expansion adds two additional Class options for each Class color, so players may choose from among the four available Classes of the color they select. There may only be one player of each Class color. <i style=\"color: red;\">You can use this application for this step.</i>"],
+                              ["" , "<b>Cost Summary Cards and Player Aid Cards</b> - Give each player a Cost Summary card and an updated Player Aid card. The Player Aid card included in the base game is not used when playing with the expansion."],
+                              ["" , "<b>Market Deck</b> - Add the single-dot and double-dot Market cards from this expansion to their respective piles from the base game before shuffling the piles separately. Then randomly remove Market cards from each pile, based on the number of players, and put them in the discard pile:<ul style=\"padding-top:10px;\"><li>For two players, discard 18 Market cards from each pile (a total of 36 cards).</li><li>For three players, discard 14 Market cards from each pile (a total of 28 cards).</li><li>For four players, discard 12 Market cards from each pile (a total of 24 cards).</li><li>For five players, discard 7 Market cards from each pile (a total of 14 cards).</li></ul>Place the single-dot pile on top of the double-dot pile to form the Market deck."],
+                              ["" , "<b>Creating the Market</b> - When creating the Market, lay out a number of cards equal to the number of players plus two (4/5/6/7 cards for 2/3/4/5 players, respectively). There is one additional card in the Market in comparison to the Market in the base game."],
+                              ["" , "<b>Initiative Cards</b> - Replace the “4” and “5” cards from the base game with the new ones included in this expansion. When playing with five players, use the “4,” “5,” and “6” cards from the expansion, and place 1 Gold on the “2,” “3,” “4,” and “5” cards."],
+                              ["" , "<b>Adventure, Injury, and Honor Tokens</b> - Place the Adventure tokens, Injury tokens, and Honor tokens in a pile so all players can access them."],
+                              ["" , "<b>Starting Dice</b> - When playing with five players, each player rolls 8 starting dice."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Monster Setup"],
+              ["cardText" , "After completing the Basic Setup, follow these steps to prepare the Monster:"],
+              ["cardOl"   , [
+                              ["" , "<b>Choose a Monster</b> - Find the six Monster cards with the “2P+” indicator on them. Monster cards are each associated with a color; remove all Monster cards that match any player’s Class color. Randomly choose a Monster from the remaining cards and place it face up on the table. Return all other Monster cards to the game box. <i style=\"color: red;\">You can use this application for this step.</i>"],
+                              ["" , "<b>Select Adventure Cards</b> - Gather the three Location cards, the three Obstacle cards, and the three Attack cards for the chosen Monster. Randomly select one of each card type and place them face down near the Monster card. Make sure no player sees the chosen Location, Obstacle, and Attack cards before starting the game. Return all unselected Adventure cards to the game box."],
+                              ["" , "<b>Minion Deck</b> - Separate the single-dot and double-dot Minion cards. Shuffle each separately and place the single-dot pile on top of the double-dot pile to form the Minion deck. Return the top seven cards from the Minion deck to the box. Place the deck face down near the Monster card and the Adventure cards. Reveal the top card, placing it face up on top."]
+                            ]]
+            ],
+  "rules" : [
+              ["card"     , ""],
+              ["cardTitle", "Rules for base game"],
+              ["cardText" , "<i>Mighty heroes don’t just appear out of thin air – they must be created! Race, class, alignment, skills, traits, and equipment are all elements of the perfect hero, ready to take on the opposition in the quest for glory and riches. In Roll Player, you compete with your opponents to create the greatest fantasy adventurer who has ever lived, preparing to embark on an epic quest. Roll and draft dice to build up your character’s attributes. Buy weapons and armor to outfit your hero. Train to gain skills and to discover your hero’s traits, in order to prepare them for their journey. Earn Reputation Stars by constructing the perfect character. The player with the greatest Reputation wins the game and will surely triumph over whatever nefarious plot lies ahead!</i>"],
+              ["cardTitle", "Overview of a Round"],
+              ["cardText" , "Roll Player is played over a series of rounds, each divided into four phases: the Roll Phase, the Dice Phase, the Market Phase, and the Cleanup Phase."],
+              ["card"     , ""],
+              ["cardTitle", "Roll phase"],
+              ["cardText" , "During the Roll Phase, the Start Player draws dice from the dice bag equal to the number of Initiative cards in play and rolls them to create the Dice Pool:"],
+              ["cardUl"   , [
+                              ["", "For two players, roll three dice."],
+                              ["", "For three players, roll four dice."],
+                              ["", "For four players, roll five dice."]
+                            ]],
+              ["cardText" , "The Start Player then places the lowest value die on the “1” Initiative card, the second lowest value die on the “2” Initiative card, and so on, until all Initiative cards are filled with dice. If there are ever multiple dice with the same value, the Start Player decides where the dice are placed."],
+              ["card"     , ""],
+              ["cardTitle", "Dice phase"],
+              ["cardText" , "During the Dice Phase, beginning with the Start Player and continuing clockwise around the table, players take turns selecting an Initiative card, placing a die on their Character Sheet, collecting Gold, and taking an Attribute Action:"],
+              ["cardText" , "<b>Select an Initiative Card</b> - Each player chooses an available Initiative card, with its die and any Gold on it, and places it in front of their Character Sheet."],
+              ["cardText" , "<b>Place Dice</b> - Each player places the die from their Initiative card in the leftmost empty space of any Attribute Row."],
+              ["cardText" , "<b>Collect Gold</b> - Each player then gains Gold: the Gold on their Initiative card, if any; 1 Gold from the supply if the player’s die was placed in the final space of an Attribute Row; and 2 Gold from the supply if the player placed a gold die."],
+              ["cardText" , "<b>Take Attribute Action (Optional)</b> - After placing a die in an Attribute Row, the player may take the Attribute Action associated with that row:"],
+              ["cardUl"   , [
+                              ["", "<b>Strength</b>: Placing a die in the Strength Attribute Row allows the player to change the face value of any die on their Character Sheet to the face value on the opposite side of the die."],
+                              ["", "<b>Dexterity</b>: Placing a die in the Dexterity Attribute Row allows the player to exchange the placement of any two dice on their Character Sheet without changing their current face values. The player may not move a die to an open space using this Attribute Action."],
+                              ["", "<b>Constitution</b>: Placing a die in the Constitution Attribute Row allows the player to increase or decrease the face value of any die on their Character Sheet by one. Dice values do not “loop.” Thus, a die with a value of 6 cannot be “increased” to a 1, nor can a 1 be “decreased” to a 6."],
+                              ["", "<b>Intelligence</b>: Placing a die in the Intelligence Attribute Row allows the player to choose any die on their Character Sheet and reroll it. The player may choose to keep either the new value or the original value. The die is then returned to its original space on the Character Sheet."],
+                              ["", "<b>Wisdom</b>: Placing a die in the Wisdom Attribute Row allows the player to move the tracking token on their Alignment card one space up, down, left, or right."],
+                              ["", "<b>Charisma</b>: Placing a die in the Charisma Attribute Row allows the player to take a Charisma token. During the Market Phase this round, the player may spend any Charisma token in place of one Gold when buying a Market card."]
+                            ]],
+              ["cardText" , "Players may use an Attribute Action to affect the die that was placed this round or any die placed in a previous round."],
+              ["cardText" , "Only one Attribute Action may be taken per player in the Dice Phase."],
+              ["cardText" , "Dice that are moved or have their face values changed as a result of an Attribute Action do not trigger additional Attribute Actions."],
+              ["cardText" , "Once all players have completed their turn during the Dice Phase, one Initiative card will remain in the center of the table."],
+              ["card"     , ""],
+              ["cardTitle", "Market phase"],
+              ["cardText" , "During the Market Phase, each player has the opportunity to buy a card from the Market. The player order for this phase is dictated by the numbers on the Initiative cards that were chosen during the Dice Phase. The player with the lowest value Initiative card buys first, followed by the next lowest, etc."],
+              ["cardText" , "To buy a Market card, the player pays the cost shown in the upper right hand corner of the card to the Gold supply. The player places the bought card face up in the appropriate area of the player’s Character Sheet. New cards are not added to the Market during the Market Phase."],
+              ["cardUl"   , [
+                              ["", "There is no limit to the number of Armor, Trait, or Skill cards a player may acquire."],
+                              ["", "A player may not equip (i.e., have) more than two hands worth of Weapon cards. At any time, a player may discard a Weapon card from their play area to the Market discard pile. Discarding allows a player to buy a new Weapon card without going over their Weapon card limit."],
+                              ["", "If a player buys a Trait card, they immediately move the tracking token on their Alignment card as indicated by the arrow icon on the card, if possible."],
+                              ["", "If a player buys a Skill card, they may use it immediately."]
+                            ]],
+              ["cardText" , "If the current player cannot or chooses not to buy a card, they must select a card from the Market, and add it to the Market discard pile. They then gain 2 Gold from the supply."],
+              ["cardText" , "After a player has either bought or discarded a Market card, they return their Initiative card to the Initiative card row in the center of the table. This helps players keep track of who is next in the Market Phase."],
+              ["cardText" , "At any time during the game, any player may look through the Market discard pile."],
+              ["card"     , ""],
+              ["cardTitle", "Cleanup phase"],
+              ["cardText" , "During the Cleanup Phase, the players prepare for the next round:"],
+              ["cardOl"   , [
+                              ["" , "Each player discards any unused Charisma tokens."],
+                              ["" , "Each player may refresh one exhausted Skill card by turning it upright, thereby making it available for use in the next round."],
+                              ["" , "The Start Player returns the remaining die in the Dice Pool to the dice bag and discards the remaining Market cards."],
+                              ["" , "The Start Player draws a new set of Market cards for the next round (equal to the number of Initiative cards) and places them face up to form a new Market. If the Market deck is depleted and additional cards need to be drawn, the Start Player shuffles the discard pile (single dot and double dot together) to create a new Market deck before drawing the necessary cards."],
+                              ["" , "The Start Player places 1 Gold on any Initiative cards that do not have Gold on them, if they are neither the first nor the last card in the row. Initiative cards may never have more than 1 Gold on them."],
+                              ["" , "The Start Player passes the dice bag to the player to their left. That player becomes the Start Player for the next round."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Using Skill Cards"],
+              ["cardText" , "When a player buys a Skill card from the Market, it is immediately available for use."],
+              ["cardText" , "To use a Skill card, a player moves the tracking token on the player’s Alignment card in the direction indicated by the arrow icon shown in the card’s Description. Then, the player uses the special ability of the card, if they wish."],
+              ["cardText" , "Finally, the player exhausts the card by turning it sideways, to show that the card cannot be used again until the card is refreshed (i.e., turned upright)."],
+              ["cardUl"   , [
+                              ["", "If it is not possible for the player to move the tracking token due to its position on the player’s Alignment card, then the Skill card cannot be used."],
+                              ["", "Skill cards may only be used if they are in the upright position."],
+                              ["", "Skill cards may be used at any time (even during another player’s turn), unless noted in the card’s Description."],
+                              ["", "Each player may refresh only one Skill card per round and only during the Cleanup Phase."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Gaining Gold"],
+              ["cardText" , "There are 4 ways for a player to gain Gold in Roll Player (in addition to gaining it by using special abilities from Skill, Weapon, and Class cards)."],
+              ["cardOl"   , [
+                              ["" , "Gain 2 Gold when placing a gold die on a Character Sheet."],
+                              ["" , "Gain 2 Gold when discarding a card from the Market instead of buying one."],
+                              ["" , "Gain 1 Gold when placing the third die in an Attribute Row."],
+                              ["" , "Gain 1 Gold when selecting an Initiative card with Gold on it."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Game End"],
+              ["cardText" , "The game ends at the completion of the round in which all players have filled every Attribute Row on their Character Sheets. Then, the players calculate Reputation Stars to determine the winner!"],
+              ["card"     , ""],
+              ["cardTitle", "Final Scoring"],
+              ["cardText" , "Reputation Stars are awarded during Final Scoring (and not before). During Final Scoring, each player uses the tracking token from their Class card and the chart on the back of their Player Aid card to tally their Reputation Stars."],
+              ["cardText" , "<b>Attribute Goals</b> - A player’s Class card includes goals for each Attribute Row on the player’s Character Sheet and shows how many Reputation Stars the player will gain for meeting each goal. The player adds up the face value of the dice in a particular row on the Character Sheet, adjusts the total for any Race Bonus or Penalty shown on their Character Sheet and Weapon cards, and then checks the adjusted total against their Class card to see if it meets the goal for that Attribute Row."],
+              ["cardUl"   , [
+                              ["", "If the goal is a single number, that exact number must be met."],
+                              ["", "If the goal is a range of numbers, the player’s Attribute Score must have a value within the listed range."],
+                              ["", "If the goal includes a plus sign (+), then the player’s Attribute Score must be equal to or higher than the indicated number."]
+                            ]],
+              ["cardText" , "<b>Class Color Dice</b> - Each die on a player’s Character Sheet that matches that player’s Class color is worth one Reputation Star."],
+              ["cardText" , "<b>Alignment Card</b> - Each player checks the position of the tracking token on their Alignment card and adds or subtracts the number of Reputation Stars underneath the tracking token."],
+              ["cardText" , "<b>Backstory Card</b> - If a player has dice on their Character Sheet that match the color and position of the dice pictured on their Backstory card, the player earns Reputation Stars:"],
+              ["cardUl"   , [
+                              ["", "0 Reputation Stars for 0-1 matches"],
+                              ["", "1 Reputation Star for 2-3 matches"],
+                              ["", "3 Reputation Stars for 4-5 matches"],
+                              ["", "6 Reputation Stars for all 6 matches"]
+                            ]],
+              ["cardText" , "<b>Armor Cards</b> - Players earn Reputation Stars for sets of Armor (one or more cards of the same type of Armor) and for their character being the Class color specified on the Armor card."],
+              ["cardText" , "Each player sorts their Armor cards by type into sets: Chain, Leather, and Mystic. For each set, the player counts the cards in the set and, using the numbers under the stars on the cards, matches their total to a star. The player earns Reputation Stars equal to the number within that star. In addition, for each set, a player earns an extra Reputation Star if the cards in the set match their character’s Class color. This bonus is earned per set, not per card."],
+              ["cardText" , "<b>Trait Cards</b> - Each player adds the Reputation Stars earned from their Trait cards."],
+              ["cardText" , "<span style=\"color: red;\">The player with the most Reputation Stars wins!</span>"],
+              ["cardUl"   , [
+                              ["", "If there is a tie, the tied player with the most Gold wins."],
+                              ["", "If there is still a tie, the tied player with the fewest number of dice in their Class color on their Character Sheet wins."],
+                              ["", "If there is still a tie, the tied players rejoice in their shared victory or play again!"]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Rules for Minions and Monsters Expansion"],
+              ["cardText" , "This expansion includes a few changes to the round and turn structure compared to the base game, including a new option in the Market Phase."],
+              ["cardUl"   , [
+                              ["", "<b>Roll phase</b> - The Roll Phase is the same as in the base game."],
+                              ["", "<b>Dice phase</b> - The Dice Phase is the same as in the base game."],
+                              ["", "<b>Market phase</b> - During the Market Phase, players may do one of the following:<ul style=\"padding-top:10px;\"><li>Buy a card from the Market, as in the base game.</li><li>Discard a card from the Market and gain 2 Gold from the supply, as in the base game.</li><li>Go on a Hunt. (See Going on a Hunt below.)</li></ul>"],
+                              ["", "<b>Cleanup phase</b> - The Cleanup Phase is the same as in the base game, with one exception. During the Cleanup Phase, the Start Player reveals new Market cards equal to the number of players plus two, instead of plus one (4/5/6/7 Market cards for 2/3/4/5 players, respectively)."]
+                            ]],
+              ["cardTitle", "Going on a Hunt"],
+              ["cardText" , "During the Market Phase, a player may choose to go on a Hunt instead of buying a Market card or discarding a Market card. To go on a hunt, follow these steps:"],
+              ["cardOl"   , [
+                              ["" , "Examine the face-up top card of the Minion deck."],
+                              ["" , "The player may put the top Minion card on the bottom of the Minion deck and reveal a new Minion card by  paying 3 Gold. This can be repeated multiple times, paying 3 Gold each time."],
+                              ["" , "Take 1 Combat Die from the supply plus any additional Combat Dice allowed by the face-up Minion card."],
+                              ["" , "The player may hire mercenaries (i.e., additional Combat Dice) to assist in the Hunt for 3 XP or 5 Gold each.<ul style=\"padding-top:10px;\"><li>There is no limit on how many mercenaries may be hired.</li><li>Charisma tokens can be used to reduce the Gold cost of hiring mercenaries — one token per mercenary.</li></ul>"],
+                              ["" , "Make a combat roll by rolling the Combat Dice and totaling them.<ul style=\"padding-top:10px;\"><li>Players may reroll any of their Combat Dice (including mercenaries) by spending 1 XP per die.</li><li>Players may reroll a die an unlimited number of times, but each reroll costs 1 XP.</li></ul>"],
+                              ["" , "Gain XP, Gold, Injury tokens, and/or Honor tokens as shown on the reward level of the Minion card based on the combat roll result."],
+                              ["" , "If the reward level does not have the trophy symbol, put the Minion card on the bottom of the Minion deck, because the Minion survived and ran away."],
+                              ["" , "If the reward level does include a trophy symbol, place the Minion card near the player’s Character Sheet as a Trophy: the player’s character has killed the Minion! Then gather information:<ul style=\"padding-top:10px;\"><li>For a player’s first Trophy, the player takes a Location token and gets a private look at the Location card.</li><li>For a player’s second Trophy, the player takes an Obstacle token and gets a private look at the Obstacle card.</li><li>For a player’s third Trophy, the player takes an Attack token and gets a private look at the Attack card.</li><li>If the player already has three Adventure tokens, they gain 1 XP instead.</li></ul>"],
+                              ["" , "Reveal the top card of the Minion deck and place it face up on top of the deck."],
+                              ["" , "Return all Combat Dice to the supply."]
+                            ]],
+              ["cardTitle", "Spending Experience Points (XP)"],
+              ["cardText" , "Experience Points are gained primarily by going on Hunts or from abilities on Market cards. They can be spent in the following ways:"],
+              ["cardUl"   , [
+                              ["", "1 XP — Reroll a Combat Die during a Hunt or in Monster Combat."],
+                              ["", "2 XP — Discard an Injury token during the character creation phase."],
+                              ["", "3 XP — Hire a mercenary (i.e., additional Combat Die) before making a combat roll against a Minion or Monster."],
+                              ["", "5 XP — Take any Attribute Action during the character creation phase."]
+                            ]],
+              ["cardTitle", "Game End"],
+              ["cardUl"   , [
+                              ["", "<b>End of character creation</b> - Once all players have 18 dice on their Character Sheets and the round is finished, the character creation phase of the game is complete, and the characters journey to confront the Monster. This is the last opportunity players have to spend XP to take Attribute Actions or discard Injury tokens."],
+                              ["", "<b>Create dice pools</b> - Each player creates an individual dice pool for their character’s combat with the Monster by gaining 1 Combat Die from the supply."],
+                              ["", "<b>Resolve adventure cards</b> - The players then resolve the Adventure cards. Reveal the Adventure cards, one at a time and in order: the Location card, the Obstacle card, and finally the Attack card. As each card is revealed, players who have the matching Adventure token follow the instructions on the card. If a player has not gathered the information on a particular Adventure card, they are not eligible for the benefit of that card. The results of the Adventure cards will cause players to gain XP or Combat Dice to add to their dice pools. If multiple players tie for the benefit of an Adventure card, all tied players receive the benefit. Each player may hire mercenaries to assist in Monster Combat for 3 XP or 5 Gold each. Mercenaries hired this way are added to the player’s dice pool. There is no limit on how many mercenaries may be hired."],
+                              ["", "<b>Monster Combat</b> - Now it’s time for the adventuring party to attempt to slay the Monster! Each player rolls the Combat Dice in their individual dice pool as their combat roll and totals the result to calculate the power of their character’s attack.<ul style=\"padding-top:10px;\"><li>Take note of the Monster’s special ability, as it may affect a player’s combat roll.</li><li>Players may reroll any of their Combat Dice (including mercenaries) by spending 1 XP per die. Players may reroll an unlimited number of times, but each reroll of a die costs 1 XP (Exception: when the Chimera is in play, rerolls cost 2 XP).</li><li>Once players have finished any rerolls, the combat roll is considered Final Dice. Some Monster special abilities take effect once they are in this state.</li><li>Add 1 to the player’s combat roll for each Honor token they have.</li><li>Subtract 1 from the player’s combat roll for each Injury token they have (Exception: when the Dragon is in play, subtract 2 for each Injury token).</li></ul>Each player announces the total of their combat roll and compares it to the Strength of the Monster.<ul style=\"padding-top:10px;\"><li>If a combat roll does not meet or exceed the Monster’s Strength, that player earns no Reputation Stars and fails to contribute to the Monster’s defeat.</li><li>All players who meet or exceed the Monster’s Strength are Monster Slayers! Examine the Monster card to see how many Reputation Stars are awarded to each player based on their combat roll. Use the tracking token from each player’s Class card and the chart on the back of their Player Aid card to track the awarded Reputation Stars.</li></ul>"]
+                            ]],
+              ["cardTitle", "Final Scoring"],
+              ["cardText" , "As in the base game, each player scores Reputation Stars according to their Attribute Goals, Class color dice, Alignment card, Backstory card, Armor cards, and Trait cards. Ties are broken as in the base game — first Gold, then fewest number of Class color dice on the tied players’ Character Sheets."]
+            ]
 }
