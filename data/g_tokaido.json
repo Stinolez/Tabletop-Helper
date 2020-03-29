@@ -1,7 +1,7 @@
 {
   "set"   : [
               ["card"     , ""],
-              ["cardTitle", "Setup"],
+              ["cardTitle", "Setup for base game"],
               ["cardList" , "Place the game board on a flat surface."],
               ["cardList" , "Take the Achievement cards and place them face up next to the board."],
               ["cardList" , "Shuffle the Meal cards (red back) and make a face-down pile."],
@@ -16,7 +16,26 @@
               ["cardList" , "The player then places his color token (bag) in the hole of his Traveler tile."],
               ["cardList" , "Place all unchosen and unused tiles in the box out of play."],
               ["cardList" , "Each player receives coins equal to the number in the upper right corner of his chosen tile; this constitutes his bank at the start of the journey."],
-              ["cardList" , "Finally, randomly place all of the Traveler pieces in a line at the 1st inn (Kyoto)."]
+              ["cardList" , "Finally, randomly place all of the Traveler pieces in a line at the 1st inn (Kyoto)."],
+              ["card"     , ""],
+              ["cardTitle", "Setup for Crossroads Expansion"],
+              ["cardText" , "Set up the Tokaido game following the usual rules."],
+              ["cardText" , "Place the expansion board just above the Tokaido board. On this board, at the corresponding locations, make face-down stacks with:"],
+              ["cardList" , "Legendary Object cards"],
+              ["cardList" , "Bathouse cards"],
+              ["cardList" , "Calligraphy cards"],
+              ["cardList" , "Amulet cards"],
+              ["cardList" , "Cherry Tree cards"],
+              ["cardList" , "Fortune die"],
+              ["cardText" , "Add the new Travelers to the old. As usual, each player receives two Travelers and selects one to be for the game."],
+              ["cardText" , "The game is played according to the Tokaido rules."],
+              ["card"     , ""],
+              ["cardTitle", "Setup for Matsuri Expansion"],
+              ["cardText" , "Set up Tokaido and Crossroads according to the usual rules."],
+              ["cardText" , "Shuffle the Matsuri cards and make a face-down stack next to the board."],
+              ["cardText" , "Place the Closed Space tokens, the Journey points tokens, and the Doll/Carp tokens next to the bank."],
+              ["cardText" , "Add the new Travelers to the old. If you wish to, you can now choose your Traveler between 3 instead of just 2, or directly take the Traveler of your choice among all of them."],
+              ["cardText" , "The game is played according to the Tokaido rules."]
             ],
   "rules" : [
               ["card"     , ""],
@@ -80,6 +99,20 @@
               ["cardTitle", "Special rules for two-player games"],
               ["cardText" , "Two-player games have somewhat diffferent rules. During set-up, add a third traveler – the Neutral traveler – to the starting Inn. (Determine the order of the three travelers at random.)"],
               ["cardText" , "As with the travelers controlled by players, this Neutral traveler must be moved when he is last on the road. The player whose traveler is in the lead moves the Neutral traveler. <i>Note: Neutral traveler movements are an important part of two-player games and are the key to winning!</i>"],
-              ["cardText" , "Neutral traveler movements have no effect on the game, except at Temple and Inn spaces: When the Neutral traveler stops on a Temple space, take a coin from the bank and place it on the space corresponding to his color. Thus, the Neutral traveler is involved at the end of the game when calculating the additional points connected to Temple offerings. With two players, the first player at the Inn draws four Meal cards. When the Neutral traveler stops on an Inn space, the player who moved him takes the Meal cards and discards one at random. Place this card on the bottom of the pile without revealing it. Excepting these two cases, the rest of the game plays with the usual rules."]
+              ["cardText" , "Neutral traveler movements have no effect on the game, except at Temple and Inn spaces: When the Neutral traveler stops on a Temple space, take a coin from the bank and place it on the space corresponding to his color. Thus, the Neutral traveler is involved at the end of the game when calculating the additional points connected to Temple offerings. With two players, the first player at the Inn draws four Meal cards. When the Neutral traveler stops on an Inn space, the player who moved him takes the Meal cards and discards one at random. Place this card on the bottom of the pile without revealing it. Excepting these two cases, the rest of the game plays with the usual rules."],
+              ["card"     , ""],
+              ["cardTitle", "Crossroads expansion rules"],
+              ["cardText" , "Existing spaces gets new effects with the Crossroads expansion."],
+              ["cardList" , "<b>Panorama spaces</b> <i>(Sea, Mountain, Rice Paddy)</i>: Instead of taking the panorama card, player may choose to take a Cherry Tree card (if available) and receiving 2 points and 1 coin. There is no limit ot the number of Cherry Trees a player can accumulate, there is no associated achievement card for Cherry Tree cards."],
+              ["cardList" , "<b>Bathouses</b>: Instead of taking the Hot Springs card, player may pay 1 coin for a Bathouse card. The Bathouse cards give 4 points and are considered to be Hot Springs for the awarding of the 'Bather' achievement."],
+              ["cardList" , "<b>Farms</b>: Instead of taking 3 coins from bank, player may decide to gamble 2 coins from his reserve. After placing the bet, you throw the Fortune die, which indicates the result."],
+              ["cardList" , "<b>Temples</b>: Instead of normally paying coins to the Temple, you may pay a coin to the bank to take one of the available Amulet cards. The Amulet cards confer a single-use effect. The player chooses from among those available, and keeps them secret until he decides to use them. Used cards are returned to their stack on the Crossroads board, and can be drawn again later in the game."],
+              ["cardList" , "<b>Village</b>: Instead of byuing souvenirs you can acquire a Legendary Object. The player can buy one and only one Legendary Object of his choice (if the card is available) for the cost marked on the card (1, 2, or 3 coins)."],
+              ["cardList" , "<b>Encounters</b>: Instead of normally drawing an Encounter card, player may decide to pay one coin to the bank to acquire one of the available Calligraphy cards of his choice."],
+              ["card"     , ""],
+              ["cardTitle", "Matsuri expansion rules"],
+              ["cardText" , "When the Travelers stop at each of the 3 intermediate Inns an event is triggered: a Matsuri."],
+              ["cardText" , "Once ALL the Travelers have arrived at the Inn (after they have used their abilities and bought their Meal cards), the first player to arrive at the Inn draws 2 Matsuri. The player looks at the 2 cards, chooses one and places the other under the stack, without showing it to the other players."],
+              ["cardText" , "The chosen Matsuri card is placed face-up on top of the stack so that all the players can see it. The effect is applied as soon as the card is revealed."]
             ]
 }
