@@ -2,9 +2,11 @@
   "3.0" : {"date" : "??/??/2020",
            "rn"   : [
                       ["new",    "Added new menu to the games, option to toggle between game rules, game setting and game options."],
-                      ["update", "Added rules and game setup for The King's Guild."],
-                      ["update", "Added rules and game setup for The Witcher Adventure Game."],
-                      ["update", "Added rules and game setup for Tokaido (Crossroad, Matsuri expansions included)."]
+                      ["update", "Added shuffling monsters for Roll Player's expansion - Minions and Monsters."],
+                      ["new",    "Added rules and game setup for The King's Guild."],
+                      ["new",    "Added rules and game setup for Roll Player (with Minions and Monsters included)."],
+                      ["new",    "Added rules and game setup for Tokaido (Crossroad, Matsuri expansions included)."],
+                      ["new",    "Added rules and game setup for The Witcher Adventure Game."]
                     ]},
 
   "2.2" : {"date" : "28/02/2020",
