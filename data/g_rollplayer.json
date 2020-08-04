@@ -9,11 +9,11 @@
                               ["" , "Beginning with the Start Player and proceeding clockwise around the table, each player draws a random die from the dice bag, takes the Class card of the matching color, and chooses one of the two Classes on the card. If the drawn die is gold, or matches another player’s color, continue to draw until a unique color is drawn. During this step, no Gold is gained if a gold die is drawn. Once all players have a Class card, return all dice to the dice bag. Alternatively, instead of drawing dice, players may select the Class card they want in reverse turn order, ending with the Start Player. <i style=\"color: red;\">You can use this application for this step.</i>"],
                               ["" , "Shuffle the deck of Backstory cards and the deck of Alignment cards separately. Deal one Backstory card and one Alignment card to each player, and give each player a Player Aid card. Return any unused Backstory, Alignment, and Player Aid cards to the box. <i style=\"color: red;\">You can use this application for this step.</i>"],
                               ["" , "Each player places their Backstory and Alignment cards on their Character Sheet and takes the two tracking tokens of their Class color. One is placed on the center space of their Alignment card. The other is placed on their Class card."],
-                              ["" , "Separate the Market cards into single-dot and double-dot card piles (dots are in the upper right corner of the cards). If playing with three players, discard three cards from each pile, or if playing with two players, discard seven cards from each pile. Shuffle the piles separately and place the single-dot pile on top of the double-dot pile to form the Market deck."],
-                              ["" , "Create the Market by drawing cards from the Market deck equal to the number of players plus one (3/4/5 cards for 2/3/4 players, respectively) and placing them face up in the center of the table."],
+                              ["" , "Separate the Market cards into single-dot and double-dot card piles. If playing with three players, discard three cards from each pile, or if playing with two players, discard seven cards from each pile. Shuffle the piles separately and place the single-dot pile on top of the double-dot pile to form the Market deck."],
+                              ["" , "Create the Market by drawing cards from the Market deck equal to the number of players plus one and placing them face up in the center of the table."],
                               ["" , "Line up the Initiative cards in the center of the table in numerical order. With three players, return the “5” card to the box. With two players, also remove the “4” card. This way, the number of Initiative cards in play equals the number of face up Market cards in play."],
                               ["" , "Place 1 Gold on each Initiative card that is neither first nor last in numerical order."],
-                              ["" , "Beginning with the Start Player, each player randomly draws their starting dice from the bag. The number of  dice each player draws is equal to the number of players plus four (6/7/8 dice for 2/3/4 players, respectively)."],
+                              ["" , "Beginning with the Start Player, each player randomly draws their starting dice from the bag. The number of  dice each player draws is equal to the number of players plus four."],
                               ["" , "Each player rolls their starting dice and arranges them on their Character Sheet in the spaces of their Attribute Rows, following these guidelines:<ul style=\"padding-top:10px;\"><li>Dice must be placed in the leftmost empty space in an Attribute Row.</li><li>Attribute Actions are not taken during setup.</li><li>For each Attribute Row that is filled with 3 dice, gain 1 Gold.</li><li>For each gold die drawn, gain 2 Gold. <i>(Exception: A player with the Thief Class card takes 4 Gold for each gold die drawn, instead of 2.</i></li></ul>"],
                               ["" , "The Start Player begins the game."]
                             ]],
@@ -25,8 +25,8 @@
                               ["" , "<b>Starting Gold</b> - When playing with five players, all players start with 5 Gold each. The third and fourth players do not receive additional starting Gold as listed in the base game rulebook in games with five players."],
                               ["" , "<b>Character Sheets and Class Cards</b> - When selecting a Character Sheet, choose from among all available Character Sheets. When drawing dice to randomly select a Class color, if a player draws a gold-colored die or Boost Die, set it aside and draw again, remembering to return all set-aside dice to the bag afterward. This expansion adds two additional Class options for each Class color, so players may choose from among the four available Classes of the color they select. There may only be one player of each Class color. <i style=\"color: red;\">You can use this application for this step.</i>"],
                               ["" , "<b>Cost Summary Cards and Player Aid Cards</b> - Give each player a Cost Summary card and an updated Player Aid card. The Player Aid card included in the base game is not used when playing with the expansion."],
-                              ["" , "<b>Market Deck</b> - Add the single-dot and double-dot Market cards from this expansion to their respective piles from the base game before shuffling the piles separately. Then randomly remove Market cards from each pile, based on the number of players, and put them in the discard pile:<ul style=\"padding-top:10px;\"><li>For two players, discard 18 Market cards from each pile (a total of 36 cards).</li><li>For three players, discard 14 Market cards from each pile (a total of 28 cards).</li><li>For four players, discard 12 Market cards from each pile (a total of 24 cards).</li><li>For five players, discard 7 Market cards from each pile (a total of 14 cards).</li></ul>Place the single-dot pile on top of the double-dot pile to form the Market deck."],
-                              ["" , "<b>Creating the Market</b> - When creating the Market, lay out a number of cards equal to the number of players plus two (4/5/6/7 cards for 2/3/4/5 players, respectively). There is one additional card in the Market in comparison to the Market in the base game."],
+                              ["" , "<b>Market Deck</b> - Add the single-dot and double-dot Market cards from this expansion to their respective piles from the base game before shuffling the piles separately. Then randomly remove Market cards from each pile, based on the number of players, and put them in the discard pile:<ul style=\"padding-top:10px;\"><li>For two players, discard 18 Market cards from each pile.</li><li>For three players, discard 14 Market cards from each pile.</li><li>For four players, discard 12 Market cards from each pile.</li><li>For five players, discard 7 Market cards from each pile.</li></ul>Place the single-dot pile on top of the double-dot pile to form the Market deck."],
+                              ["" , "<b>Creating the Market</b> - When creating the Market, lay out a number of cards equal to the number of players plus two. There is one additional card in the Market in comparison to the Market in the base game."],
                               ["" , "<b>Initiative Cards</b> - Replace the “4” and “5” cards from the base game with the new ones included in this expansion. When playing with five players, use the “4,” “5,” and “6” cards from the expansion, and place 1 Gold on the “2,” “3,” “4,” and “5” cards."],
                               ["" , "<b>Adventure, Injury, and Honor Tokens</b> - Place the Adventure tokens, Injury tokens, and Honor tokens in a pile so all players can access them."],
                               ["" , "<b>Starting Dice</b> - When playing with five players, each player rolls 8 starting dice."]
@@ -43,17 +43,10 @@
   "rules" : [
               ["card"     , ""],
               ["cardTitle", "Rules for base game"],
-              ["cardText" , "<i>Mighty heroes don’t just appear out of thin air – they must be created! Race, class, alignment, skills, traits, and equipment are all elements of the perfect hero, ready to take on the opposition in the quest for glory and riches. In Roll Player, you compete with your opponents to create the greatest fantasy adventurer who has ever lived, preparing to embark on an epic quest. Roll and draft dice to build up your character’s attributes. Buy weapons and armor to outfit your hero. Train to gain skills and to discover your hero’s traits, in order to prepare them for their journey. Earn Reputation Stars by constructing the perfect character. The player with the greatest Reputation wins the game and will surely triumph over whatever nefarious plot lies ahead!</i>"],
-              ["cardTitle", "Overview of a Round"],
               ["cardText" , "Roll Player is played over a series of rounds, each divided into four phases: the Roll Phase, the Dice Phase, the Market Phase, and the Cleanup Phase."],
               ["card"     , ""],
               ["cardTitle", "Roll phase"],
-              ["cardText" , "During the Roll Phase, the Start Player draws dice from the dice bag equal to the number of Initiative cards in play and rolls them to create the Dice Pool:"],
-              ["cardUl"   , [
-                              ["", "For two players, roll three dice."],
-                              ["", "For three players, roll four dice."],
-                              ["", "For four players, roll five dice."]
-                            ]],
+              ["cardText" , "During the Roll Phase, the Start Player draws dice from the dice bag equal to the number of Initiative cards in play and rolls them to create the Dice Pool."],
               ["cardText" , "The Start Player then places the lowest value die on the “1” Initiative card, the second lowest value die on the “2” Initiative card, and so on, until all Initiative cards are filled with dice. If there are ever multiple dice with the same value, the Start Player decides where the dice are placed."],
               ["card"     , ""],
               ["cardTitle", "Dice phase"],
@@ -63,12 +56,12 @@
               ["cardText" , "<b>Collect Gold</b> - Each player then gains Gold: the Gold on their Initiative card, if any; 1 Gold from the supply if the player’s die was placed in the final space of an Attribute Row; and 2 Gold from the supply if the player placed a gold die."],
               ["cardText" , "<b>Take Attribute Action (Optional)</b> - After placing a die in an Attribute Row, the player may take the Attribute Action associated with that row:"],
               ["cardUl"   , [
-                              ["", "<b>Strength</b>: Placing a die in the Strength Attribute Row allows the player to change the face value of any die on their Character Sheet to the face value on the opposite side of the die."],
-                              ["", "<b>Dexterity</b>: Placing a die in the Dexterity Attribute Row allows the player to exchange the placement of any two dice on their Character Sheet without changing their current face values. The player may not move a die to an open space using this Attribute Action."],
-                              ["", "<b>Constitution</b>: Placing a die in the Constitution Attribute Row allows the player to increase or decrease the face value of any die on their Character Sheet by one. Dice values do not “loop.” Thus, a die with a value of 6 cannot be “increased” to a 1, nor can a 1 be “decreased” to a 6."],
-                              ["", "<b>Intelligence</b>: Placing a die in the Intelligence Attribute Row allows the player to choose any die on their Character Sheet and reroll it. The player may choose to keep either the new value or the original value. The die is then returned to its original space on the Character Sheet."],
-                              ["", "<b>Wisdom</b>: Placing a die in the Wisdom Attribute Row allows the player to move the tracking token on their Alignment card one space up, down, left, or right."],
-                              ["", "<b>Charisma</b>: Placing a die in the Charisma Attribute Row allows the player to take a Charisma token. During the Market Phase this round, the player may spend any Charisma token in place of one Gold when buying a Market card."]
+                              ["", "<b>Strength</b> allows the player to change the face value of any die on their Character Sheet to the face value on the opposite side of the die."],
+                              ["", "<b>Dexterity</b> allows the player to exchange the placement of any two dice on their Character Sheet without changing their current face values. The player may not move a die to an open space using this Attribute Action."],
+                              ["", "<b>Constitution</b> allows the player to increase or decrease the face value of any die on their Character Sheet by one. Dice values do not “loop.” Thus, a die with a value of 6 cannot be “increased” to a 1, nor can a 1 be “decreased” to a 6."],
+                              ["", "<b>Intelligence</b> allows the player to choose any die on their Character Sheet and reroll it. The player may choose to keep either the new value or the original value. The die is then returned to its original space on the Character Sheet."],
+                              ["", "<b>Wisdom</b> allows the player to move the tracking token on their Alignment card one space up, down, left, or right."],
+                              ["", "<b>Charisma</b> allows the player to take a Charisma token. During the Market Phase this round, the player may spend any Charisma token in place of one Gold when buying a Market card."]
                             ]],
               ["cardText" , "Players may use an Attribute Action to affect the die that was placed this round or any die placed in a previous round."],
               ["cardText" , "Only one Attribute Action may be taken per player in the Dice Phase."],
@@ -76,7 +69,7 @@
               ["cardText" , "Once all players have completed their turn during the Dice Phase, one Initiative card will remain in the center of the table."],
               ["card"     , ""],
               ["cardTitle", "Market phase"],
-              ["cardText" , "During the Market Phase, each player has the opportunity to buy a card from the Market. The player order for this phase is dictated by the numbers on the Initiative cards that were chosen during the Dice Phase. The player with the lowest value Initiative card buys first, followed by the next lowest, etc."],
+              ["cardText" , "The player order for this phase is dictated by the numbers on the Initiative cards that were chosen during the Dice Phase. The player with the lowest value Initiative card buys first, followed by the next lowest, etc."],
               ["cardText" , "To buy a Market card, the player pays the cost shown in the upper right hand corner of the card to the Gold supply. The player places the bought card face up in the appropriate area of the player’s Character Sheet. New cards are not added to the Market during the Market Phase."],
               ["cardUl"   , [
                               ["", "There is no limit to the number of Armor, Trait, or Skill cards a player may acquire."],
@@ -85,11 +78,10 @@
                               ["", "If a player buys a Skill card, they may use it immediately."]
                             ]],
               ["cardText" , "If the current player cannot or chooses not to buy a card, they must select a card from the Market, and add it to the Market discard pile. They then gain 2 Gold from the supply."],
-              ["cardText" , "After a player has either bought or discarded a Market card, they return their Initiative card to the Initiative card row in the center of the table. This helps players keep track of who is next in the Market Phase."],
+              ["cardText" , "After a player has either bought or discarded a Market card, they return their Initiative card to the Initiative card row in the center of the table."],
               ["cardText" , "At any time during the game, any player may look through the Market discard pile."],
               ["card"     , ""],
               ["cardTitle", "Cleanup phase"],
-              ["cardText" , "During the Cleanup Phase, the players prepare for the next round:"],
               ["cardOl"   , [
                               ["" , "Each player discards any unused Charisma tokens."],
                               ["" , "Each player may refresh one exhausted Skill card by turning it upright, thereby making it available for use in the next round."],
@@ -155,13 +147,13 @@
                               ["", "<b>Roll phase</b> - The Roll Phase is the same as in the base game."],
                               ["", "<b>Dice phase</b> - The Dice Phase is the same as in the base game."],
                               ["", "<b>Market phase</b> - During the Market Phase, players may do one of the following:<ul style=\"padding-top:10px;\"><li>Buy a card from the Market, as in the base game.</li><li>Discard a card from the Market and gain 2 Gold from the supply, as in the base game.</li><li>Go on a Hunt. (See Going on a Hunt below.)</li></ul>"],
-                              ["", "<b>Cleanup phase</b> - The Cleanup Phase is the same as in the base game, with one exception. During the Cleanup Phase, the Start Player reveals new Market cards equal to the number of players plus two, instead of plus one (4/5/6/7 Market cards for 2/3/4/5 players, respectively)."]
+                              ["", "<b>Cleanup phase</b> - The Cleanup Phase is the same as in the base game, with one exception. During the Cleanup Phase, the Start Player reveals new Market cards equal to the number of players plus two, instead of plus one."]
                             ]],
               ["cardTitle", "Going on a Hunt"],
               ["cardText" , "During the Market Phase, a player may choose to go on a Hunt instead of buying a Market card or discarding a Market card. To go on a hunt, follow these steps:"],
               ["cardOl"   , [
                               ["" , "Examine the face-up top card of the Minion deck."],
-                              ["" , "The player may put the top Minion card on the bottom of the Minion deck and reveal a new Minion card by  paying 3 Gold. This can be repeated multiple times, paying 3 Gold each time."],
+                              ["" , "The player may put the top Minion card on the bottom of the Minion deck and reveal a new Minion card by paying 3 Gold. This can be repeated multiple times, paying 3 Gold each time."],
                               ["" , "Take 1 Combat Die from the supply plus any additional Combat Dice allowed by the face-up Minion card."],
                               ["" , "The player may hire mercenaries (i.e., additional Combat Dice) to assist in the Hunt for 3 XP or 5 Gold each.<ul style=\"padding-top:10px;\"><li>There is no limit on how many mercenaries may be hired.</li><li>Charisma tokens can be used to reduce the Gold cost of hiring mercenaries — one token per mercenary.</li></ul>"],
                               ["" , "Make a combat roll by rolling the Combat Dice and totaling them.<ul style=\"padding-top:10px;\"><li>Players may reroll any of their Combat Dice (including mercenaries) by spending 1 XP per die.</li><li>Players may reroll a die an unlimited number of times, but each reroll costs 1 XP.</li></ul>"],
