@@ -1,6 +1,84 @@
 {
-  "set"   : {"1" : ["cardTitle", "Setup"],
-             "2" : ["cardText" , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]},
-  "rules" : {"1" : ["cardTitle", "Rules"],
-             "2" : ["cardText" , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]}
+  "set"   : [
+              ["card"     , ""],
+              ["cardTitle", "Setup"],
+              ["cardOl"   , [
+
+                              ["", "Place the score board on the table where it can be easily seen by all players. Place the round marker on the “I” space of the round track."],
+                              ["", "Shuffle the Common cards and place them face down in easy reach of all the players."],
+                              ["", "Each player chooses the Faction he wishes to play <span style=\"color:red;font-style:oblique;\">(you can use this application for this step)</span> and takes all the components of the chosen faction. Each of the four Factions has its own set of the following components:<ul style=\"padding-top:10px;\"><li>A Faction board</li><li>A deck of 30 Faction cards</li><li>A Faction marker</li></ul>Players place their Faction boards in front of them, shuffle their Faction cards and place them nearby in a face down deck. If there are fewer than 4 players, return the remaining pieces to the box."],
+                              ["", "Each player places his Faction marker on the “0” space of the Victory Point track."],
+                              ["", "Place all Resource and Worker markers and additional tokens in easy reach, creating the general supply."],
+                              ["", "Randomly select the First player. The selected player takes the First player marker."],
+                              ["", "At the beginning of the game, each player, beginning with the First player, draws 2 cards from the Common deck and 2 cards from his own Faction deck. These four cards are the players’ starting hands."]
+                            ]]
+            ],
+  "rules" : [
+              ["card"     , ""],
+              ["cardTitle", "Rules"],
+              ["cardText" , "The game consists of 5 rounds, each divided into the following four phases:"],
+              ["cardOl"   , [
+                              ["", "Lookout Phase – Players acquire new cards"],
+                              ["", "Production Phase – Players receive Resources, Workers, Raze tokens, etc. produced by their faction"],
+                              ["" ,"Action Phase – Players use their cards, Resources, Workers, etc. to take actions to expand their Empire and score VP"],
+                              ["" ,"Clean-up Phase – Players discard all used and unused Resources, Workers, Gold and tokens."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Phase 1: Lookout Phase"],
+              ["cardText" , "In this phase, each player will acquire 3 new cards and add them to his hand. During this phase, each player:"],
+              ["cardOl"   , [
+                              ["", "Each player draws the top card from his own Faction deck and adds it to his hand."],
+                              ["", "Draw from the Common deck the number of cards equal to the number of players, plus 1 and place them face-up in the center of the playing area. Players are now ready to select cards. Starting with the first player and proceeding clockwise, each player will select 1 card from the revealed set of cards. The remaining card is discarded without further effect."],
+                              ["", "Again, draw from the Common deck the number of cards equal to the number of players, plus 1 and place them face-up in the center of the playing area. In the second round of drafting cards, the last player starts, and this time counter-clockwise each player will select 1 card from the revealed set of cards. Once again, the remaining card is discarded without further effect."],
+                              ["" ,"Notes:There’s no limit to the number of cards a player may have in his hand. Cards in hand are kept secret from other players"]
+                            ]],
+
+              ["card"     , ""],
+              ["cardTitle", "Phase 2: Production Phase"],
+              ["cardText" , "During the Production phase, players collect Goods from 3 different sources:"],
+              ["cardOl"   , [
+                              ["", "Faction board – this is the Faction’s basic Production providing the player with a specified number of Workers, specific Resources and tokens."],
+                              ["", "Deals – each signed Deal provides the player with 1 specific Good."],
+                              ["", "Production Locations – each Production Location has its own ability and produces a specified kind and number of Goods."]
+                            ]],
+              ["cardText" , "Players perform the Production phase starting with the First player and continuing clockwise. Each player checks his own Faction board, Deals and Production Locations to determine the number and type of Goods he collects. The Goods are collected in the following way:"],
+              ["cardOl"   , [
+                              ["", "Cards should be drawn from either the Common deck or the player’s own Faction deck (player’s choice), unless stated otherwise."],
+                              ["", "VPs are marked by adjusting the Faction marker on the Victory Point track."],
+                              ["", "All other Goods are taken by players from the general supply and placed in their own supply."]
+                            ]],
+              ["cardText" , "Resources, Workers and tokens which players obtain in the Production phase can only be spent in the current round. All unused Goods (apart from Victory Points and cards) are discarded at the end of the round."],
+              ["card"     , ""],
+              ["cardTitle", "Phase 3: Action Phase"],
+              ["cardText" , "Players take their actions to build and/or raze Locations, make Deals, use Action Locations and exchange Workers for Resources. Starting with the First player and continuing clockwise, each player performs one action at a time. The Player can take any available action or pass. The available actions are:"],
+              ["cardOl"   , [
+                              ["", "Build a Location – This action allows a player to place Common or Faction cards from their hand into their playing area to improve their Empire. In order to build a location a player has to:<ul style=\"padding-top:10px;\"><li>Choose the card from his hand that he wants to build.</li><li>Pay the building cost depicted in the card’s upper left corner using the indicated Goods from his personal supply.</li><li>Place the card in his Empire following the Location placement order.</li><li>Notes: When you build a Production Location, you immediately gain the benefits the Location provides. Some of the Locations can have a special Bonus ability that grants the player one-time-only Goods when the Location is built.</li></ul>"],
+                              ["", "Make a deal - This action allows a player to make a deal with a Faction card from their hand (a player cannot Make a Deal with a Common card.). Each Faction card has a Deal field which indicates what kind of Goods (Resources, Workers, cards, etc.) it provides. Deals provide various benefits to the player immediately after performing the action and during the Production phase of each following round. In order to make a deal, a player has to:<ul style=\"padding-top:10px;\"><li>Choose a Faction card from his hand.</li><li>Discard 1 Food.</li><li>Place the card under the top of his Faction board. The card should be placed in such a manner that only the Deal field of the card is visible.</li><li>Immediately gain the Good the Deal provides.</li><li>There is no limit to the number of Deals a player may have.</li></ul>"],
+                              ["", "Raze - This action allows a player to Raze a Common Card from his hand or an opponent’s Common Location to immediately gain some Goods. A player can only use this action if he has Raze tokens.<ul style=\"padding-top:10px;\"><li>In order to raze a common card from hand:<ul style=\"padding-top:10px;\"><li>Select a Common card from his hand.</li><li>Discard 1 Raze token.</li><li>Take from the general supply the Goods depicted in the Raze field of the card.</li><li>Discard the card.</li></ul></li><li>In order to raze an opponent’s location:<ul style=\"padding-top:10px;\"><li>Choose an enemy and any one of his Common Locations in his Empire.</li><li>Discard 2 Raze tokens.</li><li>Take from the general supply the Goods depicted in the Raze field of the card.</li><li>Turn the razed Location into a Foundation (owner of the Location receives 1 Wood from the general supply and turn the card face down - it can now be only used to build a new Location).</li></ul></li></ul>"],
+                              ["", "Activate an action location - This action allows you to use the ability of an Action Location in your Empire. A Player can only use this action if he has any Action Locations in his Empire. Such Locations allow a player to exchange Workers and/or Resources for cards, other Resources, Victory Points, etc. In order to activate a location, a player has to:<ul style=\"padding-top:10px;\"><li>Choose the Action Location from his Empire and thus the Action he wants to activate.</li><li>Pay the required type and number of Goods, placing them on the Location. They remain on the Location card until the end of the round to mark that the action of this Location has already been used this round. An Action Location may only be used once per round, unless stated otherwise on the card.</li><li>Use the card’s action.</li><li>If a player has an Action Location which can be activated twice, he has the choice of either activating it once a turn or both times at once by spending twice the Goods and taking the action twice.</li></ul>"],
+                              ["", "Spend 2 Workers to get 1 Resource or 1 card from the deck - This action allows a player to exchange 2 Workers for 1 Resource of his choice or for 1 Common or Faction card. In order to perform this action a player has to:<ul style=\"padding-top:10px;\"><li>Discard 2 of his Workers.</li><li>Take 1 Resource of the chosen type (Wood, Stone or Food) from the general supply or draw a card from either his Faction deck or the Common deck.</li><li>In one action a player can discard multiple pairs of Workers to take 1 Resource or draw 1 card for each pair of Workers."],
+                              ["" ,"Passing: Once a player passes in the Action phase, he cannot perform any additional Actions in the current round. Neither can he be targeted by the Actions of other players. For example, a player who has passed cannot have any of his Locations Razed. There is no limit to the number, type or order of Actions a player may take during the Action phase, so long as he takes them one action at a time. The Action phase continues until all players have passed."]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Phase 4: Clean-up Phase"],
+              ["cardText" , "Skip Clean-up Phase in the Final Round (Goods are used as the deciding factor in the event of a tie). Players do the following:"],
+              ["cardOl"   , [
+                              ["", "Players can use storage abilities (cards providing storage abilities, Faction board storage) to save any of the indicated type of Good(s)."],
+                              ["", "Players discard all non-stored Resources, Workers, and tokens (Defense tokens, Goods that were used to activate Action Locations, and all other remaining Goods)."],
+                              ["", "Pass the First player token to the next player in clockwise order."],
+                              ["", "Move the round marker to the next space on the Round track."],
+                              ["", "Begin a new round"]
+                            ]],
+              ["card"     , ""],
+              ["cardTitle", "Game End"],
+
+
+
+              ["cardText" , "The game lasts for 5 rounds. After the fifth round each player calculates his final score. Victory Points are collected by players throughout the game. To calculate the final score, each player should add the Victory Point value of the Locations in his Empire to his current score:"],
+              ["cardOl"   , [
+                              ["", "Each Common Location is worth 1 VP"],
+                              ["", "Each Faction Location is worth 2 VPs"]
+                            ]],
+              ["cardText" , "The player with the most VPs is the winner. In case of a tie, the tied player with the most Workers and Resources left is the winner. If the players are still tied, the winner is the tied player with the most cards left in his hand. If there is still a tie, the tied players share the victory."]
+            ]
 }
