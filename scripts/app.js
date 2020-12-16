@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '3.0.200329',
+      appVersion = '20.04.017',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -13,28 +13,34 @@ var app = (function () {
   // Create element (for game setup / game rules)
   function createElement(elementType, data) {
 
-    /*******************************************
-     | Element | Data                          |
-     -------------------------------------------
-     | div     | [className, HTML content]     |
-     | span    |                               |
-     | tr      |                               |
-     | td      |                               |
-     | li      |                               |
-     -------------------------------------------
-     | ul      | [className, [                 |
-     | ol      |               [className, 1], |
-     |         |               [className, 2], |
-     |         |               ...             |
-     |         |             ]]                |
-     |         |                               |
-     -------------------------------------------
-     | table   | [className, [                 |
-     |         |               [1, 1, ...],    |
-     |         |               [2, 2, ...],    |
-     |         |               ...             |
-     |         |             ]]                |
-     *******************************************/
+    /*********************************************
+     | Element | Data                            |
+     ---------------------------------------------
+     | div     | [className, HTML content]       |
+     | span    |                                 |
+     | tr      |                                 |
+     | td      |                                 |
+     | li      |                                 |
+     ---------------------------------------------
+     | ul      | [className, [                   |
+     | ol      |               [className, 1],   |
+     |         |               [className, 2],   |
+     |         |               ...               |
+     |         |             ]]                  |
+     |         |                                 |
+     ---------------------------------------------
+     | table   | [className, [                   |
+     |         |               [1, 1, ...],      |
+     |         |               [2, 2, ...],      |
+     |         |               ...               |
+     |         |             ]]                  |
+     ---------------------------------------------
+     | img     | [className, {                   |
+     |         |               "atr1" : "value"  |
+     |         |               "atr2" : "value"  |
+     |         |               ...               |
+     |         |             }]                  |
+     *********************************************/
 
     // Create element by the type
     var element = document.createElement(elementType);
@@ -81,6 +87,20 @@ var app = (function () {
             row.appendChild(col);
           }
           element.appendChild(row);
+        }
+        break;
+
+      // Element: img
+      case 'img':
+
+        var imgAttributes = JSON.parse(data[1]);        
+        element.className = data[0];
+        for (var attr in imgAttributes) {
+          if (attr.indexOf('data-') === -1) {
+            element[attr] = imgAttributes[attr];
+          } else {
+            element.dataset[attr.replace('data-', '')] = imgAttributes[attr];
+          }
         }
         break;
 
@@ -138,6 +158,42 @@ var app = (function () {
 
     }
 
+  }
+
+
+  // Registering games on the main page
+  function registerGames(json) {
+
+    var data  = JSON.parse(json),
+        games = document.getElementById('games');
+
+    for (var game in data) {
+
+      // Defining game data
+      var gameData = {  "src"           : "images/games-logo/" + game + ".png"
+                      , "alt"           : data[game].name
+                      , "data-game"     : game
+                      , "data-gamename" : data[game].search
+      };
+
+      // New elements
+      var card  = createElement('div', ["card", ""]),
+          img   = createElement('img', ["cardLogo", JSON.stringify(gameData)]);
+
+      // Append the elements
+      card.appendChild(img);
+      games.appendChild(card);
+
+    }
+
+    if (document.getElementsByClassName('cardLogo').length > 0) {
+      for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+        document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
+          location.href = 'games/g_' + e.srcElement.dataset.game + '.html';
+        });
+      }
+    }
+    
   }
 
   // Add rules and game setup on the page
@@ -441,12 +497,8 @@ var app = (function () {
       }
 
       // Register games
-      if (document.getElementsByClassName('cardLogo').length > 0) {
-        for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
-          document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
-            location.href = 'games/g_' + e.srcElement.dataset.game + '.html';
-          });
-        }
+      if (document.getElementById('games')) {
+        loadJSON(registerGames, '../data/g_app.json');
       }
 
       // Put release notes on the page (only for info page)
