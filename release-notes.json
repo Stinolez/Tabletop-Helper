@@ -1,61 +1,64 @@
 {
-  "3.0" : {"date" : "??/??/2020",
-           "rn"   : [
-                      ["new",    "Added new menu to the games, option to toggle between game rules, game setting and game options."],
-                      ["update", "Added shuffling monsters for Roll Player's expansion - Minions and Monsters."],
-                      ["new",    "Added rules and game setup for The King's Guild."],
-                      ["new",    "Added rules and game setup for Roll Player (with Minions and Monsters included)."],
-                      ["new",    "Added rules and game setup for Tokaido (Crossroad, Matsuri expansions included)."],
-                      ["new",    "Added rules and game setup for The Witcher Adventure Game."]
-                    ]},
+  "20.04" : {"date" : "??/??/2020",
+             "rn"   : [
+                        ["update", "Changed how new games are added."]
+                        ["new",    "Added new menu to the games, option to toggle between game rules, game setting and game options."],
+                        ["update", "Added shuffling monsters for Roll Player's expansion - Minions and Monsters."],
+                        ["new",    "Added rules and game setup for Imperial Settlers: Empires of the North."],
+                        ["new",    "Added rules and game setup for Rising Sun."],
+                        ["new",    "Added rules and game setup for Roll Player (with Minions and Monsters included)."],
+                        ["new",    "Added rules and game setup for The King's Guild."],
+                        ["new",    "Added rules and game setup for The Witcher Adventure Game."],
+                        ["new",    "Added rules and game setup for Tokaido (Crossroad, Matsuri expansions included)."]
+                      ]},
 
-  "2.2" : {"date" : "28/02/2020",
-           "rn"   : [
-                      ["new",    "18Lilliput"],
-                      ["update", "Changed handling of release notes (json file) so there is no need to change info file."]
-                    ]},
+  "20.03" : {"date" : "28/02/2020",
+             "rn"   : [
+                        ["new",    "18Lilliput"],
+                        ["update", "Changed handling of release notes (json file) so there is no need to change info file."]
+                      ]},
 
-  "2.1" : {"date" : "18/02/2020",
-           "rn"   : [
-                      ["new",    "Added \"Search\" function into the header for looking through the list of games"],
-                      ["new",    "Imperial Settlers: Empires of the North"]
-                    ]},
+  "20.02" : {"date" : "18/02/2020",
+             "rn"   : [
+                        ["new",    "Added \"Search\" function into the header for looking through the list of games"],
+                        ["new",    "Imperial Settlers: Empires of the North"]
+                      ]},
 
-  "2.0" : {"date" : "14/02/2020",
-           "rn"   : [
-                      ["new",    "Tokaido"],
-                      ["new",    "The Witcher Adventure Game"],
-                      ["new",    "Added support to save game settings in localStorage for future use without selecting it again"],
-                      ["update", "Move \"About\" tooltip to separate page with release notes"]
-                    ]},
+  "20.01" : {"date" : "14/02/2020",
+             "rn"   : [
+                        ["new",    "Tokaido"],
+                        ["new",    "The Witcher Adventure Game"],
+                        ["new",    "Added support to save game settings in localStorage for future use without selecting it again"],
+                        ["update", "Move \"About\" tooltip to separate page with release notes"]
+                      ]},
 
-  "1.2" : {"date" : "23/09/2019",
-           "rn"   : [
-                      ["new",    "Gloomhaven"],
-                      ["new",    "Imperial Settlers"]
-                    ]},
+  "19.05" : {"date" : "23/09/2019",
+             "rn"   : [
+                        ["new",    "Gloomhaven"],
+                        ["new",    "Imperial Settlers"]
+                      ]},
 
-  "1.0" : {"date" : "03/05/2019",
-           "rn"   : [
-                      ["new",    "Added tooltip for \"About\" page"],
-                      ["update", "Update splash screens with application logo"],
-                      ["update", "Update Rising Sun clan's names with images"],
-                      ["bugfix", "Fixed zoom-in on select list"],
-                      ["bugfix", "Fixed update message for app first time load"]
-                    ]},
+  "19.04" : {"date" : "03/05/2019",
+             "rn"   : [
+                        ["new",    "Added tooltip for \"About\" page"],
+                        ["update", "Update splash screens with application logo"],
+                        ["update", "Update Rising Sun clan's names with images"],
+                        ["bugfix", "Fixed zoom-in on select list"],
+                        ["bugfix", "Fixed update message for app first time load"]
+                      ]},
 
-  "0.3" : {"date" : "29/04/2019",
-           "rn"   : [
-                      ["new",    "Roll Player (Czech + English translation)"]
-                    ]},
+  "19.03" : {"date" : "29/04/2019",
+             "rn"   : [
+                        ["new",    "Roll Player (Czech + English translation)"]
+                      ]},
 
-  "0.2" : {"date" : "24/04/2019",
-           "rn"   : [
-                      ["new",    "The King's Guild"]
-                    ]},
+  "19.02" : {"date" : "24/04/2019",
+             "rn"   : [
+                        ["new",    "The King's Guild"]
+                      ]},
 
-  "0.1" : {"date" : "18/04/2019",
-           "rn"   : [
-                      ["new",    "Rising Sun"]
-                    ]}
+  "19.01" : {"date" : "18/04/2019",
+             "rn"   : [
+                        ["new",    "Rising Sun"]
+                      ]}
 }
