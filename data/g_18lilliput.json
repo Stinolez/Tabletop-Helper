@@ -1,6 +1,12 @@
 {
-  "set"   : {"1" : ["cardTitle", "Setup"],
-             "2" : ["cardText" , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]},
-  "rules" : {"1" : ["cardTitle", "Rules"],
-             "2" : ["cardText" , "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus ultricies tristique nulla aliquet enim tortor at auctor. Aliquam ut porttitor leo a diam sollicitudin tempor. Sed velit dignissim sodales ut eu sem integer. Tincidunt tortor aliquam nulla facilisi. Vulputate enim nulla aliquet porttitor lacus luctus. Maecenas accumsan lacus vel facilisis volutpat est velit egestas. Est ante in nibh mauris. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Egestas pretium aenean pharetra magna. Aliquam ut porttitor leo a diam. Erat velit scelerisque in dictum non consectetur a. Quam pellentesque nec nam aliquam. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Magna eget est lorem ipsum dolor sit amet consectetur. Id semper risus in hendrerit. Mattis pellentesque id nibh tortor id aliquet lectus proin."]}
+  "set"   : [
+              ["card"     , ""],
+              ["cardTitle", "Setup"],
+              ["cardText" , "No setup information exist for this game."]
+            ],
+  "rules" : [
+              ["card"     , ""],
+              ["cardTitle", "Rules"],
+              ["cardText" , "No rules information exist for this game."]
+            ]
 }
