@@ -11,9 +11,6 @@ var g_characters = [  'flimnap'
                     , 'lilliput'
                     , 'mildendo'
                     , 'slamecksan'];
-440/685
-
-418/650
 
 // Register the action on the shuffleCharacters button
 document.getElementById('shuffleCharacters').addEventListener('click', function() {
