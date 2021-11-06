@@ -1,7 +1,14 @@
 {
-  "20.04" : {"date" : "??/??/2020",
+  "21.01" : {"date" : "06/11/2021",
              "rn"   : [
-                        ["update", "Changed how new games are added."]
+                        ["update", "Changed games rules and setup pages into one game tips, not mandatory for adding new games to streamline onboarding of new games."],
+                        ["update", "Split about application and release notes into two different pages."],
+                        [ "new",   "Added new menu for user settings allowing to hide unwanted games."]
+                      ]},
+
+  "20.04" : {"date" : "17/04/2020",
+             "rn"   : [
+                        ["update", "Changed how new games are added."],
                         ["new",    "Added new menu to the games, option to toggle between game rules, game setting and game options."],
                         ["update", "Added shuffling monsters for Roll Player's expansion - Minions and Monsters."],
                         ["new",    "Added rules and game setup for Imperial Settlers: Empires of the North."],
