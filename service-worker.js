@@ -1,4 +1,4 @@
-var cacheName     = 'tth-cn-17',
+var cacheName     = 'tth-cn-18',
     filesToCache  = [
 
       /*************** SYSTEM ***************/
@@ -26,6 +26,7 @@ var cacheName     = 'tth-cn-17',
 
       /************* GAME DATA *************/
       , '/data/g_18lilliput.json'
+      , '/data/g_app.json'
       , '/data/g_gloomhaven.json'
       , '/data/g_imperialsettlers.json'
       , '/data/g_imperialsettlersnorth.json'
