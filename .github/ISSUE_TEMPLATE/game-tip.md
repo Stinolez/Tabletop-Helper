@@ -1,5 +1,5 @@
 ---
-name: GAMETIP
+name: Gametip
 about: Create to ask new game tip to be added
 title: "[GAMETIP]"
 labels: gametip
