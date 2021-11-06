@@ -60,3 +60,6 @@ document.getElementById('kingsguild-guilds').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('kingsguild-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('kingsguild');

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
+  <meta name="theme-color" content="#3F51B5"/>
+  <meta name="description" content="Tabletop Helper is a companion application for board games designed for mobile use without need to use Internet connection after first appliaction load.">
   <title>Tabletop Helper</title>
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <link rel="manifest" href="manifest.json">
@@ -21,32 +23,41 @@
   <link rel="apple-touch-startup-image" href="images/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
   <link rel="apple-touch-startup-image" href="images/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 </head>
-<body ontouchstart>
+<body>
 
   <!-- HEADER -->
   <header class="header">
-    <img src="images/system/search.png" id="headerSearch">
+    <img src="images/system/search.png" id="headerSearch" alt="search icon">
     <h1 class="headerTitle">Tabletop Helper</h1>
     <div class="headerSearchBox">
       <input type="text" id="gameSearch" />
     </div>
-    <a href="info.html" target="_self">
-      <img src="images/system/info.png" id="headerHelp">
-    </a>
+
+    <!-- Navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" id="menuBox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="info.html">
+            <li>About application</li>
+          </a>
+          <a href="release-notes.html">
+            <li>Release notes</li>
+          </a>
+          <a href="settings.html">
+            <li>User settings</li>
+          </a>
+        </ul>
+      </div>
+    </nav>
+
   </header>
 
   <!-- MAIN -->
-  <main class="main">
-    <div class="card"><img src="images/games-logo/18lilliput.png" class="cardLogo" data-game="18lilliput" data-gamename="18Lilliput"></div>
-    <div class="card"><img src="images/games-logo/gloomhaven.png" class="cardLogo" data-game="gloomhaven" data-gamename="Gloomhaven"></div>
-    <div class="card"><img src="images/games-logo/imperialsettlers.png" class="cardLogo" data-game="imperialsettlers" data-gamename="Imperial Settlers, Settlers: Zrod Impéria"></div>
-    <div class="card"><img src="images/games-logo/imperialsettlersnorth.png" class="cardLogo" data-game="imperialsettlersnorth" data-gamename="Imperial Settlers: Empires of the North, Settlers: Vládcové severu"></div>
-    <div class="card"><img src="images/games-logo/kingsguild.png" class="cardLogo" data-game="kingsguild" data-gamename="The King's Guild"></div>
-    <div class="card"><img src="images/games-logo/risingsun.png" class="cardLogo" data-game="risingsun" data-gamename="Rising Sun"></div>
-    <div class="card"><img src="images/games-logo/rollplayer.png" class="cardLogo" data-game="rollplayer" data-gamename="Roll Player, Hrdina v kostce"></div>
-    <div class="card"><img src="images/games-logo/tokaido.png" class="cardLogo" data-game="tokaido" data-gamename="Tokaido"></div>
-    <div class="card"><img src="images/games-logo/witcher.png" class="cardLogo" data-game="witcher" data-gamename="The Witcher Adventure Game, Zaklínač: Dobrodružná hra"></div>
-  </main>
+  <main class="main" id="games"></main>
 
   <!-- COPYRIGHT -->
   <div id="copyright"></div>

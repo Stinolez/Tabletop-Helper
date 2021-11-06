@@ -42,7 +42,13 @@ var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození",
                                                 "backstory" : ["Apprentice", "Cast Off", "Damaged", "Doomed", "Gate Keeper", "Gladiator",
                                                                "Lost in Time", "Oracle", "Outcast", "Separated", "Transported", "Wanderer"],
                                                 "alignment" : ["Advocate", "Defender", "Diplomat", "Dissenter", "Enigma", "Individualist",
-                                                               "Mediator", "Miscreant", "Radical", "Skeptic", "Vigilante", "Villian"]}
+                                                               "Mediator", "Miscreant", "Radical", "Skeptic", "Vigilante", "Villian"],
+                                                "monsters"  : {"black"  : "Demon",
+                                                               "blue"   : "Kraken",
+                                                               "green"  : "Giant Troll",
+                                                               "purple" : "Chimera",
+                                                               "red"    : "Dragon",
+                                                               "white"  : "Vampire"}}
                           }
              },
     g_setting = {"Čeština" : ["Rasa", "Povolání", "Příběh", "Přesvědčení"],
@@ -58,10 +64,13 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       monstersMinions = document.getElementById('monstersMinionsExpansion').checked,
       playersCard     = document.getElementById('rollplayer-heroes'),
       playersSlider   = document.getElementById('rollplayer-heroes-slider'),
+      monstersCard    = document.getElementById('rollplayer-monsters'),
+      monstersSlider  = document.getElementById('rollplayer-monsters-slider'),
       diceColours     = ["black", "blue", "green", "purple", "red", "white"],
       availRace       = g_data[language].base.race,
       availBackstory  = g_data[language].base.backstory,
-      availAlignment  = g_data[language].base.alignment;
+      availAlignment  = g_data[language].base.alignment,
+      monsterColours  = ["black", "blue", "green", "purple", "red", "white"];
 
   // Five players available only with Monsters & Minions Expansion
   if (!monstersMinions && numberOfPlayers === 5) {
@@ -71,6 +80,9 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
     // Clear previous results
     while (playersSlider.hasChildNodes()) {
       playersSlider.removeChild(playersSlider.firstChild);
+    }
+    while (monstersSlider.hasChildNodes()) {
+      monstersSlider.removeChild(monstersSlider.firstChild);
     }
 
     // Get available Races / Classes / Backstory / Alignments for selected options
@@ -94,6 +106,9 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
 
     // Display the selection for players
     for (var i = 0; i < numberOfPlayers; i++) {
+
+      // Getting rid of used colours for monster setting
+      monsterColours.splice(monsterColours.indexOf(diceColours[i]), 1);
 
       // Selecting the class for the player colour
       var availClass = g_data[language].base.class[diceColours[i]];
@@ -148,6 +163,37 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       slide.appendChild(table);
       playersSlider.appendChild(slide);
 
+    }
+
+    // Only if we have minions and monsters
+    if (monstersMinions) {
+
+      var availMonsters = [];
+      for (var i = 0; i < monsterColours.length; i++) {
+        availMonsters.push(g_data[language].monstersMinions.monsters[monsterColours[i]]);
+      }
+      availMonsters = app.arrayShuffle(availMonsters);
+
+      // New elements
+      var slide   = document.createElement('div'),
+          title   = document.createElement('div'),
+          monster = document.createElement('div');
+
+      // Setting the elements
+      slide.className     = 'cardSlide';
+      title.className     = 'cardSlideTitle';
+      title.innerText     = 'Monster';
+      monster.className   = 'monsterName';
+      monster.innerText   = availMonsters[0];
+
+      // Append the elements
+      slide.appendChild(title);
+      slide.appendChild(monster);
+      monstersSlider.appendChild(slide);
+      monstersCard.hidden = false;
+
+    } else {
+      monstersCard.hidden = true;
     }
 
     // Display the players card & slide to first element
@@ -216,6 +262,7 @@ document.getElementById('language').addEventListener('change', function() {
 
 // On load init
 document.getElementById('rollplayer-heroes').hidden = true;
+document.getElementById('rollplayer-monsters').hidden = true;
 
 // Add supported languages to select list
 var select = document.getElementById('language'),
@@ -232,3 +279,6 @@ app.gameSetting('rollplayer-options', 'get');
 
 // Trigger initial change of language
 select.dispatchEvent(event);
+
+// Run the init of rules and set
+app.gameInit('rollplayer');

@@ -11,9 +11,6 @@ var g_characters = [  'flimnap'
                     , 'lilliput'
                     , 'mildendo'
                     , 'slamecksan'];
-440/685
-
-418/650
 
 // Register the action on the shuffleCharacters button
 document.getElementById('shuffleCharacters').addEventListener('click', function() {
@@ -77,3 +74,6 @@ document.getElementById('18lilliput-characters').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('18lilliput-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('18lilliput');

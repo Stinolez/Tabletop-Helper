@@ -55,3 +55,6 @@ document.getElementById('witcher-characters').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('witcher-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('witcher');

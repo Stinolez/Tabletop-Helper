@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="msapplication-TileImage" content="../images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
+  <meta name="theme-color" content="#3F51B5"/>
+  <meta name="description" content="Tabletop Helper is a companion application for board games designed for mobile use without need to use Internet connection after first appliaction load.">
   <title>Tabletop Helper</title>
   <link rel="stylesheet" type="text/css" href="../styles/style.css">
   <link rel="manifest" href="../manifest.json">
@@ -27,10 +29,25 @@
   <header class="header">
     <div id="headerBack" data-url="../index.html">&laquo;</div>
     <h1 class="headerTitle">Rising Sun</h1>
-  </header>
 
+    <!-- Navigation -->
+    <nav role="navigation">
+      <div id="menuToggle">
+        <input type="checkbox" id="menuBox"/>
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="javascript:void(0);" onclick="app.menuToggle('gameOption')"><li>Game Options</li></a>
+          <a href="javascript:void(0);" onclick="app.menuToggle('gameTips')"><li>Game Tips</li></a>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
   <!-- MAIN -->
-  <main class="main">
+  <main class="main hidden" id="gameTips"></main>
+  <main class="main" id="gameOption">
     <div class="card" id="risingsun-options">
       <div class="cardTitle">Options</div>
       <div class="cardText">

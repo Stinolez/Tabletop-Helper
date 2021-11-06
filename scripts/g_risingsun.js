@@ -76,3 +76,6 @@ document.getElementById('risingsun-clans').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('risingsun-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('risingsun');

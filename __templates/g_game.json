@@ -1,0 +1,19 @@
+{
+  "tips" : [
+            ["card"     , ""],
+            ["cardTitle", "Card Title"],
+            ["cardText" , "Card text..."],
+            ["cardUl"    , [
+                            ["" , "1. unsorted list"],
+                            ["" , "2. unsorted list"]
+                           ]],
+            ["cardOl"    , [
+                            ["" , "1. sorted list"],
+                            ["" , "2. sorted list"]
+                           ]],
+            ["cardTable" , [
+                            ["Row 1 Column 1", "Row 1 Column 2"],
+                            ["Row 2 Column 1", "Row 2 Column 2"]
+                           ]]
+           ]
+}

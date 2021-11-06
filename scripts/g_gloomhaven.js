@@ -129,3 +129,6 @@ document.getElementById('gloomhaven-game').hidden = true;
 
 // Run game setting (with the game setting card ID)
 app.gameSetting('gloomhaven-options', 'get');
+
+// Run the init of rules and set
+app.gameInit('gloomhaven');
