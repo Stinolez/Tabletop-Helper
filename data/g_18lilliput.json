@@ -1,12 +1,7 @@
 {
-  "set"   : [
-              ["card"     , ""],
-              ["cardTitle", "Setup"],
-              ["cardText" , "No setup information exist for this game."]
-            ],
-  "rules" : [
-              ["card"     , ""],
-              ["cardTitle", "Rules"],
-              ["cardText" , "No rules information exist for this game."]
-            ]
+  "tips" : [
+            ["card"     , ""],
+            ["cardTitle", "Game Tips"],
+            ["cardText" , "No tips exist for this game."]
+           ]
 }
