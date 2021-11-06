@@ -4,13 +4,13 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper',
-      appVersion = '20.04.017',
+      appVersion = '21.01.001',
       appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
   var loader     = document.querySelector('.loader');
 
-  // Create element (for game setup / game rules)
+  // Create element
   function createElement(elementType, data) {
 
     /*********************************************
@@ -160,29 +160,34 @@ var app = (function () {
 
   }
 
-
   // Registering games on the main page
   function registerGames(json) {
 
-    var data  = JSON.parse(json),
-        games = document.getElementById('games');
+    var data     = JSON.parse(json)
+      , games    = document.getElementById('games')
+      , settings = JSON.parse(localStorage.getItem('game-visibility') || '{}');
 
     for (var game in data) {
 
-      // Defining game data
-      var gameData = {  "src"           : "images/games-logo/" + game + ".png"
-                      , "alt"           : data[game].name
-                      , "data-game"     : game
-                      , "data-gamename" : data[game].search
-      };
+      // Check if the game is hidden or not
+      if (!(settings[game] === false)) {
 
-      // New elements
-      var card  = createElement('div', ["card", ""]),
-          img   = createElement('img', ["cardLogo", JSON.stringify(gameData)]);
+        // Defining game data
+        var gameData = {  "src"           : "images/games-logo/" + game + ".png"
+                        , "alt"           : data[game].name
+                        , "data-game"     : game
+                        , "data-gamename" : data[game].search
+        };
 
-      // Append the elements
-      card.appendChild(img);
-      games.appendChild(card);
+        // New elements
+        var card  = createElement('div', ["card", ""]),
+            img   = createElement('img', ["cardLogo", JSON.stringify(gameData)]);
+
+        // Append the elements
+        card.appendChild(img);
+        games.appendChild(card);
+      
+      }
 
     }
 
@@ -196,88 +201,86 @@ var app = (function () {
     
   }
 
-  // Add rules and game setup on the page
-  function gameRulesSetting(json) {
+  // Registering games on the settings page
+  function gamesListSettings(json) {
+
+    var data       = JSON.parse(json)
+      , games      = document.getElementById('gamesList')
+      , gamesTable = []
+      , settings   = JSON.parse(localStorage.getItem('game-visibility') || '{}');
+
+    for (var game in data) {
+
+      // Defining game data
+      var name  = data[game].name
+        , state = (settings[game] === false ? 0 : 1)
+        , cbox  = '';
+
+      // Creating the checkbox
+      cbox = '<input type="checkbox" class="gameState" id="' + game + '" ' + (state === 1 ? "checked" : "") + '>';
+
+      // New table line
+      gamesTable.push([cbox, name]);
+
+    }
+
+    var gT = createElement('table', ["cardTable", gamesTable]);
+    games.appendChild(gT);
+
+    if (document.getElementsByClassName('gameState').length > 0) {
+      for (var i = 0; i < document.getElementsByClassName('gameState').length; i++) {
+        document.getElementsByClassName('gameState')[i].addEventListener('click', function (e) {
+          app.updateGamesVisibility();
+        });
+      }
+    }
+
+  }
+
+  // Add game tips on the page
+  function gameTips(json) {
 
     var data  = JSON.parse(json),
-        setup = document.getElementById('gameSet'),
-        rules = document.getElementById('gameRules'),
-        cardS,
-        cardR;
+        tips  = document.getElementById('gameTips'),
+        cardT;
 
-    // Game Setup
-    for (var set in data['set']) {
+    // Game Tips
+    for (var tip in data['tips']) {
 
-      var options = data['set'][set];
+      var options = data['tips'][tip];
 
       // Process card class
       if (options[0] === 'card') {
 
-        // If we already have card, then add it to setup
-        if (cardS) {
-          setup.appendChild(cardS);
+        // If we already have card, then add it to tips
+        if (cardT) {
+          tips.appendChild(cardT);
         }
 
         // Create new element for the card
-        cardS = createElement('div', options);
+        cardT = createElement('div', options);
 
       // Process ordered list
       } else if (options[0] === 'cardOl') {
-        cardS.appendChild(createElement('ol', options));
+        cardT.appendChild(createElement('ol', options));
 
       // Process un-ordered list
       } else if (options[0] === 'cardUl') {
-        cardS.appendChild(createElement('ul', options));
+        cardT.appendChild(createElement('ul', options));
 
       // Process tables
       } else if (options[0] === 'cardTable') {
-        cardS.appendChild(createElement('table', options));
+        cardT.appendChild(createElement('table', options));
 
       // Process texts
       } else {
-        cardS.appendChild(createElement('div', options));
+        cardT.appendChild(createElement('div', options));
       }
 
     }
 
-    // Game Rules
-    for (var rule in data['rules']) {
-
-      var options = data['rules'][rule];
-
-      // Process card class
-      if (options[0] === 'card') {
-
-        // If we already have card, then add it to setup
-        if (cardR) {
-          rules.appendChild(cardR);
-        }
-
-        // Create new element for the card
-        cardR = createElement('div', options);
-
-      // Process ordered list
-      } else if (options[0] === 'cardOl') {
-        cardR.appendChild(createElement('ol', options));
-
-      // Process un-ordered list
-      } else if (options[0] === 'cardUl') {
-        cardR.appendChild(createElement('ul', options));
-
-      // Process tables
-      } else if (options[0] === 'cardTable') {
-        cardR.appendChild(createElement('table', options));
-
-      // Process texts
-      } else {
-        cardR.appendChild(createElement('div', options));
-      }
-
-    }
-
-    // Add cards to setup / rules
-    setup.appendChild(cardS);
-    rules.appendChild(cardR);
+    // Add cards to tips
+    tips.appendChild(cardT);
 
   }
 
@@ -389,15 +392,14 @@ var app = (function () {
 
     // Function to load rules of game to model
     gameInit: function(gameName) {
-      loadJSON(gameRulesSetting, '../data/g_' + gameName + '.json');
+      loadJSON(gameTips, '../data/g_' + gameName + '.json');
     },
 
     // Menu toggle Function
     menuToggle: function(button) {
 
       var menuBox     = document.getElementById('menuBox'),
-          gameSet     = document.getElementById('gameSet'),
-          gameRules   = document.getElementById('gameRules'),
+          gameTips    = document.getElementById('gameTips'),
           gameOption  = document.getElementById('gameOption');
 
       // Hide menu
@@ -406,21 +408,13 @@ var app = (function () {
       // Show / hide section based on the selection
       switch(button) {
 
-        case 'gameSet':
-          gameSet.className     = 'main';
-          gameRules.className   = 'main hidden';
-          gameOption.className  = 'main hidden';
-          break;
-
-        case 'gameRules':
-          gameSet.className     = 'main hidden';
-          gameRules.className   = 'main';
+        case 'gameTips':
+          gameTips.className    = 'main';
           gameOption.className  = 'main hidden';
           break;
 
         case 'gameOption':
-          gameSet.className     = 'main hidden';
-          gameRules.className   = 'main hidden';
+          gameTips.className    = 'main hidden';
           gameOption.className  = 'main';
           break;
       }
@@ -501,6 +495,11 @@ var app = (function () {
         loadJSON(registerGames, '../data/g_app.json');
       }
 
+      // User settings - games list
+      if (document.getElementById('gamesList')) {
+        loadJSON(gamesListSettings, '../data/g_app.json');
+      }
+
       // Put release notes on the page (only for info page)
       if (document.getElementById('release-notes')) {
         loadJSON(releaseNotes, '../release-notes.json');
@@ -560,6 +559,23 @@ var app = (function () {
 
       // Hide loader
       hideLoader();
+
+    },
+
+    // Update game visibility preference setting
+    updateGamesVisibility: function() {
+
+      // Getting the list of the games
+      var list     = document.getElementsByClassName('gameState')
+        , settings = {};
+
+      // Loop through the list of games to get each game status
+      for (var i = 0; i < list.length; i++) {
+        settings[list[i].id] = list[i].checked;
+      }
+
+      // Saving the state to the localStorage
+      localStorage.setItem('game-visibility', JSON.stringify(settings));
 
     }
 
