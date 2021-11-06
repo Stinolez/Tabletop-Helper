@@ -47,6 +47,9 @@ It's little bit easier to install this application on your Android phone or tabl
 ## Feature / game request
 Do you have board game you'd like to see in this companion application or some functionality for already present board game is missing? If so, please submit feature request via the **Feature request template** in the Issues tab.
 
+## Game tip addition request
+Do you have any general tip you want to add to specific game (e.g. overlooked rule, etc)? If so, please submit gametip via the **Gametip template** in the Issues tab.
+
 ## Bug report
 If you have any issue with this application, please submit it via the **Bug report template** in the Issues tab.
 Please see if there was already submitted another bug similar to yours to avoid creating duplicates. I also recommend to try restart the application at first (swipe it out, kill from task manager) and try to restart it. Another trick, which might solve some major issues - esp. when update was not delivered - go to your browser setting and try to delete data from the domain <https://stinolez.com>.
