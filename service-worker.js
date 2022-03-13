@@ -1,19 +1,21 @@
-var cacheName     = 'tth-cn-18',
-    filesToCache  = [
+var cacheName     = '22.03.13.220002'
+  , filesToCache  = [
 
-      /*************** SYSTEM ***************/
+      /*** SYSTEM ***/
         '/'
+      , '/favicon.ico'
       , '/index.html'
       , '/info.html'
-      , '/favicon.ico'
+      , '/release-notes.html'
       , '/release-notes.json'
+      , '/settings.html'
       , '/images/app-logo.png'
       , '/images/system/info.png'
       , '/images/system/search.png'
       , '/scripts/app.js'
       , '/styles/style.css'
 
-      /************* GAME LOGOS *************/
+      /*** GAME LOGOS ***/
       , '/images/games-logo/18lilliput.png'
       , '/images/games-logo/gloomhaven.png'
       , '/images/games-logo/imperialsettlers.png'
@@ -24,7 +26,7 @@ var cacheName     = 'tth-cn-18',
       , '/images/games-logo/tokaido.png'
       , '/images/games-logo/witcher.png'
 
-      /************* GAME DATA *************/
+      /*** GAME DATA ***/
       , '/data/g_18lilliput.json'
       , '/data/g_app.json'
       , '/data/g_gloomhaven.json'
@@ -36,7 +38,7 @@ var cacheName     = 'tth-cn-18',
       , '/data/g_tokaido.json'
       , '/data/g_witcher.json'
 
-      /************* GAME PAGES *************/
+      /*** GAME PAGES ***/
       , '/games/g_18lilliput.html'
       , '/games/g_gloomhaven.html'
       , '/games/g_imperialsettlers.html'
@@ -47,7 +49,7 @@ var cacheName     = 'tth-cn-18',
       , '/games/g_tokaido.html'
       , '/games/g_witcher.html'
 
-      /************ GAME SCRIPTS ************/
+      /*** GAME SCRIPTS ***/
       , '/scripts/g_18lilliput.js'
       , '/scripts/g_gloomhaven.js'
       , '/scripts/g_imperialsettlers.js'
@@ -58,7 +60,7 @@ var cacheName     = 'tth-cn-18',
       , '/scripts/g_tokaido.js'
       , '/scripts/g_witcher.js'
 
-      /************ GAME IMAGES *************/
+      /*** GAME IMAGES ***/
       , '/images/games/18lilliput/balmuff.png'
       , '/images/games/18lilliput/emperor.png'
       , '/images/games/18lilliput/flimnap.png'
