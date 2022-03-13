@@ -1,4 +1,11 @@
 {
+
+  "22.03.13" : {"date" : "13/03/2022",
+             "rn"   : [
+                        ["update", "Changed the application versioning to format: YY.MM.DD.build for better version understanding."],
+                        ["bugfix", "Added all necessary files to service worker, probably cause of a bug with constant application force update."]
+                      ]},
+
   "21.01" : {"date" : "06/11/2021",
              "rn"   : [
                         ["update", "Changed games rules and setup pages into one game tips, not mandatory for adding new games to streamline onboarding of new games."],
