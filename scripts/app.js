@@ -3,9 +3,9 @@
 var app = (function () {
 
   // Private variables
-  var appName    = 'Tabletop Helper',
-      appVersion = '21.01.001',
-      appOwner   = 'Tomáš \'Stínolez\' Vitásek';
+  var appName    = 'Tabletop Helper'
+    , appVersion = '22.03.13.220002'
+    , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
   var loader     = document.querySelector('.loader');
