@@ -1,8 +1,14 @@
 {
   "name": "Tabletop Helper",
   "short_name": "Tabletop Helper",
+  "description": "Helpder application for tabletop games.",
   "orientation": "portrait-primary",
   "icons": [
+    {
+      "src": "images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
     {
       "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",
@@ -49,9 +55,17 @@
     {
       "name": "Homepage",
       "url": "/index.html",
-      "description": "Application Homepage"
+      "description": "Application Homepage",
+      "icons": [
+        {
+          "src": "images/icons/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
+  "id": "/index.html",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#3E4EB8",
