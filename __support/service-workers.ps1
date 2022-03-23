@@ -15,6 +15,7 @@ Set-Content -Path $app -Value $content
 
 # Setting cached folders
 $folders = @()
+$folders += , @('\images\icons\', 'APP ICONS')
 $folders += , @('\images\games-logo\', 'GAME LOGOS')
 $folders += , @('\data\', 'GAME DATA')
 $folders += , @('\games\', 'GAME PAGES')
@@ -35,6 +36,7 @@ Add-Content -Path $sw -Value ("        '/'")
 Add-Content -Path $sw -Value ("      , '/favicon.ico'")
 Add-Content -Path $sw -Value ("      , '/index.html'")
 Add-Content -Path $sw -Value ("      , '/info.html'")
+Add-Content -Path $sw -Value ("      , '/manifest.json'")
 Add-Content -Path $sw -Value ("      , '/release-notes.html'")
 Add-Content -Path $sw -Value ("      , '/release-notes.json'")
 Add-Content -Path $sw -Value ("      , '/settings.html'")

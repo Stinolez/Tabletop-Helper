@@ -1,4 +1,4 @@
-var cacheName     = '22.03.13.220002'
+var cacheName     = '22.03.23.214318'
   , filesToCache  = [
 
       /*** SYSTEM ***/
@@ -6,6 +6,7 @@ var cacheName     = '22.03.13.220002'
       , '/favicon.ico'
       , '/index.html'
       , '/info.html'
+      , '/manifest.json'
       , '/release-notes.html'
       , '/release-notes.json'
       , '/settings.html'
@@ -14,6 +15,15 @@ var cacheName     = '22.03.13.220002'
       , '/images/system/search.png'
       , '/scripts/app.js'
       , '/styles/style.css'
+
+      /*** APP ICONS ***/
+      , '/images/icons/icon-128x128.png'
+      , '/images/icons/icon-144x144.png'
+      , '/images/icons/icon-152x152.png'
+      , '/images/icons/icon-192x192.png'
+      , '/images/icons/icon-256x256.png'
+      , '/images/icons/icon-32x32.png'
+      , '/images/icons/icon-96x96.png'
 
       /*** GAME LOGOS ***/
       , '/images/games-logo/18lilliput.png'
