@@ -93,7 +93,7 @@ var app = (function () {
       // Element: img
       case 'img':
 
-        var imgAttributes = JSON.parse(data[1]);        
+        var imgAttributes = JSON.parse(data[1]);
         element.className = data[0];
         for (var attr in imgAttributes) {
           if (attr.indexOf('data-') === -1) {
@@ -186,7 +186,7 @@ var app = (function () {
         // Append the elements
         card.appendChild(img);
         games.appendChild(card);
-      
+
       }
 
     }
@@ -198,7 +198,7 @@ var app = (function () {
         });
       }
     }
-    
+
   }
 
   // Registering games on the settings page
