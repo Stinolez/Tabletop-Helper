@@ -1,10 +1,15 @@
 {
 
+  "??.??.??" : {"date" : "??/??/????",
+                "rn"   : [
+                           ["update", "Slight tweaks for css styling."]
+                         ]},
+
   "22.03.13" : {"date" : "13/03/2022",
-             "rn"   : [
-                        ["update", "Changed the application versioning to format: YY.MM.DD.build for better version understanding."],
-                        ["bugfix", "Added all necessary files to service worker, probably cause of a bug with constant application force update."]
-                      ]},
+                "rn"   : [
+                           ["update", "Changed the application versioning to format: YY.MM.DD.build for better version understanding."],
+                           ["bugfix", "Added all necessary files to service worker, probably cause of a bug with constant application force update."]
+                         ]},
 
   "21.01" : {"date" : "06/11/2021",
              "rn"   : [
