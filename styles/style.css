@@ -66,6 +66,7 @@ a, a:link, a:visited, a:hover, a:active {
   margin-left: 5px;
   vertical-align: middle;
   width: 40px;
+  user-select: none;
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select: none;
@@ -380,11 +381,13 @@ a, a:link, a:visited, a:hover, a:active {
   display: flex;
   width: 100%;
   text-align: center;
+  scroll-snap-type: x mandatory;
 }
 
 .cardSlide {
   width: 100%;
   flex-shrink: 0;
+  scroll-snap-align: center;
 }
 
 .cardSlide > img {
