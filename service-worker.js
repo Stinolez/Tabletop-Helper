@@ -1,4 +1,4 @@
-var cacheName     = '22.03.23.214318'
+var cacheName     = '22.12.27.234231'
   , filesToCache  = [
 
       /*** SYSTEM ***/
@@ -13,6 +13,7 @@ var cacheName     = '22.03.23.214318'
       , '/images/app-logo.png'
       , '/images/system/info.png'
       , '/images/system/search.png'
+      , '/data/g_app.json'
       , '/scripts/app.min.js'
       , '/styles/style.min.css'
 
@@ -38,7 +39,6 @@ var cacheName     = '22.03.23.214318'
 
       /*** GAME DATA ***/
       , '/data/g_18lilliput.json'
-      , '/data/g_app.json'
       , '/data/g_gloomhaven.json'
       , '/data/g_imperialsettlers.json'
       , '/data/g_imperialsettlersnorth.json'
