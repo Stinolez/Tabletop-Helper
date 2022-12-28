@@ -1,4 +1,4 @@
-var cacheName     = '22.12.28.171142'
+var cacheName     = '22.12.29.001541'
   , filesToCache  = [
 
       /*** SYSTEM ***/
@@ -28,6 +28,7 @@ var cacheName     = '22.12.28.171142'
 
       /*** GAME LOGOS ***/
       , '/images/games-logo/18lilliput.png'
+      , '/images/games-logo/azul.png'
       , '/images/games-logo/gloomhaven.png'
       , '/images/games-logo/imperialsettlers.png'
       , '/images/games-logo/imperialsettlersnorth.png'
@@ -39,6 +40,7 @@ var cacheName     = '22.12.28.171142'
 
       /*** GAME DATA ***/
       , '/data/g_18lilliput.json'
+      , '/data/g_azul.json'
       , '/data/g_gloomhaven.json'
       , '/data/g_imperialsettlers.json'
       , '/data/g_imperialsettlersnorth.json'
@@ -50,6 +52,7 @@ var cacheName     = '22.12.28.171142'
 
       /*** GAME PAGES ***/
       , '/games/g_18lilliput.html'
+      , '/games/g_azul.html'
       , '/games/g_gloomhaven.html'
       , '/games/g_imperialsettlers.html'
       , '/games/g_imperialsettlersnorth.html'
@@ -61,6 +64,7 @@ var cacheName     = '22.12.28.171142'
 
       /*** GAME SCRIPTS ***/
       , '/scripts/g_18lilliput.min.js'
+      , '/scripts/g_azul.min.js'
       , '/scripts/g_gloomhaven.min.js'
       , '/scripts/g_imperialsettlers.min.js'
       , '/scripts/g_imperialsettlersnorth.min.js'
@@ -80,6 +84,11 @@ var cacheName     = '22.12.28.171142'
       , '/images/games/18lilliput/mildendo.png'
       , '/images/games/18lilliput/skyresh-bolgolam.png'
       , '/images/games/18lilliput/slamecksan.png'
+      , '/images/games/azul/1.png'
+      , '/images/games/azul/2.png'
+      , '/images/games/azul/3.png'
+      , '/images/games/azul/4.png'
+      , '/images/games/azul/5.png'
       , '/images/games/imperialsettlers/amazons.png'
       , '/images/games/imperialsettlers/atlanteans.png'
       , '/images/games/imperialsettlers/aztecs.png'
