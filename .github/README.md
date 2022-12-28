@@ -6,6 +6,7 @@ The application is hosted and free to use at my website: <https://tabletop-helpe
 ## List of supported board games
 
 * **18Lilliput** - <https://boardgamegeek.com/boardgame/250621/18lilliput>
+* **Azul** - <https://boardgamegeek.com/boardgame/230802/azul>
 * **Gloomhaven** - <https://boardgamegeek.com/boardgame/174430/gloomhaven>
 * **Imperial Settlers** - <https://boardgamegeek.com/boardgame/154203/imperial-settlers>
 * **Imperial Settlers: Empires of the North** - <https://boardgamegeek.com/boardgame/270844/imperial-settlers-empires-north>
