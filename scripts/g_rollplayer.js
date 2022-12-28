@@ -266,7 +266,7 @@ document.getElementById('rollplayer-monsters').hidden = true;
 
 // Add supported languages to select list
 var select = document.getElementById('language'),
-    event  = new Event('change');
+    evt    = new Event('change');
 for (var language in g_data) {
   var option = document.createElement('option');
   option.appendChild( document.createTextNode(language) );
@@ -278,7 +278,7 @@ for (var language in g_data) {
 app.gameSetting('rollplayer-options', 'get');
 
 // Trigger initial change of language
-select.dispatchEvent(event);
+select.dispatchEvent(evt);
 
 // Run the init of rules and set
 app.gameInit('rollplayer');

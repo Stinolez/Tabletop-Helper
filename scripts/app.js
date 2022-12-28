@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper'
-    , appVersion = '22.03.23.214318'
+    , appVersion = '22.12.28.171142'
     , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -194,7 +194,7 @@ var app = (function () {
     if (document.getElementsByClassName('cardLogo').length > 0) {
       for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
         document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
-          location.href = 'games/g_' + e.srcElement.dataset.game + '.html';
+          location.href = 'games/g_' + e.target.dataset.game + '.html';
         });
       }
     }
@@ -508,7 +508,7 @@ var app = (function () {
       // Back button action
       if (document.getElementById('headerBack')) {
         document.getElementById('headerBack').addEventListener('click', function(e) {
-          location.href = e.srcElement.dataset.url;
+          location.href = e.target.dataset.url;
         });
       }
 
