@@ -14,14 +14,12 @@ Write-Host "Creating new build."
 New-Item $build -Type Directory
 
 # Variables
-$rootFiles = Get-ChildItem -Path $root -Exclude *.js.map -Name -Attributes !Directory
+$rootFiles = Get-ChildItem -Path $root -Name -Attributes !Directory
 $dataFolders = Get-ChildItem -Path $root -Recurse -Name -Attributes Directory
 
 # Copy root files (excluding not minified js files)
 foreach ($file in $rootFiles) {
-  if ($file -Like "*.min.js" -Or $file -NotLike "*.js") {
-    Copy-Item ($root + $file) -Destination $build
-  }
+  Copy-Item ($root + $file) -Destination $build
 }
 
 # Create structure and copy all files in the structure (excluding folders starting with "__" or github folder, excluding not minified js / css files)

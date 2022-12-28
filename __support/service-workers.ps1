@@ -117,4 +117,4 @@ $sw_content += "`n});"
 Set-Content -Path $sw -Value $sw_content -NoNewline
 
 # Reminder
-Write-Host "Please save files service-worker.js & scripts/app.js to minify them."
+Write-Host "Please save scripts/app.js file to minify it."
