@@ -48,7 +48,6 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
       g_scenario         = (document.getElementById('solo').checked ? g_solo_level : g_scenario_level),
       playerLvl          = 0,
       scenarioLvl        = 0,
-      playersCard        = document.getElementById('gloomhaven-game'),
       playersSlider      = document.getElementById('gloomhaven-game-slider');
 
   // Get the sum of player levels

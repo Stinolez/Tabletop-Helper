@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper'
-    , appVersion = '22.03.13.220002'
+    , appVersion = '22.12.29.001541'
     , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -93,7 +93,7 @@ var app = (function () {
       // Element: img
       case 'img':
 
-        var imgAttributes = JSON.parse(data[1]);        
+        var imgAttributes = JSON.parse(data[1]);
         element.className = data[0];
         for (var attr in imgAttributes) {
           if (attr.indexOf('data-') === -1) {
@@ -186,7 +186,7 @@ var app = (function () {
         // Append the elements
         card.appendChild(img);
         games.appendChild(card);
-      
+
       }
 
     }
@@ -194,11 +194,11 @@ var app = (function () {
     if (document.getElementsByClassName('cardLogo').length > 0) {
       for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
         document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
-          location.href = 'games/g_' + e.srcElement.dataset.game + '.html';
+          location.href = 'games/g_' + e.target.dataset.game + '.html';
         });
       }
     }
-    
+
   }
 
   // Registering games on the settings page
@@ -347,8 +347,6 @@ var app = (function () {
       // Load data and input in the form (if there are any data to input)
       if (type === 'get' && settings) {
 
-        console.log(settings);
-
         // Set the data for selects
         for (var key in settings['selects']) {
           document.getElementById(key).value = settings['selects'][key];
@@ -430,6 +428,11 @@ var app = (function () {
       return array;
     },
 
+    // Function to return random integer between min (inclusive) and max (inclusive)
+    getRandomInt: function(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+
     // Init function
     init: function() {
 
@@ -508,7 +511,7 @@ var app = (function () {
       // Back button action
       if (document.getElementById('headerBack')) {
         document.getElementById('headerBack').addEventListener('click', function(e) {
-          location.href = e.srcElement.dataset.url;
+          location.href = e.target.dataset.url;
         });
       }
 

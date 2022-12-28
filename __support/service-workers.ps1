@@ -2,24 +2,26 @@
 $version = Get-Date -Format "yy.MM.dd.HHmmss"
 
 # Setting paths
-$currentPath = Get-Location
-$root = (Get-Item $currentPath).parent.FullName
+$scriptPath = Split-Path -parent $MyInvocation.MyCommand.Definition
+$root = (Get-Item $scriptPath).parent.FullName
 
-# File names
+# Service Worker
+$sw_content = ""
 $sw = $root + '\service-worker.js'
-$app = $root + '\scripts\app.js'
 
-### setting version to app.js
+# Main app.js
+$app = $root + '\scripts\app.js'
 $content = (Get-Content -Path $app -ReadCount 0) -replace ("    , appVersion = '(.*)'"), ("    , appVersion = '" + $version + "'")
 Set-Content -Path $app -Value $content
 
-# Setting cached folders
+# Setting cached folders (structure: <path>, <sw comment>, <include>, <exclude>)
 $folders = @()
-$folders += , @('\images\games-logo\', 'GAME LOGOS')
-$folders += , @('\data\', 'GAME DATA')
-$folders += , @('\games\', 'GAME PAGES')
-$folders += , @('\scripts\', 'GAME SCRIPTS')
-$folders += , @('\images\games\', 'GAME IMAGES')
+$folders += , @('\images\icons\'     , 'APP ICONS'   , '*'       , '')
+$folders += , @('\images\games-logo\', 'GAME LOGOS'  , '*'       , '')
+$folders += , @('\data\'             , 'GAME DATA'   , '*'       , 'g_app.json')
+$folders += , @('\games\'            , 'GAME PAGES'  , '*'       , '')
+$folders += , @('\scripts\'          , 'GAME SCRIPTS', '*.min.js', 'app*.js')
+$folders += , @('\images\games\'     , 'GAME IMAGES' , '*'       , '')
 
 # Creation of service worker file (if not existing)
 if (-Not (Test-Path -Path $sw)) {
@@ -27,24 +29,25 @@ if (-Not (Test-Path -Path $sw)) {
 }
 
 # Start of the file generation
-Set-Content -Path $sw -Value ("var cacheName     = '" + $version + "'")
-Add-Content -Path $sw -Value ("  , filesToCache  = [")
-Add-Content -Path $sw -Value ("")
-Add-Content -Path $sw -Value ("      /*** SYSTEM ***/")
-Add-Content -Path $sw -Value ("        '/'")
-Add-Content -Path $sw -Value ("      , '/favicon.ico'")
-Add-Content -Path $sw -Value ("      , '/index.html'")
-Add-Content -Path $sw -Value ("      , '/info.html'")
-Add-Content -Path $sw -Value ("      , '/release-notes.html'")
-Add-Content -Path $sw -Value ("      , '/release-notes.json'")
-Add-Content -Path $sw -Value ("      , '/settings.html'")
-Add-Content -Path $sw -Value ("      , '/images/app-logo.png'")
-Add-Content -Path $sw -Value ("      , '/images/system/info.png'")
-Add-Content -Path $sw -Value ("      , '/images/system/search.png'")
-Add-Content -Path $sw -Value ("      , '/scripts/app.js'")
-Add-Content -Path $sw -Value ("      , '/styles/style.css'")
-
-Add-Content -Path $sw -Value ("")
+$sw_content +=       "var cacheName     = '" + $version + "'"
+$sw_content += "`n  , filesToCache  = ["
+$sw_content += "`n"
+$sw_content += "`n      /*** SYSTEM ***/"
+$sw_content += "`n        '/'"
+$sw_content += "`n      , '/favicon.ico'"
+$sw_content += "`n      , '/index.html'"
+$sw_content += "`n      , '/info.html'"
+$sw_content += "`n      , '/manifest.json'"
+$sw_content += "`n      , '/release-notes.html'"
+$sw_content += "`n      , '/release-notes.json'"
+$sw_content += "`n      , '/settings.html'"
+$sw_content += "`n      , '/images/app-logo.png'"
+$sw_content += "`n      , '/images/system/info.png'"
+$sw_content += "`n      , '/images/system/search.png'"
+$sw_content += "`n      , '/data/g_app.json'"
+$sw_content += "`n      , '/scripts/app.min.js'"
+$sw_content += "`n      , '/styles/style.min.css'"
+$sw_content += "`n"
 
 # Loop through cached folders
 foreach ($folder in $folders) {
@@ -55,55 +58,63 @@ foreach ($folder in $folders) {
   if (Test-Path -Path $objectPath) {
 
     # Variables
-    $files = Get-ChildItem -Path $objectPath -Exclude app.js -Recurse -Name -Attributes !Directory
+    $include = $folder[2]
+    $exclude = $folder[3]
+    $files = Get-ChildItem -Path $objectPath -Exclude $exclude -Include $include -Recurse -Name -Attributes !Directory
 
     # Adding content to service worker
-    Add-Content -Path $sw -Value ("      /*** " + $folder[1] + " ***/")
+    $sw_content += "`n      /*** " + $folder[1] + " ***/"
     foreach ($file in $files) {
-      Add-Content -Path $sw -Value ("      , '" + $folder[0].replace('\', '/') + $file.replace('\', '/') + "'")
+      $sw_content += "`n      , '" + $folder[0].replace('\', '/') + $file.replace('\', '/') + "'"
     }
-    Add-Content -Path $sw -Value ("")
+    $sw_content += "`n"
 
   }
 
 }
 
 # End of the file generation
-Add-Content -Path $sw -Value ("    ];")
-Add-Content -Path $sw -Value ("")
-Add-Content -Path $sw -Value ("// Install")
-Add-Content -Path $sw -Value ("self.addEventListener('install', function(e) {")
-Add-Content -Path $sw -Value ("  console.log('[ServiceWorker] Install');")
-Add-Content -Path $sw -Value ("  e.waitUntil(")
-Add-Content -Path $sw -Value ("    caches.open(cacheName).then(function(cache) {")
-Add-Content -Path $sw -Value ("      console.log('[ServiceWorker] Caching app shell');")
-Add-Content -Path $sw -Value ("      return cache.addAll(filesToCache);")
-Add-Content -Path $sw -Value ("    })")
-Add-Content -Path $sw -Value ("  );")
-Add-Content -Path $sw -Value ("});")
-Add-Content -Path $sw -Value ("")
-Add-Content -Path $sw -Value ("// Activate")
-Add-Content -Path $sw -Value ("self.addEventListener('activate', function(e) {")
-Add-Content -Path $sw -Value ("  console.log('[ServiceWorker] Activate');")
-Add-Content -Path $sw -Value ("  e.waitUntil(")
-Add-Content -Path $sw -Value ("    caches.keys().then(function(keyList) {")
-Add-Content -Path $sw -Value ("      return Promise.all(keyList.map(function(key) {")
-Add-Content -Path $sw -Value ("        if (key !== cacheName) {")
-Add-Content -Path $sw -Value ("          console.log('[ServiceWorker] Removing old cache', key);")
-Add-Content -Path $sw -Value ("          return caches.delete(key);")
-Add-Content -Path $sw -Value ("        }")
-Add-Content -Path $sw -Value ("      }));")
-Add-Content -Path $sw -Value ("    })")
-Add-Content -Path $sw -Value ("  );")
-Add-Content -Path $sw -Value ("  return self.clients.claim();")
-Add-Content -Path $sw -Value ("});")
-Add-Content -Path $sw -Value ("")
-Add-Content -Path $sw -Value ("// Fetch")
-Add-Content -Path $sw -Value ("self.addEventListener('fetch', function(e) {")
-Add-Content -Path $sw -Value ("  console.log('[ServiceWorker] Fetch', e.request.url);")
-Add-Content -Path $sw -Value ("  e.respondWith(")
-Add-Content -Path $sw -Value ("    caches.match(e.request).then(function(response) {")
-Add-Content -Path $sw -Value ("      return response || fetch(e.request);")
-Add-Content -Path $sw -Value ("    })")
-Add-Content -Path $sw -Value ("  );")
-Add-Content -Path $sw -Value ("});") -NoNewline
+$sw_content += "`n    ];"
+$sw_content += "`n"
+$sw_content += "`n// Install"
+$sw_content += "`nself.addEventListener('install', function(e) {"
+$sw_content += "`n  console.log('[ServiceWorker] Install');"
+$sw_content += "`n  e.waitUntil("
+$sw_content += "`n    caches.open(cacheName).then(function(cache) {"
+$sw_content += "`n      console.log('[ServiceWorker] Caching app shell');"
+$sw_content += "`n      return cache.addAll(filesToCache);"
+$sw_content += "`n    })"
+$sw_content += "`n  );"
+$sw_content += "`n});"
+$sw_content += "`n"
+$sw_content += "`n// Activate"
+$sw_content += "`nself.addEventListener('activate', function(e) {"
+$sw_content += "`n  console.log('[ServiceWorker] Activate');"
+$sw_content += "`n  e.waitUntil("
+$sw_content += "`n    caches.keys().then(function(keyList) {"
+$sw_content += "`n      return Promise.all(keyList.map(function(key) {"
+$sw_content += "`n        if (key !== cacheName) {"
+$sw_content += "`n          console.log('[ServiceWorker] Removing old cache', key);"
+$sw_content += "`n          return caches.delete(key);"
+$sw_content += "`n        }"
+$sw_content += "`n      }));"
+$sw_content += "`n    })"
+$sw_content += "`n  );"
+$sw_content += "`n  return self.clients.claim();"
+$sw_content += "`n});"
+$sw_content += "`n"
+$sw_content += "`n// Fetch"
+$sw_content += "`nself.addEventListener('fetch', function(e) {"
+$sw_content += "`n  console.log('[ServiceWorker] Fetch', e.request.url);"
+$sw_content += "`n  e.respondWith("
+$sw_content += "`n    caches.match(e.request).then(function(response) {"
+$sw_content += "`n      return response || fetch(e.request);"
+$sw_content += "`n    })"
+$sw_content += "`n  );"
+$sw_content += "`n});"
+
+# Setting the ServiceWorker file
+Set-Content -Path $sw -Value $sw_content -NoNewline
+
+# Reminder
+Write-Host "Please save scripts/app.js file to minify it."
