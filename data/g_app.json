@@ -1,6 +1,8 @@
 {
    "18lilliput"             : {  "name"   : "18Lilliput"
                                , "search" : "18Lilliput"}
+ , "azul"                   : {  "name"   : "Azul"
+                               , "search" : "Azul"}
  , "gloomhaven"             : {  "name"   : "Gloomhaven"
                                , "search" : "Gloomhaven"}
  , "imperialsettlers"       : {  "name"   : "Imperial Settlers"
