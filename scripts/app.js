@@ -4,7 +4,7 @@ var app = (function () {
 
   // Private variables
   var appName    = 'Tabletop Helper'
-    , appVersion = '22.12.28.171142'
+    , appVersion = '22.12.29.001541'
     , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -347,8 +347,6 @@ var app = (function () {
       // Load data and input in the form (if there are any data to input)
       if (type === 'get' && settings) {
 
-        console.log(settings);
-
         // Set the data for selects
         for (var key in settings['selects']) {
           document.getElementById(key).value = settings['selects'][key];
@@ -428,6 +426,11 @@ var app = (function () {
         [array[i], array[j]] = [array[j], array[i]];
       }
       return array;
+    },
+
+    // Function to return random integer between min (inclusive) and max (inclusive)
+    getRandomInt: function(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     },
 
     // Init function
