@@ -2,7 +2,7 @@
 'use strict';
 
 // The King's Guild global variables
-var g_guilds = [  'starfall-syndicate'
+let g_guilds = [  'starfall-syndicate'
                 , 'merchant-guild'
                 , 'explorers-league'
                 , 'holy-order'
@@ -11,7 +11,7 @@ var g_guilds = [  'starfall-syndicate'
 
 // Register the action on the shuffleGuilds button
 document.getElementById('shuffleGuilds').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       guildsArray     = g_guilds,
       playersCard     = document.getElementById('kingsguild-guilds'),
       playersSlider   = document.getElementById('kingsguild-guilds-slider');
@@ -25,10 +25,10 @@ document.getElementById('shuffleGuilds').addEventListener('click', function() {
   }
 
   // Display the guilds for players
-  for (var i = 0; i < numberOfPlayers; i++) {
+  for (let i = 0; i < numberOfPlayers; i++) {
 
     // New elements
-    var slide = document.createElement('div'),
+    let slide = document.createElement('div'),
         title = document.createElement('div'),
         image = document.createElement('img');
 

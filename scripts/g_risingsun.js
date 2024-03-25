@@ -2,13 +2,13 @@
 'use strict';
 
 // Rising sun global variables
-var g_clans     = ['bonsai', 'dragonfly', 'koi', 'lotus', 'turtle'],
+let g_clans     = ['bonsai', 'dragonfly', 'koi', 'lotus', 'turtle'],
     g_dai_clans = ['fox'],
     g_exp_clans = ['moon', 'sun'];
 
 // Register the action on the shuffleClans button
 document.getElementById('shuffleClans').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       daimyo          = document.getElementById('daimyoBox').checked,
       expansion       = document.getElementById('dynastyExpansion').checked,
       clansArray      = g_clans,
@@ -39,10 +39,10 @@ document.getElementById('shuffleClans').addEventListener('click', function() {
     }
 
     // Display the clans for players
-    for (var i = 0; i < numberOfPlayers; i++) {
+    for (let i = 0; i < numberOfPlayers; i++) {
 
       // New elements
-      var slide = document.createElement('div'),
+      let slide = document.createElement('div'),
           title = document.createElement('div'),
           image = document.createElement('img');
 

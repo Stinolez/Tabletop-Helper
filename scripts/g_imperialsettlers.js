@@ -2,14 +2,14 @@
 'use strict';
 
 // Imperial Settlers global variables
-var g_factions    = ['romans', 'barbarians', 'japanese', 'egyptians'],
+let g_factions    = ['romans', 'barbarians', 'japanese', 'egyptians'],
     g_amazons     = ['amazons'],
     g_atlanteans  = ['atlanteans'],
     g_aztecs      = ['aztecs'];
 
 // Register the action on the shuffleFactions button
 document.getElementById('shuffleFactions').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       amazons         = document.getElementById('amazons').checked,
       atlanteans      = document.getElementById('atlanteans').checked,
       aztecs          = document.getElementById('aztecs').checked,
@@ -46,10 +46,10 @@ document.getElementById('shuffleFactions').addEventListener('click', function() 
     }
 
     // Display the factions for players
-    for (var i = 0; i < numberOfPlayers; i++) {
+    for (let i = 0; i < numberOfPlayers; i++) {
 
       // New elements
-      var slide = document.createElement('div'),
+      let slide = document.createElement('div'),
           title = document.createElement('div'),
           image = document.createElement('img');
 

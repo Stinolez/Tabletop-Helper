@@ -2,12 +2,12 @@
 'use strict';
 
 // Imperial Settlers: Empires of the North global variables
-var g_factions    = ['glenn', 'heidel', 'mackinnon', 'nanurjuk', 'panuk', 'ulaf'],
+let g_factions    = ['glenn', 'heidel', 'mackinnon', 'nanurjuk', 'panuk', 'ulaf'],
     g_japan       = ['saikoro', 'umineko'];
 
 // Register the action on the shuffleFactions button
 document.getElementById('shuffleFactions').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       japan           = document.getElementById('japan').checked,
       factionsArray   = g_factions,
       playersCard     = document.getElementById('imperialsettlersnorth-factions'),
@@ -27,10 +27,10 @@ document.getElementById('shuffleFactions').addEventListener('click', function() 
   }
 
   // Display the factions for players
-  for (var i = 0; i < numberOfPlayers; i++) {
+  for (let i = 0; i < numberOfPlayers; i++) {
 
     // New elements
-    var slide = document.createElement('div'),
+    let slide = document.createElement('div'),
         title = document.createElement('div'),
         image = document.createElement('img');
 
