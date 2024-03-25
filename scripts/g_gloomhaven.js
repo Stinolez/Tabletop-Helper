@@ -2,7 +2,7 @@
 'use strict';
 
 // Gloomhaven global variables
-var g_scenario_level = {"0": {"monster": "0", "gold": "2", "trap": "2", "hazard": "1", "exp": "4"},
+let g_scenario_level = {"0": {"monster": "0", "gold": "2", "trap": "2", "hazard": "1", "exp": "4"},
                         "1": {"monster": "1", "gold": "2", "trap": "3", "hazard": "1", "exp": "6"},
                         "2": {"monster": "2", "gold": "3", "trap": "4", "hazard": "2", "exp": "8"},
                         "3": {"monster": "3", "gold": "3", "trap": "5", "hazard": "2", "exp": "10"},
@@ -24,10 +24,10 @@ var g_scenario_level = {"0": {"monster": "0", "gold": "2", "trap": "2", "hazard"
 
 // Register the action on the change of number of characters
 document.getElementById('numberOfCharacters').addEventListener('change', function() {
-  var numberOfCharacters = Number(document.getElementById('numberOfCharacters').value);
+  let numberOfCharacters = Number(document.getElementById('numberOfCharacters').value);
 
   // Show / hide player levels
-  for (var i = 1; i < 5; i++) {
+  for (let i = 1; i < 5; i++) {
     if (i <= numberOfCharacters) {
       document.getElementById('character' + i).parentNode.hidden = false;
     } else {
@@ -43,7 +43,7 @@ document.getElementById('numberOfCharacters').addEventListener('change', functio
 
 // Register the action on the scenarioSetting button
 document.getElementById('scenarioSetting').addEventListener('click', function() {
-  var difficulty         = Number(document.getElementById('difficulty').value),
+  let difficulty         = Number(document.getElementById('difficulty').value),
       numberOfCharacters = Number(document.getElementById('numberOfCharacters').value),
       g_scenario         = (document.getElementById('solo').checked ? g_solo_level : g_scenario_level),
       playerLvl          = 0,
@@ -51,7 +51,7 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
       playersSlider      = document.getElementById('gloomhaven-game-slider');
 
   // Get the sum of player levels
-  for (var i = 1; i <= numberOfCharacters; i++) {
+  for (let i = 1; i <= numberOfCharacters; i++) {
     playerLvl = playerLvl + Number(document.getElementById('character' + i).value);
   }
 
@@ -65,7 +65,7 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
 
   // Display the setting for the game
   // New elements
-  var slide = document.createElement('div'),
+  let slide = document.createElement('div'),
       title = document.createElement('div'),
       table = document.createElement('table');
 
@@ -75,10 +75,10 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
   title.innerText = 'Scenario Settings';
 
   // Creating table content
-  for (var i = 0; i < 6; i++) {
+  for (let i = 0; i < 6; i++) {
 
     // New elements
-    var tr = table.insertRow(),
+    let tr = table.insertRow(),
         th = document.createElement('th');
 
     // Setting of the elements
@@ -86,7 +86,7 @@ document.getElementById('scenarioSetting').addEventListener('click', function() 
     tr.appendChild(th);
 
     // Value for the character attribute
-    var td = tr.insertCell();
+    let td = tr.insertCell();
     switch (i) {
       case 0:
         td.appendChild(document.createTextNode(scenarioLvl));

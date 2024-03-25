@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="msapplication-TileImage" content="../images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
-  <meta name="theme-color" content="#3F51B5"/>
-  <meta name="description" content="Tabletop Helper is a companion application for board games designed for mobile use without need to use Internet connection after first appliaction load.">
+  <meta name="theme-color" content="#3F51B5" />
+  <meta name="description"
+    content="Tabletop Helper is a companion application for board games designed for mobile use without need to use Internet connection after first appliaction load.">
   <title>Tabletop Helper</title>
   <link rel="stylesheet" type="text/css" href="../styles/style.min.css">
   <link rel="manifest" href="../manifest.json">
@@ -15,28 +17,22 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Tabletop Helper">
   <link rel="apple-touch-icon" href="../images/icons/icon-152x152.png">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-  <link rel="apple-touch-startup-image" href="../images/splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
-  <style type="text/css">
-    .characterName {
-      font-size: 20px;
-      font-family: monospace;
-      font-variant: all-small-caps;
-    }
-    .characterType {
-      font-size: 15px;
-      font-family: monospace;
-      font-variant: all-small-caps;
-      font-style: oblique;
-      color: red;
-    }
-  </style>
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-640x1136.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-750x1294.png"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-1242x2148.png"
+    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-1125x2436.png"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-1536x2048.png"
+    media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-1668x2224.png"
+    media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="../images/splash/launch-2048x2732.png"
+    media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -47,13 +43,17 @@
     <!-- Navigation -->
     <nav role="navigation">
       <div id="menuToggle">
-        <input type="checkbox" id="menuBox"/>
+        <input type="checkbox" id="menuBox" />
         <span></span>
         <span></span>
         <span></span>
         <ul id="menu">
-          <a href="javascript:void(0);" onclick="app.menuToggle('gameOption')"><li>Game Options</li></a>
-          <a href="javascript:void(0);" onclick="app.menuToggle('gameTips')"><li>Game Tips</li></a>
+          <a href="javascript:void(0);" onclick="app.menuToggle('gameOption')">
+            <li>Game Options</li>
+          </a>
+          <a href="javascript:void(0);" onclick="app.menuToggle('gameTips')">
+            <li>Game Tips</li>
+          </a>
         </ul>
       </div>
     </nav>
@@ -74,32 +74,28 @@
         </select>
       </div>
       <div class="cardText">
-        <label for="crossroads">Tokaido: Crossroads</label>
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="crossroads">
-            <label class="onoffswitch-label" for="crossroads"></label>
-        </div>
+        <label for="crossroads">
+          Tokaido: Crossroads
+          <input type="checkbox" class="switch" id="crossroads">
+        </label>
       </div>
       <div class="cardText">
-        <label for="matsuri">Tokaido: Matsuri</label>
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="matsuri">
-            <label class="onoffswitch-label" for="matsuri"></label>
-        </div>
+        <label for="matsuri">
+          Tokaido: Matsuri
+          <input type="checkbox" class="switch" id="matsuri">
+        </label>
       </div>
       <div class="cardText">
-        <label for="eriku">Tokaido Promo: Eriku</label>
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="eriku">
-            <label class="onoffswitch-label" for="eriku"></label>
-        </div>
+        <label for="eriku">
+          Tokaido Promo: Eriku
+          <input type="checkbox" class="switch" id="eriku">
+        </label>
       </div>
       <div class="cardText">
-        <label for="felicia">Tokaido Promo: Felicia</label>
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="felicia">
-            <label class="onoffswitch-label" for="felicia"></label>
-        </div>
+        <label for="felicia">
+          Tokaido Promo: Felicia
+          <input type="checkbox" class="switch" id="felicia">
+        </label>
       </div>
       <div class="cardButtons">
         <button id="shuffleCharacters" class="button">Shuffle Characters</button>
@@ -126,4 +122,5 @@
   <script src="../scripts/g_tokaido.min.js"></script>
 
 </body>
+
 </html>

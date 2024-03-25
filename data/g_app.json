@@ -1,22 +1,42 @@
 {
-   "18lilliput"             : {  "name"   : "18Lilliput"
-                               , "search" : "18Lilliput"}
- , "azul"                   : {  "name"   : "Azul"
-                               , "search" : "Azul"}
- , "gloomhaven"             : {  "name"   : "Gloomhaven"
-                               , "search" : "Gloomhaven"}
- , "imperialsettlers"       : {  "name"   : "Imperial Settlers"
-                               , "search" : "Imperial Settlers, Settlers: Zrod Impéria"}
- , "imperialsettlersnorth"  : {  "name"   : "Imperial Settlers: Empires of the North"
-                               , "search" : "Imperial Settlers: Empires of the North, Settlers: Vládcové severu"}
- , "kingsguild"             : {  "name"   : "The King's Guild"
-                               , "search" : "The King's Guild"}
- , "risingsun"              : {  "name"   : "Rising Sun"
-                               , "search" : "Rising Sun"}
- , "rollplayer"             : {  "name"   : "Roll Player"
-                               , "search" : "Roll Player, Hrdina v kostce"}
- , "tokaido"                : {  "name"   : "Tokaido"
-                               , "search" : "Tokaido"}
- , "witcher"                : {  "name"   : "The Witcher Adventure Game"
-                               , "search" : "The Witcher Adventure Game, Zaklínač: Dobrodružná hra"}
+  "18lilliput": {
+    "name": "18Lilliput",
+    "search": "18Lilliput"
+  },
+  "azul": {
+    "name": "Azul",
+    "search": "Azul"
+  },
+  "gloomhaven": {
+    "name": "Gloomhaven",
+    "search": "Gloomhaven"
+  },
+  "imperialsettlers": {
+    "name": "Imperial Settlers",
+    "search": "Imperial Settlers, Settlers: Zrod Impéria"
+  },
+  "imperialsettlersnorth": {
+    "name": "Imperial Settlers: Empires of the North",
+    "search": "Imperial Settlers: Empires of the North, Settlers: Vládcové severu"
+  },
+  "kingsguild": {
+    "name": "The King's Guild",
+    "search": "The King's Guild"
+  },
+  "risingsun": {
+    "name": "Rising Sun",
+    "search": "Rising Sun"
+  },
+  "rollplayer": {
+    "name": "Roll Player",
+    "search": "Roll Player, Hrdina v kostce"
+  },
+  "tokaido": {
+    "name": "Tokaido",
+    "search": "Tokaido"
+  },
+  "witcher": {
+    "name": "The Witcher Adventure Game",
+    "search": "The Witcher Adventure Game, Zaklínač: Dobrodružná hra"
+  }
 }

@@ -2,7 +2,7 @@
 'use strict';
 
 // Tokaido global variables
-var g_base        = ['hiroshige', 'chuubei', 'kinko', 'yoshiyasu', 'satsuki', 'mitsukuni', 'sasayakko', 'hirotada', 'umegae', 'zen-emon'],
+let g_base        = ['hiroshige', 'chuubei', 'kinko', 'yoshiyasu', 'satsuki', 'mitsukuni', 'sasayakko', 'hirotada', 'umegae', 'zen-emon'],
     g_crossroads  = ['jirocho', 'daigoro', 'nampo', 'gotozaemon', 'miyataka', 'kita'],
     g_matsuri     = ['kushinada', 'mutsumi', 'takeru', 'titia', 'rakuken', 'kamui', 'mari', 'yashima',
                      'kidzuna', 'chihaya', 'mahirito', 'iyasaka', 'suseri', 'musubi', 'ayumu', 'misaki'],
@@ -45,7 +45,7 @@ var g_base        = ['hiroshige', 'chuubei', 'kinko', 'yoshiyasu', 'satsuki', 'm
 
 // Register the action on the shuffleCharacters button
 document.getElementById('shuffleCharacters').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       crossroads      = document.getElementById('crossroads').checked,
       matsuri         = document.getElementById('matsuri').checked,
       eriku           = document.getElementById('eriku').checked,
@@ -83,10 +83,10 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
   }
 
   // Display the factions for players
-  for (var i = 0; i < numberOfPlayers; i++) {
+  for (let i = 0; i < numberOfPlayers; i++) {
 
     // New elements
-    var slide = document.createElement('div'),
+    let slide = document.createElement('div'),
         title = document.createElement('div'),
         char  = document.createElement('div'),
         type  = document.createElement('div');
@@ -95,9 +95,9 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
     slide.className = 'cardSlide';
     title.className = 'cardSlideTitle';
     title.innerText = 'Player ' + (i + 1);
-    char.className  = 'characterName';
+    char.classList  = 'characterName all-small-caps header-font-size';
     char.innerText  = g_names[charactersArray[i]][0];
-    type.className  = 'characterType';
+    type.classList  = 'characterType all-small-caps oblique c-red';
     type.innerText  = '(' + g_names[charactersArray[i]][1] + ')';
 
     // Append the elements

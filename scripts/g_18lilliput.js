@@ -2,7 +2,7 @@
 'use strict';
 
 // 18Lilliput global variables
-var g_characters = [  'flimnap'
+let g_characters = [  'flimnap'
                     , 'general-limnoc'
                     , 'skyresh-bolgolam'
                     , 'balmuff'
@@ -14,7 +14,7 @@ var g_characters = [  'flimnap'
 
 // Register the action on the shuffleCharacters button
 document.getElementById('shuffleCharacters').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       charactersArray = g_characters,
       companiesArray  = g_companies,
       playersCard     = document.getElementById('18lilliput-characters'),
@@ -30,27 +30,22 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
   }
 
   // Display the characters for players
-  for (var i = 0; i < numberOfPlayers; i++) {
+  for (let i = 0; i < numberOfPlayers; i++) {
 
     // New elements
-    var slide  = document.createElement('div'),
+    let slide  = document.createElement('div'),
         title  = document.createElement('div'),
         image  = document.createElement('img'),
         bg     = document.createElement('div');
 
     // Setting the elements
-    slide.className               = 'cardSlide';
-    slide.style.position          = 'relative';
+    slide.className               = 'cardSlide relative';
     title.className               = 'cardSlideTitle';
     title.innerText               = 'Player ' + (i + 1);
     image.src                     = '../images/games/18lilliput/' + charactersArray[i] + '.png';
     image.alt                     = charactersArray[i];
-    bg.style.position             = 'absolute';
-    bg.style.width                = '100px';
-    bg.style.height               = '200px';
+    bg.className                  = 'lilliput-flag absolute';
     bg.style.backgroundImage      = 'url("../images/games/18lilliput/' + companiesArray[i] + '.png")';
-    bg.style.backgroundPositionX  = '9px';
-    bg.style.backgroundRepeat     = 'no-repeat';
 
     // Append the elements
     slide.appendChild(bg);

@@ -2,7 +2,7 @@
 'use strict';
 
 // Azul global variables
-var g_default_position = [  [1, 2, 3, 4, 5]
+let g_default_position = [  [1, 2, 3, 4, 5]
                           , [2, 3, 4, 5, 1]
                           , [3, 4, 5, 1, 2]
                           , [4, 5, 1, 2, 3]
@@ -92,15 +92,7 @@ document.getElementById('azul-generate').addEventListener('click', function() {
   title.innerText = 'Generated Board';
 
   // Styling grid
-  grid.style.width               = 'auto';
-  grid.style.display             = 'grid';
-  grid.style.gap                 = gap + 'px';
-  grid.style.gridTemplateColumns = 'repeat(5, ' + size + 'px)';
-  grid.style.gridTemplateRows    = 'repeat(5, ' + size + 'px)';
-  grid.style.gridAutoFlow        = 'row';
-  grid.style.alignContent        = 'center';
-  grid.style.justifyContent      = 'center';
-  grid.style.alignItems          = 'center';
+  grid.className = 'azul-board';
 
   // Creating table content
   for (let i = 0; i < new_position.length; i++) {
@@ -109,10 +101,8 @@ document.getElementById('azul-generate').addEventListener('click', function() {
       let image = document.createElement('img');
 
       // Element settings and append
-      image.src          = '../images/games/azul/' + new_position[i][j] + '.png';
-      image.alt          = new_position[i][j];
-      image.style.width  = size + 'px';
-      image.style.height = size + 'px';
+      image.src = '../images/games/azul/' + new_position[i][j] + '.png';
+      image.alt = new_position[i][j];
       grid.appendChild(image);
     }
 

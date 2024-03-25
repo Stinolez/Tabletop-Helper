@@ -29,7 +29,7 @@ if (-Not (Test-Path -Path $sw)) {
 }
 
 # Start of the file generation
-$sw_content +=       "var cacheName     = '" + $version + "'"
+$sw_content +=       "let cacheName     = '" + $version + "'"
 $sw_content += "`n  , filesToCache  = ["
 $sw_content += "`n"
 $sw_content += "`n      /*** SYSTEM ***/"

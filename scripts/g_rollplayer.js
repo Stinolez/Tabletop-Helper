@@ -2,7 +2,7 @@
 'use strict';
 
 // Roll Player global variables
-var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození", "Elfové", "Lidé", "Orkové", "Pulčíci", "Trpaslíci"],
+let g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození", "Elfové", "Lidé", "Orkové", "Pulčíci", "Trpaslíci"],
                                                 "class"     : {"black"  : ["Ničema", "Zloděj"],
                                                                "blue"   : ["Čaroděj", "Kouzelník"],
                                                                "green"  : ["Druid", "Hraničář"],
@@ -57,7 +57,7 @@ var g_data = {"Čeština" : {"base"            : {"race"      : ["Drakorození",
 
 // Register the action on the shuffleHeroes button
 document.getElementById('shuffleHeroes').addEventListener('click', function() {
-  var language        = document.getElementById('language').value,
+  let language        = document.getElementById('language').value,
       numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       frogkin         = document.getElementById('frogkinPromo').checked,
       minotaur        = document.getElementById('minotaurPromo').checked,
@@ -66,7 +66,13 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       playersSlider   = document.getElementById('rollplayer-heroes-slider'),
       monstersCard    = document.getElementById('rollplayer-monsters'),
       monstersSlider  = document.getElementById('rollplayer-monsters-slider'),
-      diceColours     = ["black", "blue", "green", "purple", "red", "white"],
+      diceBgColours   = [  ["black" , "transparent"]
+                         , ["blue"  , "transparent"]
+                         , ["green" , "transparent"]
+                         , ["purple", "transparent"]
+                         , ["red"   , "transparent"]
+                         , ["white" , "black"]
+                        ],
       availRace       = g_data[language].base.race,
       availBackstory  = g_data[language].base.backstory,
       availAlignment  = g_data[language].base.alignment,
@@ -100,25 +106,25 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
 
     // Shuffle all arrays
     availRace       = app.arrayShuffle(availRace);
-    diceColours     = app.arrayShuffle(diceColours);
+    diceBgColours   = app.arrayShuffle(diceBgColours);
     availBackstory  = app.arrayShuffle(availBackstory);
     availAlignment  = app.arrayShuffle(availAlignment);
 
     // Display the selection for players
-    for (var i = 0; i < numberOfPlayers; i++) {
+    for (let i = 0; i < numberOfPlayers; i++) {
 
       // Getting rid of used colours for monster setting
-      monsterColours.splice(monsterColours.indexOf(diceColours[i]), 1);
+      monsterColours.splice(monsterColours.indexOf(diceBgColours[i][0]), 1);
 
       // Selecting the class for the player colour
-      var availClass = g_data[language].base.class[diceColours[i]];
+      let availClass = g_data[language].base.class[diceBgColours[i][0]];
       if (monstersMinions) {
-        availClass = availClass.concat(g_data[language].monstersMinions.class[diceColours[i]]);
+        availClass = availClass.concat(g_data[language].monstersMinions.class[diceBgColours[i][0]]);
       }
       availClass = app.arrayShuffle(availClass);
 
       // New elements
-      var slide = document.createElement('div'),
+      let slide = document.createElement('div'),
           title = document.createElement('div'),
           table = document.createElement('table');
 
@@ -128,10 +134,10 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       title.innerText = 'Player ' + (i + 1);
 
       // Creating table content
-      for (var j = 0; j < 4; j++) {
+      for (let j = 0; j < 4; j++) {
 
         // New elements
-        var tr = table.insertRow(),
+        let tr = table.insertRow(),
             th = document.createElement('th');
 
         // Setting of the elements
@@ -139,14 +145,16 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
         tr.appendChild(th);
 
         // Value for the character attribute
-        var td = tr.insertCell();
+        let td = tr.insertCell();
         switch (j) {
           case 0:
             td.appendChild(document.createTextNode(availRace[i]));
             break;
           case 1:
             td.appendChild(document.createTextNode(availClass[0]));
-            td.className = 'block ' + diceColours[i];
+            td.className = 'rollplayer-block'; // + diceBgColours[i][0];
+            td.style.setProperty('--_c-bg'    , 'var(--c-' + diceBgColours[i][0] + ')');
+            td.style.setProperty('--_c-border', 'var(--c-' + diceBgColours[i][1] + ')');
             break;
           case 2:
             td.appendChild(document.createTextNode(availBackstory[i]));
@@ -168,14 +176,14 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
     // Only if we have minions and monsters
     if (monstersMinions) {
 
-      var availMonsters = [];
-      for (var i = 0; i < monsterColours.length; i++) {
+      let availMonsters = [];
+      for (let i = 0; i < monsterColours.length; i++) {
         availMonsters.push(g_data[language].monstersMinions.monsters[monsterColours[i]]);
       }
       availMonsters = app.arrayShuffle(availMonsters);
 
       // New elements
-      var slide   = document.createElement('div'),
+      let slide   = document.createElement('div'),
           title   = document.createElement('div'),
           monster = document.createElement('div');
 
@@ -183,7 +191,7 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
       slide.className     = 'cardSlide';
       title.className     = 'cardSlideTitle';
       title.innerText     = 'Monster';
-      monster.className   = 'monsterName';
+      monster.className   = 'monsterName header-font-size all-small-caps';
       monster.innerText   = availMonsters[0];
 
       // Append the elements
@@ -211,7 +219,7 @@ document.getElementById('shuffleHeroes').addEventListener('click', function() {
 document.getElementById('language').addEventListener('change', function() {
 
   // Variables
-  var language        = document.getElementById('language').value,
+  let language        = document.getElementById('language').value,
       frogkin         = document.getElementById('frogkinPromo'),
       minotaur        = document.getElementById('minotaurPromo'),
       monstersMinions = document.getElementById('monstersMinionsExpansion'),
@@ -237,13 +245,13 @@ document.getElementById('language').addEventListener('change', function() {
   // Show / hide (+ reset values) for monstersMinions option
   if (g_data[language].monstersMinions) {
     monstersMinions.parentElement.parentElement.hidden = false;
-    for (var i = 0; i < numberOfPlayers.options.length; i++) {
+    for (let i = 0; i < numberOfPlayers.options.length; i++) {
       if (numberOfPlayers.options[i].value == '5') {
         fifthPlayer = true;
       }
     }
     if (!fifthPlayer) {
-      var option = document.createElement('option');
+      let option = document.createElement('option');
       option.appendChild(document.createTextNode('5'));
       option.value = '5';
       numberOfPlayers.appendChild(option);
@@ -251,7 +259,7 @@ document.getElementById('language').addEventListener('change', function() {
   } else {
     monstersMinions.checked = false;
     monstersMinions.parentElement.parentElement.hidden = true;
-    for (var i = 0; i < numberOfPlayers.options.length; i++) {
+    for (let i = 0; i < numberOfPlayers.options.length; i++) {
       if (numberOfPlayers.options[i].value == '5') {
         numberOfPlayers.remove(i);
       }
@@ -265,10 +273,10 @@ document.getElementById('rollplayer-heroes').hidden = true;
 document.getElementById('rollplayer-monsters').hidden = true;
 
 // Add supported languages to select list
-var select = document.getElementById('language'),
+let select = document.getElementById('language'),
     evt    = new Event('change');
-for (var language in g_data) {
-  var option = document.createElement('option');
+for (let language in g_data) {
+  let option = document.createElement('option');
   option.appendChild( document.createTextNode(language) );
   option.value = language;
   select.appendChild(option);

@@ -2,11 +2,11 @@
 'use strict';
 
 // Witcher global variables
-var g_characters = ['geralt', 'triss', 'yarpen', 'dandelion'];
+let g_characters = ['geralt', 'triss', 'yarpen', 'dandelion'];
 
 // Register the action on the shuffleCharacters button
 document.getElementById('shuffleCharacters').addEventListener('click', function() {
-  var numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
+  let numberOfPlayers = Number(document.getElementById('numberOfPlayers').value),
       charactersArray = g_characters,
       playersCard     = document.getElementById('witcher-characters'),
       playersSlider   = document.getElementById('witcher-characters-slider');
@@ -20,10 +20,10 @@ document.getElementById('shuffleCharacters').addEventListener('click', function(
   }
 
   // Display the characters for players
-  for (var i = 0; i < numberOfPlayers; i++) {
+  for (let i = 0; i < numberOfPlayers; i++) {
 
     // New elements
-    var slide = document.createElement('div'),
+    let slide = document.createElement('div'),
         title = document.createElement('div'),
         image = document.createElement('img');
 
