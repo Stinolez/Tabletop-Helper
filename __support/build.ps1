@@ -24,7 +24,7 @@ foreach ($file in $rootFiles) {
 
 # Create structure and copy all files in the structure (excluding folders starting with "__" or github folder, excluding not minified js / css files)
 foreach ($folder in $dataFolders) {
-  if ($folder -NotLike ".github*" -And $folder -NotLike ".vscode*" -And $folder -NotLike "__*") {
+  if ($folder -NotLike ".git*" -And $folder -NotLike ".vscode*" -And $folder -NotLike "__*") {
     New-Item ($build + $folder) -Type Directory
     $dataFiles = Get-ChildItem -Path ($root + $folder) -Exclude *.js.map, *.css.map -Name -Attributes !Directory
     foreach ($file in $dataFiles) {
