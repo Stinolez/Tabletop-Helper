@@ -1,7 +1,16 @@
 {
-  "tips" : [
-            ["card"     , ""],
-            ["cardTitle", "Game Tips"],
-            ["cardText" , "No tips exist for this game."]
-           ]
+  "tips": [
+    [
+      "card",
+      ""
+    ],
+    [
+      "cardTitle",
+      "Game Tips"
+    ],
+    [
+      "cardText",
+      "No tips exist for this game."
+    ]
+  ]
 }
