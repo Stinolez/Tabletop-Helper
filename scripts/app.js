@@ -1,14 +1,14 @@
 'use strict';
 
-var app = (function () {
+let app = (function () {
 
   // Private variables
-  var appName    = 'Tabletop Helper'
-    , appVersion = '22.12.29.001541'
+  let appName    = 'Tabletop Helper'
+    , appVersion = '24.03.25.215656'
     , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
-  var loader     = document.querySelector('.loader');
+  let loader     = document.querySelector('.loader');
 
   // Create element
   function createElement(elementType, data) {
@@ -43,7 +43,7 @@ var app = (function () {
      *********************************************/
 
     // Create element by the type
-    var element = document.createElement(elementType);
+    let element = document.createElement(elementType);
 
     // Use different settings for different element types
     switch(elementType) {
@@ -63,13 +63,13 @@ var app = (function () {
       case 'ul':
       case 'ol':
 
-        var listData = data[1];
+        let listData = data[1];
         element.className = data[0];
-        for (var i = 0; i < listData.length; i++) {
+        for (let i = 0; i < listData.length; i++) {
           if (listData[i][0] === 'cardTable') {
-            var sub = createElement('table', listData[i]);
+            let sub = createElement('table', listData[i]);
           } else {
-            var sub = createElement('li', listData[i]);
+            let sub = createElement('li', listData[i]);
           }
           element.appendChild(sub);
         }
@@ -78,12 +78,12 @@ var app = (function () {
       // Element: table
       case 'table':
 
-        var tableData = data[1];
+        let tableData = data[1];
         element.className = data[0];
-        for (var i = 0; i < tableData.length; i++) {
-          var row = createElement('tr', ["", ""]);
-          for (var j = 0; j < tableData[i].length; j++) {
-            var col = createElement('td', ["", tableData[i][j]]);
+        for (let i = 0; i < tableData.length; i++) {
+          let row = createElement('tr', ["", ""]);
+          for (let j = 0; j < tableData[i].length; j++) {
+            let col = createElement('td', ["", tableData[i][j]]);
             row.appendChild(col);
           }
           element.appendChild(row);
@@ -93,9 +93,9 @@ var app = (function () {
       // Element: img
       case 'img':
 
-        var imgAttributes = JSON.parse(data[1]);
+        let imgAttributes = JSON.parse(data[1]);
         element.className = data[0];
-        for (var attr in imgAttributes) {
+        for (let attr in imgAttributes) {
           if (attr.indexOf('data-') === -1) {
             element[attr] = imgAttributes[attr];
           } else {
@@ -123,7 +123,7 @@ var app = (function () {
   // Load JSON file
   function loadJSON(callback, filepath) {
 
-    var xobj = new XMLHttpRequest();
+    let xobj = new XMLHttpRequest();
 
     xobj.overrideMimeType("application/json");
     xobj.open('GET', filepath, true);
@@ -140,14 +140,14 @@ var app = (function () {
   // Print release notes on the page
   function releaseNotes(json) {
 
-    var data = JSON.parse(json),
+    let data = JSON.parse(json),
         rn   = document.getElementById('release-notes');
 
     // Loop through versions
-    for (var versions in data) {
+    for (let versions in data) {
 
       // New elements
-      var card      = createElement('div', ["card", ""]),
+      let card      = createElement('div', ["card", ""]),
           cardTitle = createElement('div', ["cardTitle", "Version " + versions + " (" + data[versions]['date'] + ")"]),
           rnList    = createElement('ul' , ["rn", data[versions]['rn']]);
 
@@ -163,24 +163,24 @@ var app = (function () {
   // Registering games on the main page
   function registerGames(json) {
 
-    var data     = JSON.parse(json)
+    let data     = JSON.parse(json)
       , games    = document.getElementById('games')
       , settings = JSON.parse(localStorage.getItem('game-visibility') || '{}');
 
-    for (var game in data) {
+    for (let game in data) {
 
       // Check if the game is hidden or not
       if (!(settings[game] === false)) {
 
         // Defining game data
-        var gameData = {  "src"           : "images/games-logo/" + game + ".png"
+        let gameData = {  "src"           : "images/games-logo/" + game + ".png"
                         , "alt"           : data[game].name
                         , "data-game"     : game
                         , "data-gamename" : data[game].search
         };
 
         // New elements
-        var card  = createElement('div', ["card", ""]),
+        let card  = createElement('div', ["card", ""]),
             img   = createElement('img', ["cardLogo", JSON.stringify(gameData)]);
 
         // Append the elements
@@ -192,7 +192,7 @@ var app = (function () {
     }
 
     if (document.getElementsByClassName('cardLogo').length > 0) {
-      for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+      for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
         document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
           location.href = 'games/g_' + e.target.dataset.game + '.html';
         });
@@ -204,15 +204,15 @@ var app = (function () {
   // Registering games on the settings page
   function gamesListSettings(json) {
 
-    var data       = JSON.parse(json)
+    let data       = JSON.parse(json)
       , games      = document.getElementById('gamesList')
       , gamesTable = []
       , settings   = JSON.parse(localStorage.getItem('game-visibility') || '{}');
 
-    for (var game in data) {
+    for (let game in data) {
 
       // Defining game data
-      var name  = data[game].name
+      let name  = data[game].name
         , state = (settings[game] === false ? 0 : 1)
         , cbox  = '';
 
@@ -224,15 +224,20 @@ var app = (function () {
 
     }
 
-    var gT = createElement('table', ["cardTable", gamesTable]);
+    let gT = createElement('table', ["cardTable", gamesTable]);
     games.appendChild(gT);
 
     if (document.getElementsByClassName('gameState').length > 0) {
-      for (var i = 0; i < document.getElementsByClassName('gameState').length; i++) {
+      for (let i = 0; i < document.getElementsByClassName('gameState').length; i++) {
         document.getElementsByClassName('gameState')[i].addEventListener('click', function (e) {
           app.updateGamesVisibility();
         });
       }
+    }
+
+    let cb = document.getElementById('gamesList').querySelectorAll('table.cardTable td:nth-child(1)');
+    for (let i = 0; i < cb.length; ++i) {
+       cb[i].classList.add('text-center');
     }
 
   }
@@ -240,14 +245,14 @@ var app = (function () {
   // Add game tips on the page
   function gameTips(json) {
 
-    var data  = JSON.parse(json),
+    let data  = JSON.parse(json),
         tips  = document.getElementById('gameTips'),
         cardT;
 
     // Game Tips
-    for (var tip in data['tips']) {
+    for (let tip in data['tips']) {
 
-      var options = data['tips'][tip];
+      let options = data['tips'][tip];
 
       // Process card class
       if (options[0] === 'card') {
@@ -304,7 +309,7 @@ var app = (function () {
 
     // Toggles the visibility of the dialog.
     createConfirm: function(title, text, button, action) {
-        var bodyElement = document.body;
+        let bodyElement = document.body;
         bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
                                                       '<div class="dialog">' +
                                                         '<div class="dialog-title">' + title + '</div>' +
@@ -318,7 +323,7 @@ var app = (function () {
           document.getElementById('dialogConfirm').addEventListener('click', action);
         } else {
           document.getElementById('dialogConfirm').addEventListener('click', function() {
-            var dialogContainer = document.getElementById('dialog-container');
+            let dialogContainer = document.getElementById('dialog-container');
             dialogContainer.parentNode.removeChild(dialogContainer);
           });
         }
@@ -342,18 +347,18 @@ var app = (function () {
     gameSetting: function(id, type) {
 
       // Getting the settings from localStorage
-      var settings = JSON.parse(localStorage.getItem(id));
+      let settings = JSON.parse(localStorage.getItem(id));
 
       // Load data and input in the form (if there are any data to input)
       if (type === 'get' && settings) {
 
         // Set the data for selects
-        for (var key in settings['selects']) {
+        for (let key in settings['selects']) {
           document.getElementById(key).value = settings['selects'][key];
         }
 
         // Set the data for checkboxes
-        for (var key in settings['checkboxes']) {
+        for (let key in settings['checkboxes']) {
           document.getElementById(key).checked = settings['checkboxes'][key];
         }
 
@@ -363,19 +368,19 @@ var app = (function () {
       if (type === 'set') {
 
         // Get the options box and all select and input elements
-        var optionBox   = document.getElementById(id),
+        let optionBox   = document.getElementById(id),
             selects     = optionBox.getElementsByTagName('select'),
             inputs      = optionBox.getElementsByTagName('input'),
             newSettings = {'selects'    : {},
                            'checkboxes' : {}};
 
         // Get data for all selects
-        for (var i = 0; i < selects.length; i++) {
+        for (let i = 0; i < selects.length; i++) {
           newSettings['selects'][selects[i].id] = selects[i].value;
         }
 
         // Get data for all checkboxes
-        for (var i = 0; i < inputs.length; i++) {
+        for (let i = 0; i < inputs.length; i++) {
           if (inputs[i].type === 'checkbox') {
             newSettings['checkboxes'][inputs[i].id] = inputs[i].checked;
           }
@@ -396,7 +401,7 @@ var app = (function () {
     // Menu toggle Function
     menuToggle: function(button) {
 
-      var menuBox     = document.getElementById('menuBox'),
+      let menuBox     = document.getElementById('menuBox'),
           gameTips    = document.getElementById('gameTips'),
           gameOption  = document.getElementById('gameOption');
 
@@ -421,8 +426,8 @@ var app = (function () {
 
     // Function to reshufle array in random order
     arrayShuffle: function(array) {
-      for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
       }
       return array;
@@ -447,20 +452,23 @@ var app = (function () {
 
         document.getElementById('headerSearch').addEventListener('click', function(e) {
 
-          var title  = document.getElementsByClassName('headerTitle')[0].style.display || 'block'
-            , search = document.getElementsByClassName('headerSearchBox')[0].style.display || 'none';
+          let title  = document.getElementsByClassName('headerTitle')[0]
+            , search = document.getElementsByClassName('headerSearchBox')[0]
+            , input  = document.getElementById('gameSearch');
 
-          document.getElementsByClassName('headerTitle')[0].style.display = (title  === 'block' ? 'none' : 'block');
-          document.getElementsByClassName('headerSearchBox')[0].style.display = (search === 'block' ? 'none' : 'block');
-
-          if (document.getElementsByClassName('headerSearchBox')[0].style.display === 'block') {
-            document.getElementById('gameSearch').focus();
+          if (title.className.indexOf('display-none') != -1) {
+            title.classList.remove('display-none');
+            search.classList.add('display-none');
+            input.value = '';
+            input.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 70, ctrlKey: true }));
           } else {
-            document.getElementById('gameSearch').value = '';
-            document.getElementById('gameSearch').dispatchEvent(new KeyboardEvent('keyup', { keyCode: 70, ctrlKey: true }));
+            title.classList.add('display-none');
+            search.classList.remove('display-none');
+            input.focus();
           }
 
         });
+
       }
 
       // Register search function
@@ -468,24 +476,24 @@ var app = (function () {
 
         document.getElementById('gameSearch').addEventListener('keyup', function(e) {
 
-          var search = document.getElementById('gameSearch').value;
+          let search = document.getElementById('gameSearch').value;
 
           if (search !== '') {
 
-            for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
-              var gameName = document.getElementsByClassName('cardLogo')[i].dataset.gamename;
+            for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+              let gameName = document.getElementsByClassName('cardLogo')[i].dataset.gamename;
               if (gameName.toUpperCase().indexOf(search.toUpperCase()) === -1) {
-                document.getElementsByClassName('cardLogo')[i].parentNode.style.display = 'none';
+                document.getElementsByClassName('cardLogo')[i].parentNode.classList.add('display-none');
               } else {
-                document.getElementsByClassName('cardLogo')[i].parentNode.style.display = 'block';
+                document.getElementsByClassName('cardLogo')[i].parentNode.classList.remove('display-none');
               }
             }
 
           } else {
 
             // Show all games
-            for (var i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
-              document.getElementsByClassName('cardLogo')[i].parentNode.style.display = 'block';
+            for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
+              document.getElementsByClassName('cardLogo')[i].parentNode.classList.remove('display-none');
             }
 
           }
@@ -569,11 +577,11 @@ var app = (function () {
     updateGamesVisibility: function() {
 
       // Getting the list of the games
-      var list     = document.getElementsByClassName('gameState')
+      let list     = document.getElementsByClassName('gameState')
         , settings = {};
 
       // Loop through the list of games to get each game status
-      for (var i = 0; i < list.length; i++) {
+      for (let i = 0; i < list.length; i++) {
         settings[list[i].id] = list[i].checked;
       }
 
