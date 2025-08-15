@@ -1,4 +1,4 @@
-let cacheName     = '24.03.25.215656'
+let cacheName     = '25.08.16.010511'
   , filesToCache  = [
 
       /*** SYSTEM ***/
@@ -36,6 +36,7 @@ let cacheName     = '24.03.25.215656'
       , '/images/games-logo/risingsun.png'
       , '/images/games-logo/rollplayer.png'
       , '/images/games-logo/tokaido.png'
+      , '/images/games-logo/wayfarers.png'
       , '/images/games-logo/witcher.png'
 
       /*** GAME DATA ***/
@@ -48,6 +49,7 @@ let cacheName     = '24.03.25.215656'
       , '/data/g_risingsun.json'
       , '/data/g_rollplayer.json'
       , '/data/g_tokaido.json'
+      , '/data/g_wayfarers.json'
       , '/data/g_witcher.json'
 
       /*** GAME PAGES ***/
@@ -60,6 +62,7 @@ let cacheName     = '24.03.25.215656'
       , '/games/g_risingsun.html'
       , '/games/g_rollplayer.html'
       , '/games/g_tokaido.html'
+      , '/games/g_wayfarers.html'
       , '/games/g_witcher.html'
 
       /*** GAME SCRIPTS ***/
@@ -72,6 +75,7 @@ let cacheName     = '24.03.25.215656'
       , '/scripts/g_risingsun.min.js'
       , '/scripts/g_rollplayer.min.js'
       , '/scripts/g_tokaido.min.js'
+      , '/scripts/g_wayfarers.min.js'
       , '/scripts/g_witcher.min.js'
 
       /*** GAME IMAGES ***/
