@@ -66,10 +66,11 @@ let app = (function () {
         let listData = data[1];
         element.className = data[0];
         for (let i = 0; i < listData.length; i++) {
+          let sub;
           if (listData[i][0] === 'cardTable') {
-            let sub = createElement('table', listData[i]);
+            sub = createElement('table', listData[i]);
           } else {
-            let sub = createElement('li', listData[i]);
+            sub = createElement('li', listData[i]);
           }
           element.appendChild(sub);
         }
@@ -195,7 +196,7 @@ let app = (function () {
       for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
         document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
           location.href = 'games/g_' + e.target.dataset.game + '.html';
-        });
+          });
       }
     }
 
@@ -230,8 +231,8 @@ let app = (function () {
     if (document.getElementsByClassName('gameState').length > 0) {
       for (let i = 0; i < document.getElementsByClassName('gameState').length; i++) {
         document.getElementsByClassName('gameState')[i].addEventListener('click', function (e) {
-          app.updateGamesVisibility();
-        });
+            app.updateGamesVisibility();
+          });
       }
     }
 
@@ -247,7 +248,7 @@ let app = (function () {
 
     let data  = JSON.parse(json),
         tips  = document.getElementById('gameTips'),
-        cardT;
+      cardT;
 
     // Game Tips
     for (let tip in data['tips']) {
@@ -265,19 +266,19 @@ let app = (function () {
         // Create new element for the card
         cardT = createElement('div', options);
 
-      // Process ordered list
+        // Process ordered list
       } else if (options[0] === 'cardOl') {
         cardT.appendChild(createElement('ol', options));
 
-      // Process un-ordered list
+        // Process un-ordered list
       } else if (options[0] === 'cardUl') {
         cardT.appendChild(createElement('ul', options));
 
-      // Process tables
+        // Process tables
       } else if (options[0] === 'cardTable') {
         cardT.appendChild(createElement('table', options));
 
-      // Process texts
+        // Process texts
       } else {
         cardT.appendChild(createElement('div', options));
       }
@@ -309,24 +310,24 @@ let app = (function () {
 
     // Toggles the visibility of the dialog.
     createConfirm: function(title, text, button, action) {
-        let bodyElement = document.body;
+      let bodyElement = document.body;
         bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
-                                                      '<div class="dialog">' +
+          '<div class="dialog">' +
                                                         '<div class="dialog-title">' + title + '</div>' +
                                                         '<div class="dialog-body">' + text + '</div>' +
-                                                        '<div class="dialog-buttons">' +
+          '<div class="dialog-buttons">' +
                                                           '<button id="dialogConfirm" class="button">' + (button ? button : 'OK' ) + '</button>' +
                                                         '</div>' +
                                                       '</div>' +
                                                     '</div>');
-        if (action) {
+      if (action) {
           document.getElementById('dialogConfirm').addEventListener('click', action);
-        } else {
+      } else {
           document.getElementById('dialogConfirm').addEventListener('click', function() {
             let dialogContainer = document.getElementById('dialog-container');
             dialogContainer.parentNode.removeChild(dialogContainer);
           });
-        }
+      }
     },
 
     // Publicly facing createElement function
@@ -362,6 +363,11 @@ let app = (function () {
           document.getElementById(key).checked = settings['checkboxes'][key];
         }
 
+        // Set the data for inputs
+        for (let key in settings['inputs']) {
+          document.getElementById(key).value = settings['inputs'][key];
+        }
+
       }
 
       // Set the data into localStorage to use for getData
@@ -372,7 +378,8 @@ let app = (function () {
             selects     = optionBox.getElementsByTagName('select'),
             inputs      = optionBox.getElementsByTagName('input'),
             newSettings = {'selects'    : {},
-                           'checkboxes' : {}};
+                           'checkboxes' : {},
+                           'inputs'     : {}};
 
         // Get data for all selects
         for (let i = 0; i < selects.length; i++) {
@@ -383,6 +390,8 @@ let app = (function () {
         for (let i = 0; i < inputs.length; i++) {
           if (inputs[i].type === 'checkbox') {
             newSettings['checkboxes'][inputs[i].id] = inputs[i].checked;
+          } else if (inputs[i].type === 'text') {
+            newSettings['inputs'][inputs[i].id] = inputs[i].value;
           }
         }
 
@@ -461,13 +470,13 @@ let app = (function () {
             search.classList.add('display-none');
             input.value = '';
             input.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 70, ctrlKey: true }));
-          } else {
+            } else {
             title.classList.add('display-none');
             search.classList.remove('display-none');
-            input.focus();
-          }
+              input.focus();
+            }
 
-        });
+          });
 
       }
 
@@ -484,21 +493,21 @@ let app = (function () {
               let gameName = document.getElementsByClassName('cardLogo')[i].dataset.gamename;
               if (gameName.toUpperCase().indexOf(search.toUpperCase()) === -1) {
                 document.getElementsByClassName('cardLogo')[i].parentNode.classList.add('display-none');
-              } else {
+                } else {
                 document.getElementsByClassName('cardLogo')[i].parentNode.classList.remove('display-none');
               }
             }
 
-          } else {
+            } else {
 
-            // Show all games
+              // Show all games
             for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
               document.getElementsByClassName('cardLogo')[i].parentNode.classList.remove('display-none');
+              }
+
             }
 
-          }
-
-        });
+          });
       }
 
       // Register games
@@ -519,15 +528,15 @@ let app = (function () {
       // Back button action
       if (document.getElementById('headerBack')) {
         document.getElementById('headerBack').addEventListener('click', function(e) {
-          location.href = e.target.dataset.url;
-        });
+            location.href = e.target.dataset.url;
+          });
       }
 
       // Register service worker
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
 
-          // Automatically check SW update every hour (if online)
+            // Automatically check SW update every hour (if online)
           setInterval(function(){
 
               // Get the SW and if exists update / if doesn't exist - already waiting for refresh
@@ -539,28 +548,28 @@ let app = (function () {
 
           }, (60 * 60 * 1000));
 
-          // New service worker has appeared in registration.installing!
+            // New service worker has appeared in registration.installing!
           registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
+              const newWorker = registration.installing;
 
-            // Wait for the new service worker to be installed
+              // Wait for the new service worker to be installed
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed') {
 
-                // Get all registrated service workers
+                  // Get all registrated service workers
                 navigator.serviceWorker.getRegistration().then(function(reg) {
 
-                  // If there is some service worker waiting - unregister, show message and reload
-                  if (reg.waiting) {
+                      // If there is some service worker waiting - unregister, show message and reload
+                      if (reg.waiting) {
                     reg.unregister().then(function() {
                       app.createConfirm('', 'New version of the application is available. Please click below to update it.', 'Update', function() {window.location.reload(true);});
+                        });
+                      }
+
                     });
-                  }
 
-                });
-
-              }
-            });
+                }
+              });
 
           });
 
