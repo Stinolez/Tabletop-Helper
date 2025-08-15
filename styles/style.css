@@ -572,11 +572,11 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .rn li {
-    margin-bottom: var(--base-margin);
+  margin-bottom: var(--base-margin);
 }
 
 .rn li:last-child {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .rn > li.bugfix {
@@ -599,8 +599,7 @@ a, a:link, a:visited, a:hover, a:active {
   display: grid;
   gap: var(--_gap);
   grid-template-columns: repeat(5, min(var(--_size), var(--_max-size)));
-  place-content: center
-  ;
+  place-content: center;
 }
 
 .rollplayer-block::after {
@@ -618,6 +617,11 @@ a, a:link, a:visited, a:hover, a:active {
   height: 200px;
   background-position-x: 9px;
   background-repeat: no-repeat;
+}
+
+#wayfarers-options input[type="text"],
+#wayfarers-data input[type="text"] {
+  width: 100%;
 }
 
 /* Modifier classes - Fonts */
