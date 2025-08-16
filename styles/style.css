@@ -572,11 +572,11 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 .rn li {
-    margin-bottom: var(--base-margin);
+  margin-bottom: var(--base-margin);
 }
 
 .rn li:last-child {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .rn > li.bugfix {
@@ -591,6 +591,30 @@ a, a:link, a:visited, a:hover, a:active {
   color: var(--c-green);
 }
 
+/* Game overview */
+#gameOverview {
+  --l-h1-font-size: 1.1rem;
+  --l-h2-font-size: 1rem;
+  --l-h3-font-size: 0.9rem;
+  --l-h4-font-size: 0.9rem;
+}
+
+#gameOverview h1{
+  font-size: var(--l-h1-font-size);
+}
+
+#gameOverview h2{
+  font-size: var(--l-h2-font-size);
+}
+
+#gameOverview h3{
+  font-size: var(--l-h3-font-size);
+}
+
+#gameOverview h4{
+  font-size: var(--l-h4-font-size);
+}
+
 /* Game specifics */
 .azul-board {
   --_max-size: 70px;
@@ -599,8 +623,7 @@ a, a:link, a:visited, a:hover, a:active {
   display: grid;
   gap: var(--_gap);
   grid-template-columns: repeat(5, min(var(--_size), var(--_max-size)));
-  place-content: center
-  ;
+  place-content: center;
 }
 
 .rollplayer-block::after {
@@ -618,6 +641,11 @@ a, a:link, a:visited, a:hover, a:active {
   height: 200px;
   background-position-x: 9px;
   background-repeat: no-repeat;
+}
+
+#wayfarers-options input[type="text"],
+#wayfarers-data input[type="text"] {
+  width: 100%;
 }
 
 /* Modifier classes - Fonts */

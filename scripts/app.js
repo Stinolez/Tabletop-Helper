@@ -4,7 +4,7 @@ let app = (function () {
 
   // Private variables
   let appName    = 'Tabletop Helper'
-    , appVersion = '24.03.25.215656'
+    , appVersion = '25.08.16.231305'
     , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -66,10 +66,11 @@ let app = (function () {
         let listData = data[1];
         element.className = data[0];
         for (let i = 0; i < listData.length; i++) {
+          let sub;
           if (listData[i][0] === 'cardTable') {
-            let sub = createElement('table', listData[i]);
+            sub = createElement('table', listData[i]);
           } else {
-            let sub = createElement('li', listData[i]);
+            sub = createElement('li', listData[i]);
           }
           element.appendChild(sub);
         }
@@ -120,12 +121,24 @@ let app = (function () {
     loader.hidden = true;
   }
 
-  // Load JSON file
-  function loadJSON(callback, filepath) {
+  // Load file
+  function loadFile(callback, filepath, type) {
 
     let xobj = new XMLHttpRequest();
 
-    xobj.overrideMimeType("application/json");
+    // Rewrite mime type
+    switch (type) {
+      case 'json':
+        xobj.overrideMimeType("application/json");
+        break;
+      case 'md':
+        xobj.overrideMimeType("text/markdown");
+        break;
+      default:
+        xobj.overrideMimeType("text/plain");
+
+    }
+
     xobj.open('GET', filepath, true);
 
     xobj.onreadystatechange = function () {
@@ -195,7 +208,7 @@ let app = (function () {
       for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
         document.getElementsByClassName('cardLogo')[i].addEventListener('click', function(e) {
           location.href = 'games/g_' + e.target.dataset.game + '.html';
-        });
+          });
       }
     }
 
@@ -230,8 +243,8 @@ let app = (function () {
     if (document.getElementsByClassName('gameState').length > 0) {
       for (let i = 0; i < document.getElementsByClassName('gameState').length; i++) {
         document.getElementsByClassName('gameState')[i].addEventListener('click', function (e) {
-          app.updateGamesVisibility();
-        });
+            app.updateGamesVisibility();
+          });
       }
     }
 
@@ -242,50 +255,15 @@ let app = (function () {
 
   }
 
-  // Add game tips on the page
-  function gameTips(json) {
+  // Add game overview on the page
+  function gameOverview(md) {
 
-    let data  = JSON.parse(json),
-        tips  = document.getElementById('gameTips'),
-        cardT;
+    let data      = marked.parse(md)
+      , overview  = document.getElementById('gameOverview')
+      , card      = createElement('div', ["card", ""]);
 
-    // Game Tips
-    for (let tip in data['tips']) {
-
-      let options = data['tips'][tip];
-
-      // Process card class
-      if (options[0] === 'card') {
-
-        // If we already have card, then add it to tips
-        if (cardT) {
-          tips.appendChild(cardT);
-        }
-
-        // Create new element for the card
-        cardT = createElement('div', options);
-
-      // Process ordered list
-      } else if (options[0] === 'cardOl') {
-        cardT.appendChild(createElement('ol', options));
-
-      // Process un-ordered list
-      } else if (options[0] === 'cardUl') {
-        cardT.appendChild(createElement('ul', options));
-
-      // Process tables
-      } else if (options[0] === 'cardTable') {
-        cardT.appendChild(createElement('table', options));
-
-      // Process texts
-      } else {
-        cardT.appendChild(createElement('div', options));
-      }
-
-    }
-
-    // Add cards to tips
-    tips.appendChild(cardT);
+    card.innerHTML = data;
+    overview.appendChild(card);
 
   }
 
@@ -309,24 +287,24 @@ let app = (function () {
 
     // Toggles the visibility of the dialog.
     createConfirm: function(title, text, button, action) {
-        let bodyElement = document.body;
+      let bodyElement = document.body;
         bodyElement.insertAdjacentHTML('beforeend', '<div id="dialog-container" class="dialog-container">' +
-                                                      '<div class="dialog">' +
+          '<div class="dialog">' +
                                                         '<div class="dialog-title">' + title + '</div>' +
                                                         '<div class="dialog-body">' + text + '</div>' +
-                                                        '<div class="dialog-buttons">' +
+          '<div class="dialog-buttons">' +
                                                           '<button id="dialogConfirm" class="button">' + (button ? button : 'OK' ) + '</button>' +
                                                         '</div>' +
                                                       '</div>' +
                                                     '</div>');
-        if (action) {
+      if (action) {
           document.getElementById('dialogConfirm').addEventListener('click', action);
-        } else {
+      } else {
           document.getElementById('dialogConfirm').addEventListener('click', function() {
             let dialogContainer = document.getElementById('dialog-container');
             dialogContainer.parentNode.removeChild(dialogContainer);
           });
-        }
+      }
     },
 
     // Publicly facing createElement function
@@ -362,6 +340,11 @@ let app = (function () {
           document.getElementById(key).checked = settings['checkboxes'][key];
         }
 
+        // Set the data for inputs
+        for (let key in settings['inputs']) {
+          document.getElementById(key).value = settings['inputs'][key];
+        }
+
       }
 
       // Set the data into localStorage to use for getData
@@ -372,7 +355,8 @@ let app = (function () {
             selects     = optionBox.getElementsByTagName('select'),
             inputs      = optionBox.getElementsByTagName('input'),
             newSettings = {'selects'    : {},
-                           'checkboxes' : {}};
+                           'checkboxes' : {},
+                           'inputs'     : {}};
 
         // Get data for all selects
         for (let i = 0; i < selects.length; i++) {
@@ -383,6 +367,8 @@ let app = (function () {
         for (let i = 0; i < inputs.length; i++) {
           if (inputs[i].type === 'checkbox') {
             newSettings['checkboxes'][inputs[i].id] = inputs[i].checked;
+          } else if (inputs[i].type === 'text') {
+            newSettings['inputs'][inputs[i].id] = inputs[i].value;
           }
         }
 
@@ -395,15 +381,15 @@ let app = (function () {
 
     // Function to load rules of game to model
     gameInit: function(gameName) {
-      loadJSON(gameTips, '../data/g_' + gameName + '.json');
+      loadFile(gameOverview, '../data/g_' + gameName + '.md', 'md');
     },
 
     // Menu toggle Function
     menuToggle: function(button) {
 
-      let menuBox     = document.getElementById('menuBox'),
-          gameTips    = document.getElementById('gameTips'),
-          gameOption  = document.getElementById('gameOption');
+      let menuBox       = document.getElementById('menuBox'),
+          gameOverview  = document.getElementById('gameOverview'),
+          gameOption    = document.getElementById('gameOption');
 
       // Hide menu
       menuBox.checked = false
@@ -411,14 +397,14 @@ let app = (function () {
       // Show / hide section based on the selection
       switch(button) {
 
-        case 'gameTips':
-          gameTips.className    = 'main';
-          gameOption.className  = 'main hidden';
+        case 'gameOverview':
+          gameOverview.className = 'main';
+          gameOption.className   = 'main hidden';
           break;
 
         case 'gameOption':
-          gameTips.className    = 'main hidden';
-          gameOption.className  = 'main';
+          gameOverview.className = 'main hidden';
+          gameOption.className   = 'main';
           break;
       }
 
@@ -461,13 +447,13 @@ let app = (function () {
             search.classList.add('display-none');
             input.value = '';
             input.dispatchEvent(new KeyboardEvent('keyup', { keyCode: 70, ctrlKey: true }));
-          } else {
+            } else {
             title.classList.add('display-none');
             search.classList.remove('display-none');
-            input.focus();
-          }
+              input.focus();
+            }
 
-        });
+          });
 
       }
 
@@ -484,50 +470,50 @@ let app = (function () {
               let gameName = document.getElementsByClassName('cardLogo')[i].dataset.gamename;
               if (gameName.toUpperCase().indexOf(search.toUpperCase()) === -1) {
                 document.getElementsByClassName('cardLogo')[i].parentNode.classList.add('display-none');
-              } else {
+                } else {
                 document.getElementsByClassName('cardLogo')[i].parentNode.classList.remove('display-none');
               }
             }
 
-          } else {
+            } else {
 
-            // Show all games
+              // Show all games
             for (let i = 0; i < document.getElementsByClassName('cardLogo').length; i++) {
               document.getElementsByClassName('cardLogo')[i].parentNode.classList.remove('display-none');
+              }
+
             }
 
-          }
-
-        });
+          });
       }
 
       // Register games
       if (document.getElementById('games')) {
-        loadJSON(registerGames, '../data/g_app.json');
+        loadFile(registerGames, '../data/g_app.json', 'json');
       }
 
       // User settings - games list
       if (document.getElementById('gamesList')) {
-        loadJSON(gamesListSettings, '../data/g_app.json');
+        loadFile(gamesListSettings, '../data/g_app.json', 'json');
       }
 
       // Put release notes on the page (only for info page)
       if (document.getElementById('release-notes')) {
-        loadJSON(releaseNotes, '../release-notes.json');
+        loadFile(releaseNotes, '../release-notes.json', 'json');
       }
 
       // Back button action
       if (document.getElementById('headerBack')) {
         document.getElementById('headerBack').addEventListener('click', function(e) {
-          location.href = e.target.dataset.url;
-        });
+            location.href = e.target.dataset.url;
+          });
       }
 
       // Register service worker
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
 
-          // Automatically check SW update every hour (if online)
+            // Automatically check SW update every hour (if online)
           setInterval(function(){
 
               // Get the SW and if exists update / if doesn't exist - already waiting for refresh
@@ -539,28 +525,28 @@ let app = (function () {
 
           }, (60 * 60 * 1000));
 
-          // New service worker has appeared in registration.installing!
+            // New service worker has appeared in registration.installing!
           registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
+              const newWorker = registration.installing;
 
-            // Wait for the new service worker to be installed
+              // Wait for the new service worker to be installed
             newWorker.addEventListener('statechange', () => {
               if (newWorker.state === 'installed') {
 
-                // Get all registrated service workers
+                  // Get all registrated service workers
                 navigator.serviceWorker.getRegistration().then(function(reg) {
 
-                  // If there is some service worker waiting - unregister, show message and reload
-                  if (reg.waiting) {
+                      // If there is some service worker waiting - unregister, show message and reload
+                      if (reg.waiting) {
                     reg.unregister().then(function() {
                       app.createConfirm('', 'New version of the application is available. Please click below to update it.', 'Update', function() {window.location.reload(true);});
+                        });
+                      }
+
                     });
-                  }
 
-                });
-
-              }
-            });
+                }
+              });
 
           });
 
