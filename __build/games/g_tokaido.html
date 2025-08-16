@@ -51,8 +51,8 @@
           <a href="javascript:void(0);" onclick="app.menuToggle('gameOption')">
             <li>Game Options</li>
           </a>
-          <a href="javascript:void(0);" onclick="app.menuToggle('gameTips')">
-            <li>Game Tips</li>
+          <a href="javascript:void(0);" onclick="app.menuToggle('gameOverview')">
+            <li>Game Overview</li>
           </a>
         </ul>
       </div>
@@ -60,7 +60,7 @@
   </header>
 
   <!-- MAIN -->
-  <main class="main hidden" id="gameTips"></main>
+  <main class="main hidden" id="gameOverview"></main>
   <main class="main" id="gameOption">
     <div class="card" id="tokaido-options">
       <div class="cardTitle">Options</div>
@@ -118,6 +118,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="../libs/marked.umd.js"></script>
   <script src="../scripts/app.min.js"></script>
   <script src="../scripts/g_tokaido.min.js"></script>
 
