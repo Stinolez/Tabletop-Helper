@@ -1,4 +1,4 @@
-let cacheName     = '25.08.16.010511'
+let cacheName     = '25.08.16.172449'
   , filesToCache  = [
 
       /*** SYSTEM ***/

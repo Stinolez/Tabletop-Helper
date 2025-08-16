@@ -116,6 +116,9 @@ document.getElementById('final-scoring').addEventListener('click', function () {
 
 });
 
+// Run game setting (with the game setting card ID)
+app.gameSetting('wayfarers-options', 'get');
+
 // On load init
 document.getElementById('wayfarers-score').hidden = true;
 document.getElementById('numberOfPlayers').dispatchEvent(new CustomEvent('change', {}));
@@ -123,9 +126,6 @@ document.getElementById('p1_name').dispatchEvent(new CustomEvent('change', {}));
 document.getElementById('p2_name').dispatchEvent(new CustomEvent('change', {}));
 document.getElementById('p3_name').dispatchEvent(new CustomEvent('change', {}));
 document.getElementById('p4_name').dispatchEvent(new CustomEvent('change', {}));
-
-// Run game setting (with the game setting card ID)
-app.gameSetting('wayfarers-options', 'get');
 
 // Run the init of rules and set
 app.gameInit('wayfarers');
