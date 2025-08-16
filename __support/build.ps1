@@ -26,10 +26,17 @@ foreach ($file in $rootFiles) {
 foreach ($folder in $dataFolders) {
   if ($folder -NotLike ".git*" -And $folder -NotLike ".vscode*" -And $folder -NotLike "__*") {
     New-Item ($build + $folder) -Type Directory
-    $dataFiles = Get-ChildItem -Path ($root + $folder) -Exclude *.js.map, *.css.map -Name -Attributes !Directory
-    foreach ($file in $dataFiles) {
-      if ($file -Like "*.min.js" -Or $file -Like "*.min.css" -Or ($file -NotLike "*.js" -And $file -NotLike "*.css")) {
+    if ($folder -Like "libs") {
+      $dataFiles = Get-ChildItem -Path ($root + $folder) -Name -Attributes !Directory
+      foreach ($file in $dataFiles) {
         Copy-Item ($root + $folder + "\" + $file) -Destination ($build + $folder + "\")
+      }
+    } else {
+      $dataFiles = Get-ChildItem -Path ($root + $folder) -Exclude *.js.map, *.css.map -Name -Attributes !Directory
+      foreach ($file in $dataFiles) {
+        if ($file -Like "*.min.js" -Or $file -Like "*.min.css" -Or ($file -NotLike "*.js" -And $file -NotLike "*.css")) {
+          Copy-Item ($root + $folder + "\" + $file) -Destination ($build + $folder + "\")
+        }
       }
     }
   }

@@ -591,6 +591,30 @@ a, a:link, a:visited, a:hover, a:active {
   color: var(--c-green);
 }
 
+/* Game overview */
+#gameOverview {
+  --l-h1-font-size: 1.1rem;
+  --l-h2-font-size: 1rem;
+  --l-h3-font-size: 0.9rem;
+  --l-h4-font-size: 0.9rem;
+}
+
+#gameOverview h1{
+  font-size: var(--l-h1-font-size);
+}
+
+#gameOverview h2{
+  font-size: var(--l-h2-font-size);
+}
+
+#gameOverview h3{
+  font-size: var(--l-h3-font-size);
+}
+
+#gameOverview h4{
+  font-size: var(--l-h4-font-size);
+}
+
 /* Game specifics */
 .azul-board {
   --_max-size: 70px;

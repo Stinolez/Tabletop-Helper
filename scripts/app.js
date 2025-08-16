@@ -4,7 +4,7 @@ let app = (function () {
 
   // Private variables
   let appName    = 'Tabletop Helper'
-    , appVersion = '25.08.16.172449'
+    , appVersion = '25.08.16.231305'
     , appOwner   = 'Tomáš \'Stínolez\' Vitásek';
 
   // DOM variables
@@ -121,12 +121,24 @@ let app = (function () {
     loader.hidden = true;
   }
 
-  // Load JSON file
-  function loadJSON(callback, filepath) {
+  // Load file
+  function loadFile(callback, filepath, type) {
 
     let xobj = new XMLHttpRequest();
 
-    xobj.overrideMimeType("application/json");
+    // Rewrite mime type
+    switch (type) {
+      case 'json':
+        xobj.overrideMimeType("application/json");
+        break;
+      case 'md':
+        xobj.overrideMimeType("text/markdown");
+        break;
+      default:
+        xobj.overrideMimeType("text/plain");
+
+    }
+
     xobj.open('GET', filepath, true);
 
     xobj.onreadystatechange = function () {
@@ -243,50 +255,15 @@ let app = (function () {
 
   }
 
-  // Add game tips on the page
-  function gameTips(json) {
+  // Add game overview on the page
+  function gameOverview(md) {
 
-    let data  = JSON.parse(json),
-        tips  = document.getElementById('gameTips'),
-      cardT;
+    let data      = marked.parse(md)
+      , overview  = document.getElementById('gameOverview')
+      , card      = createElement('div', ["card", ""]);
 
-    // Game Tips
-    for (let tip in data['tips']) {
-
-      let options = data['tips'][tip];
-
-      // Process card class
-      if (options[0] === 'card') {
-
-        // If we already have card, then add it to tips
-        if (cardT) {
-          tips.appendChild(cardT);
-        }
-
-        // Create new element for the card
-        cardT = createElement('div', options);
-
-        // Process ordered list
-      } else if (options[0] === 'cardOl') {
-        cardT.appendChild(createElement('ol', options));
-
-        // Process un-ordered list
-      } else if (options[0] === 'cardUl') {
-        cardT.appendChild(createElement('ul', options));
-
-        // Process tables
-      } else if (options[0] === 'cardTable') {
-        cardT.appendChild(createElement('table', options));
-
-        // Process texts
-      } else {
-        cardT.appendChild(createElement('div', options));
-      }
-
-    }
-
-    // Add cards to tips
-    tips.appendChild(cardT);
+    card.innerHTML = data;
+    overview.appendChild(card);
 
   }
 
@@ -404,15 +381,15 @@ let app = (function () {
 
     // Function to load rules of game to model
     gameInit: function(gameName) {
-      loadJSON(gameTips, '../data/g_' + gameName + '.json');
+      loadFile(gameOverview, '../data/g_' + gameName + '.md', 'md');
     },
 
     // Menu toggle Function
     menuToggle: function(button) {
 
-      let menuBox     = document.getElementById('menuBox'),
-          gameTips    = document.getElementById('gameTips'),
-          gameOption  = document.getElementById('gameOption');
+      let menuBox       = document.getElementById('menuBox'),
+          gameOverview  = document.getElementById('gameOverview'),
+          gameOption    = document.getElementById('gameOption');
 
       // Hide menu
       menuBox.checked = false
@@ -420,14 +397,14 @@ let app = (function () {
       // Show / hide section based on the selection
       switch(button) {
 
-        case 'gameTips':
-          gameTips.className    = 'main';
-          gameOption.className  = 'main hidden';
+        case 'gameOverview':
+          gameOverview.className = 'main';
+          gameOption.className   = 'main hidden';
           break;
 
         case 'gameOption':
-          gameTips.className    = 'main hidden';
-          gameOption.className  = 'main';
+          gameOverview.className = 'main hidden';
+          gameOption.className   = 'main';
           break;
       }
 
@@ -512,17 +489,17 @@ let app = (function () {
 
       // Register games
       if (document.getElementById('games')) {
-        loadJSON(registerGames, '../data/g_app.json');
+        loadFile(registerGames, '../data/g_app.json', 'json');
       }
 
       // User settings - games list
       if (document.getElementById('gamesList')) {
-        loadJSON(gamesListSettings, '../data/g_app.json');
+        loadFile(gamesListSettings, '../data/g_app.json', 'json');
       }
 
       // Put release notes on the page (only for info page)
       if (document.getElementById('release-notes')) {
-        loadJSON(releaseNotes, '../release-notes.json');
+        loadFile(releaseNotes, '../release-notes.json', 'json');
       }
 
       // Back button action

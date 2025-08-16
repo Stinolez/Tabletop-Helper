@@ -9,6 +9,10 @@
       [
         "bugfix",
         "Resolved bug not generating release notes."
+      ],
+      [
+        "update",
+        "Game Tips renamed to Game Overview, replaced custom json format for markdown file for easier creation and update."
       ]
     ]
   },

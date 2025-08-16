@@ -1,4 +1,4 @@
-let cacheName     = '25.08.16.172449'
+let cacheName     = '25.08.16.231305'
   , filesToCache  = [
 
       /*** SYSTEM ***/
@@ -16,6 +16,10 @@ let cacheName     = '25.08.16.172449'
       , '/data/g_app.json'
       , '/scripts/app.min.js'
       , '/styles/style.min.css'
+
+      /*** LIBS ***/
+      , '/libs/marked.umd.js'
+      , '/libs/marked.umd.js.map'
 
       /*** APP ICONS ***/
       , '/images/icons/icon-128x128.png'
@@ -40,17 +44,17 @@ let cacheName     = '25.08.16.172449'
       , '/images/games-logo/witcher.png'
 
       /*** GAME DATA ***/
-      , '/data/g_18lilliput.json'
-      , '/data/g_azul.json'
-      , '/data/g_gloomhaven.json'
-      , '/data/g_imperialsettlers.json'
-      , '/data/g_imperialsettlersnorth.json'
-      , '/data/g_kingsguild.json'
-      , '/data/g_risingsun.json'
-      , '/data/g_rollplayer.json'
-      , '/data/g_tokaido.json'
-      , '/data/g_wayfarers.json'
-      , '/data/g_witcher.json'
+      , '/data/g_18lilliput.md'
+      , '/data/g_azul.md'
+      , '/data/g_gloomhaven.md'
+      , '/data/g_imperialsettlers.md'
+      , '/data/g_imperialsettlersnorth.md'
+      , '/data/g_kingsguild.md'
+      , '/data/g_risingsun.md'
+      , '/data/g_rollplayer.md'
+      , '/data/g_tokaido.md'
+      , '/data/g_wayfarers.md'
+      , '/data/g_witcher.md'
 
       /*** GAME PAGES ***/
       , '/games/g_18lilliput.html'

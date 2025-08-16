@@ -48,6 +48,10 @@ $sw_content += "`n      , '/data/g_app.json'"
 $sw_content += "`n      , '/scripts/app.min.js'"
 $sw_content += "`n      , '/styles/style.min.css'"
 $sw_content += "`n"
+$sw_content += "`n      /*** LIBS ***/"
+$sw_content += "`n      , '/libs/marked.umd.js'"
+$sw_content += "`n      , '/libs/marked.umd.js.map'"
+$sw_content += "`n"
 
 # Loop through cached folders
 foreach ($folder in $folders) {
