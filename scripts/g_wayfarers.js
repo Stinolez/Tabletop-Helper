@@ -37,6 +37,10 @@ function getPrimaryTagScore(count) {
 
 function setPlayerName(nr, name) {
   document.querySelectorAll('.pn-' + nr).forEach((e) => e.innerText = (name || ('#' + nr)));
+
+  // Run game setting (with the game setting card ID)
+  app.gameSetting('wayfarers-options', 'set');
+
 }
 
 // Wayfarers global variables
@@ -54,6 +58,10 @@ document.getElementById('numberOfPlayers').addEventListener('change', function (
       document.querySelectorAll('.p' + i).forEach((e) => e.classList.add(hiddenClass));
     }
   }
+
+  // Run game setting (with the game setting card ID)
+  app.gameSetting('wayfarers-options', 'set');
+
 });
 
 document.getElementById('p1_name').addEventListener('change', function () {

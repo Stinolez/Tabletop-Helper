@@ -1,5 +1,14 @@
 {
-  "25.08.15": {
+  "25.08.17": {
+    "date": "17/08/2025",
+    "rn": [
+      [
+        "bugfix",
+        "Resolved bug with certain games overview generating unnecessary text next to menu and always shown game overview for King's Guild game."
+      ]
+    ]
+  },
+  "25.08.16": {
     "date": "16/08/2025",
     "rn": [
       [
